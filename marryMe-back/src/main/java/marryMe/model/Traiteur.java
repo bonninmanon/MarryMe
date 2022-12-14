@@ -1,4 +1,4 @@
-package model;
+package marryMe.model;
 
 public class Traiteur extends Prestation {
 	private boolean vinDHonneur;

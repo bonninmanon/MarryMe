@@ -1,4 +1,4 @@
-package model;
+package marryMe.model;
 
 public enum Lieu {
 	Domicile(600), Salon(520) ;

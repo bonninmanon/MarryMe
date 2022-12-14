@@ -12,8 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import context.Singleton;
 import dao.IDAOInvite;
-
-import model.Invite;
+import marryMe.model.Invite;
 
 
 @WebServlet("/Invite")

@@ -1,4 +1,4 @@
-package model;
+package marryMe.model;
 
 public enum Livraison {
 	ADomicile(2),VoiePostal(1);

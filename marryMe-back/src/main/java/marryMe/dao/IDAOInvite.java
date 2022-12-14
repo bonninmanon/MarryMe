@@ -3,7 +3,7 @@ package dao;
 import java.time.LocalDate;
 import java.util.List;
 
-import model.Invite ;
+import marryMe.model.Invite;
 
 public interface IDAOInvite extends IDAO<Invite,Integer> {
 

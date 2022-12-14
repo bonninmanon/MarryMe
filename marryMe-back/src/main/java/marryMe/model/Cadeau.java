@@ -1,4 +1,4 @@
-package model;
+package marryMe.model;
 
 public class Cadeau  extends Prestation {
 
