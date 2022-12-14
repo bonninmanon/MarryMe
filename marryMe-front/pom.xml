@@ -16,7 +16,7 @@
 
 		<dependency>
 			<groupId>formation-sopra</groupId>
-			<artifactId>quest-back</artifactId>
+			<artifactId>marryMe-back</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
