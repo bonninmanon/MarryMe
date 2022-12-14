@@ -1,6 +1,13 @@
 package marryMe.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="traiteur")
 public class Traiteur extends Prestation {
+	
+
 	private boolean vinDHonneur;
 	private Cuisine Cocktail ;
 	private Cuisine Repas ;
@@ -8,15 +15,19 @@ public class Traiteur extends Prestation {
 	private Cuisine CuisineDuMonde;
 	private Cuisine Cafe;
 	
-	public Traiteur(double prix, boolean vinDHonneur, Cuisine cocktail, Cuisine repas, Cuisine amusesBouches,
-			Cuisine cuisineDuMonde, Cuisine cafe) {
-		super(prix);
+	public Traiteur(double prix, boolean vinDHonneur, Cuisine cocktail, Cuisine repas,
+			Cuisine amusesBouches, Cuisine cuisineDuMonde, Cuisine cafe) {
+		super( prix);
 		this.vinDHonneur = vinDHonneur;
 		Cocktail = cocktail;
 		Repas = repas;
 		AmusesBouches = amusesBouches;
 		CuisineDuMonde = cuisineDuMonde;
 		Cafe = cafe;
+	}
+	
+	public Traiteur() {
+		// TODO Auto-generated constructor stub
 	}
 
 	public boolean isVinDHonneur() {
@@ -67,6 +78,11 @@ public class Traiteur extends Prestation {
 		Cafe = cafe;
 	}
 
+	@Override
+	public String toString() {
+		return "Traiteur [vinDHonneur=" + vinDHonneur + ", Cocktail=" + Cocktail + ", Repas=" + Repas
+				+ ", AmusesBouches=" + AmusesBouches + ", CuisineDuMonde=" + CuisineDuMonde + ", Cafe=" + Cafe + "]";
+	}
 	
 	
 	

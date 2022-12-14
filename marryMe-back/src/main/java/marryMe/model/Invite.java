@@ -1,22 +1,35 @@
 package marryMe.model;
 
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+
+
+@Entity
+@Table(name="invite")
 public class Invite {
+	
 	private Integer id;
 	private String denomination ;
 	private String nomfamille;
 	private int nbreEnfant;
 	private int nbreAdulte;
-	private String adresse;
-	private String codePostal;
-	private String ville;
-	private String pays;
+	
+	@OneToOne(mappedBy = "invite")
+    private Adresse adresse;
+    
 	private String adresseEmail;
 	private String ceremonieCivile;
 	private String ceremonieReligieuse;
 	private String vinHonneur;
 	
-	public Invite(String denomination, String nomfamille, int nbreEnfant, int nbreAdulte, String adresse,
-			String codePostal, String ville, String pays, String adresseEmail, String ceremonieCivile,
+	@ManyToOne
+	private Mariage mariage;
+	
+	public Invite(String denomination, String nomfamille, int nbreEnfant, int nbreAdulte, Adresse adresse,
+			String adresseEmail, String ceremonieCivile,
 			String ceremonieReligieuse, String vinHonneur) {
 		super();
 		this.denomination = denomination;
@@ -24,17 +37,10 @@ public class Invite {
 		this.nbreEnfant = nbreEnfant;
 		this.nbreAdulte = nbreAdulte;
 		this.adresse = adresse;
-		this.codePostal = codePostal;
-		this.ville = ville;
-		this.pays = pays;
 		this.adresseEmail = adresseEmail;
 		this.ceremonieCivile = ceremonieCivile;
 		this.ceremonieReligieuse = ceremonieReligieuse;
 		this.vinHonneur = vinHonneur;
-	}
-
-	public Invite() {
-		super();
 	}
 
 	public Integer getId() {
@@ -77,36 +83,12 @@ public class Invite {
 		this.nbreAdulte = nbreAdulte;
 	}
 
-	public String getAdresse() {
+	public Adresse getAdresse() {
 		return adresse;
 	}
 
-	public void setAdresse(String adresse) {
+	public void setAdresse(Adresse adresse) {
 		this.adresse = adresse;
-	}
-
-	public String getCodePostal() {
-		return codePostal;
-	}
-
-	public void setCodePostal(String codePostal) {
-		this.codePostal = codePostal;
-	}
-
-	public String getVille() {
-		return ville;
-	}
-
-	public void setVille(String ville) {
-		this.ville = ville;
-	}
-
-	public String getPays() {
-		return pays;
-	}
-
-	public void setPays(String pays) {
-		this.pays = pays;
 	}
 
 	public String getAdresseEmail() {
@@ -144,10 +126,11 @@ public class Invite {
 	@Override
 	public String toString() {
 		return "Invite [id=" + id + ", denomination=" + denomination + ", nomfamille=" + nomfamille + ", nbreEnfant="
-				+ nbreEnfant + ", nbreAdulte=" + nbreAdulte + ", adresse=" + adresse + ", codePostal=" + codePostal
-				+ ", ville=" + ville + ", pays=" + pays + ", adresseEmail=" + adresseEmail + ", ceremonieCivile="
-				+ ceremonieCivile + ", ceremonieReligieuse=" + ceremonieReligieuse + ", vinHonneur=" + vinHonneur + "]";
+				+ nbreEnfant + ", nbreAdulte=" + nbreAdulte + ", adresse=" + adresse + ", adresseEmail=" + adresseEmail
+				+ ", ceremonieCivile=" + ceremonieCivile + ", ceremonieReligieuse=" + ceremonieReligieuse
+				+ ", vinHonneur=" + vinHonneur + "]";
 	}
+
 	
 	
 

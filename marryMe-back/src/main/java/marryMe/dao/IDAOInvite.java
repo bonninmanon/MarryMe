@@ -1,14 +1,9 @@
-package dao;
+package marryMe.dao;
 
-import java.time.LocalDate;
-import java.util.List;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import marryMe.model.Invite;
 
-public interface IDAOInvite extends IDAO<Invite,Integer> {
+public interface IDAOInvite extends JpaRepository<Invite,Integer>{
 
-	/*
-	 * public List<Invite >findAllByDateFilter(LocalDate filter); public List<Invite
-	 * > findAllWithStagiaires();
-	 */
 }

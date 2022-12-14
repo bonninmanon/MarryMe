@@ -1,4 +1,4 @@
-package quest.config;
+package marryMe.config;
 
 import java.util.Properties;
 
@@ -21,9 +21,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @PropertySource("classpath:sgbd.properties") // On charge le fichier sgbd.properties en mémoire
-@ComponentScan("quest.dao") // On active des annotations @Component, @Repository, @Autowired, ... et on
+@ComponentScan("marryMe.dao") // On active des annotations @Component, @Repository, @Autowired, ... et on
 							// précise le(s) package(s) à scanner
-@EnableJpaRepositories("quest.dao")
+@EnableJpaRepositories("marryMe.dao")
 @EnableTransactionManagement // On active les annotations @Transactional avec transactionManager
 public class ApplicationConfig {
 //	@Value("${db.driver}")
