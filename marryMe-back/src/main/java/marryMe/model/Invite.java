@@ -1,6 +1,10 @@
 package marryMe.model;
 
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -11,13 +15,15 @@ import javax.persistence.Table;
 @Table(name="invite")
 public class Invite {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String denomination ;
 	private String nomfamille;
 	private int nbreEnfant;
 	private int nbreAdulte;
 	
-	@OneToOne(mappedBy = "invite")
+	 @Embedded
     private Adresse adresse;
     
 	private String adresseEmail;

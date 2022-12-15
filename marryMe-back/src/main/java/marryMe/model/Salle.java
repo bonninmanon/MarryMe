@@ -1,7 +1,7 @@
 package marryMe.model;
 
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -12,7 +12,7 @@ public class Salle extends Prestation{
      private int  capacite;
     private  boolean  debout ;
     
-    @OneToOne
+  @Embedded
     private Adresse adresse;
     
 	public Salle( double prix, String nom, int capacite, boolean debout) {

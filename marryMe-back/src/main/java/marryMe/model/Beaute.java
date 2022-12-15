@@ -1,5 +1,6 @@
 package marryMe.model;
 
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -13,10 +14,10 @@ public class Beaute extends Prestation  {
 	private boolean  makeUp ;
 	private boolean  vetementHomme ;
 	private boolean  vetementFemme ;
-	private Lieu Domicile ;
-	private Lieu Salon ;
+	private Lieu lieu ;
 	
-	@OneToOne(mappedBy = "beaute")
+	
+	 @Embedded
 	private Adresse adresse;
 
 
@@ -25,16 +26,18 @@ public Beaute() {
 }
 
 
-public Beaute(double prix, boolean coiffure, boolean makeUp, boolean vetementHomme, boolean vetementFemme,
-		Lieu domicile, Lieu salon) {
-	super( prix);
+
+public Beaute(double prix, boolean coiffure, boolean makeUp, boolean vetementHomme, boolean vetementFemme, Lieu lieu) {
+	super(prix);
 	this.coiffure = coiffure;
 	this.makeUp = makeUp;
 	this.vetementHomme = vetementHomme;
 	this.vetementFemme = vetementFemme;
-	Domicile = domicile;
-	Salon = salon;
+	this.lieu = lieu;
+	
 }
+
+
 
 
 public boolean isCoiffure() {
@@ -42,9 +45,11 @@ public boolean isCoiffure() {
 }
 
 
+
 public void setCoiffure(boolean coiffure) {
 	this.coiffure = coiffure;
 }
+
 
 
 public boolean isMakeUp() {
@@ -52,9 +57,11 @@ public boolean isMakeUp() {
 }
 
 
+
 public void setMakeUp(boolean makeUp) {
 	this.makeUp = makeUp;
 }
+
 
 
 public boolean isVetementHomme() {
@@ -62,9 +69,11 @@ public boolean isVetementHomme() {
 }
 
 
+
 public void setVetementHomme(boolean vetementHomme) {
 	this.vetementHomme = vetementHomme;
 }
+
 
 
 public boolean isVetementFemme() {
@@ -72,36 +81,45 @@ public boolean isVetementFemme() {
 }
 
 
+
 public void setVetementFemme(boolean vetementFemme) {
 	this.vetementFemme = vetementFemme;
 }
 
 
-public Lieu getDomicile() {
-	return Domicile;
+
+public Lieu getLieu() {
+	return lieu;
 }
 
 
-public void setDomicile(Lieu domicile) {
-	Domicile = domicile;
+
+public void setLieu(Lieu lieu) {
+	this.lieu = lieu;
 }
 
 
-public Lieu getSalon() {
-	return Salon;
+
+public Adresse getAdresse() {
+	return adresse;
 }
 
 
-public void setSalon(Lieu salon) {
-	Salon = salon;
+
+public void setAdresse(Adresse adresse) {
+	this.adresse = adresse;
 }
+
 
 
 @Override
 public String toString() {
 	return "Beaute [coiffure=" + coiffure + ", makeUp=" + makeUp + ", vetementHomme=" + vetementHomme
-			+ ", vetementFemme=" + vetementFemme + ", Domicile=" + Domicile + ", Salon=" + Salon + "]";
+			+ ", vetementFemme=" + vetementFemme + ", lieu=" + lieu + ", adresse=" + adresse + "]";
 }
+
+
+
 
 
 

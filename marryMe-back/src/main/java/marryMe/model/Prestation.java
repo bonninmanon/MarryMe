@@ -1,15 +1,19 @@
 package marryMe.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="prestation")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Prestation {
 	
 	@Id
@@ -17,11 +21,10 @@ public class Prestation {
 	private Integer id;
 	protected double  prix ;
 	
-	@ManyToOne
-	private Mariage mariage;
+	@ManyToMany(mappedBy = "prestations")
+	private List<Mariage> mariages;
 	
 	public Prestation( double prix) {
-		super();
 		this.prix = prix;
 	}
 
@@ -43,6 +46,15 @@ public class Prestation {
 
 	public void setPrix(double prix) {
 		this.prix = prix;
+	}
+
+	
+	public List<Mariage> getMariages() {
+		return mariages;
+	}
+
+	public void setMariages(List<Mariage> mariages) {
+		this.mariages = mariages;
 	}
 
 	@Override

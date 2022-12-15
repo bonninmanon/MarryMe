@@ -21,7 +21,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @PropertySource("classpath:sgbd.properties") // On charge le fichier sgbd.properties en mémoire
-@ComponentScan("marryMe.dao") // On active des annotations @Component, @Repository, @Autowired, ... et on
+@ComponentScan("marryMe.model") // On active des annotations @Component, @Repository, @Autowired, ... et on
 							// précise le(s) package(s) à scanner
 @EnableJpaRepositories("marryMe.dao")
 @EnableTransactionManagement // On active les annotations @Transactional avec transactionManager
@@ -54,7 +54,7 @@ public class ApplicationConfig {
 		LocalContainerEntityManagerFactoryBean emf = new LocalContainerEntityManagerFactoryBean();
 		JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
 		emf.setDataSource(dataSource);
-		emf.setPackagesToScan("quest.model");
+		emf.setPackagesToScan("marryMe.model");
 		emf.setJpaVendorAdapter(vendorAdapter); // On précise le provider
 
 		Properties jpaProperties = new Properties();

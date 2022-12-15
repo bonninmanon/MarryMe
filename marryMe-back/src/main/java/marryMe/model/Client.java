@@ -1,5 +1,6 @@
 package marryMe.model;
 
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -8,7 +9,7 @@ import javax.persistence.Table;
 @Table(name="client")
 public class Client extends Compte{
 	
-	@OneToOne
+	 @Embedded
 	private Adresse adresse;
 	
 	
