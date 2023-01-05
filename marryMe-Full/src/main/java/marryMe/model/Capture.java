@@ -18,16 +18,44 @@ public class Capture extends Prestation {
 	@JsonView(Views.ViewBase.class)
 	private boolean miniAlbum ;  // mini album
 	
-	public Capture( double prix, boolean photoShoot, boolean bestOf, boolean livreDor, boolean miniAlbum) {
+	@JsonView(Views.ViewBase.class)
+	private int qtLivreDor;
+	
+	@JsonView(Views.ViewBase.class)
+	private int qtAlbum;
+	
+
+	
+	public Capture(double prix, boolean photoShoot, boolean bestOf, boolean livreDor, boolean miniAlbum, int qtLivreDor,
+			int qtAlbum) {
 		super(prix);
 		this.photoShoot = photoShoot;
 		this.bestOf = bestOf;
 		this.livreDor = livreDor;
 		this.miniAlbum = miniAlbum;
+		this.qtLivreDor = qtLivreDor;
+		this.qtAlbum = qtAlbum;
 	}
-	
+
 	public Capture() {
 		// TODO Auto-generated constructor stub
+	}
+
+	
+	public int getQtLivreDor() {
+		return qtLivreDor;
+	}
+
+	public void setQtLivreDor(int qtLivreDor) {
+		this.qtLivreDor = qtLivreDor;
+	}
+
+	public int getQtAlbum() {
+		return qtAlbum;
+	}
+
+	public void setQtAlbum(int qtAlbum) {
+		this.qtAlbum = qtAlbum;
 	}
 
 	public boolean isPhotoShoot() {
@@ -65,8 +93,10 @@ public class Capture extends Prestation {
 	@Override
 	public String toString() {
 		return "Capture [photoShoot=" + photoShoot + ", bestOf=" + bestOf + ", livreDor=" + livreDor + ", miniAlbum="
-				+ miniAlbum + "]";
+				+ miniAlbum + ", qtLivreDor=" + qtLivreDor + ", qtAlbum=" + qtAlbum + "]";
 	}
+
+
 	
 	
 

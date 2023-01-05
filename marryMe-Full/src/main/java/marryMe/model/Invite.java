@@ -38,20 +38,19 @@ public class Invite {
 	private int nbreAdulte;
 	
 	 @Embedded
-		@JsonView(ViewBase.class)
-
+	@JsonView(ViewBase.class)
     private Adresse adresse;
-		@JsonView(ViewBase.class)
-
+	 
+	@JsonView(ViewBase.class)
 	private String adresseEmail;
-		@JsonView(ViewBase.class)
-
+	
+	@JsonView(ViewBase.class)
 	private String ceremonieCivile;
-		@JsonView(ViewBase.class)
-
+	
+	@JsonView(ViewBase.class)
 	private String ceremonieReligieuse;
-		@JsonView(ViewBase.class)
-
+	
+	@JsonView(ViewBase.class)
 	private String vinHonneur;
 	
 	@ManyToOne

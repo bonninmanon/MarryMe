@@ -2,12 +2,12 @@ package marryMe.model;
 
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
-import javax.persistence.OneToOne;
+
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonView;
 
-import marryMe.model.Views.ViewBase;
+
 
 @Entity
 @Table(name = "beaute")
@@ -21,9 +21,11 @@ public class Beaute extends Prestation {
 	private boolean vetementHomme;
 	@JsonView(Views.ViewBase.class)
 	private boolean vetementFemme;
+	@JsonView(Views.ViewBase.class)
 	private Lieu lieu;
 	
 	@Embedded
+	@JsonView(Views.ViewBase.class)
 	private Adresse adresse;
 
 	public Beaute() {

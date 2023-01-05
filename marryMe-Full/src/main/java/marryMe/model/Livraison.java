@@ -1,7 +1,7 @@
 package marryMe.model;
 
 public enum Livraison {
-	ADomicile(2),VoiePostal(1);
+	ADomicile(4),SurPlace(2);;
 	
 private int prix;
 

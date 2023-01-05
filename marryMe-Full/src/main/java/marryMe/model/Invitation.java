@@ -16,50 +16,59 @@ public class Invitation extends Prestation {
 	@JsonView(Views.ViewBase.class)
 	private String modele;
 	@JsonView(Views.ViewBase.class)
-	private Livraison ADomicile;
+	private Livraison SurPlace;
 	@JsonView(Views.ViewBase.class)
-	private Livraison VoiePostal;
+	private Livraison ADomicile;
 	
-	
-	public Invitation( double prix, String modele, Livraison aDomicile, Livraison voiePostal) {
-		super(prix);
-		this.modele = modele;
-		ADomicile = aDomicile;
-		VoiePostal = voiePostal;
-	}
 	
 	public Invitation() {
 		// TODO Auto-generated constructor stub
 	}
 
+
+	public Invitation(double prix, String modele, Livraison surPlace, Livraison aDomicile) {
+		super(prix);
+		this.modele = modele;
+		SurPlace = surPlace;
+		ADomicile = aDomicile;
+	}
+
+
 	public String getModele() {
 		return modele;
 	}
+
 
 	public void setModele(String modele) {
 		this.modele = modele;
 	}
 
+
+	public Livraison getSurPlace() {
+		return SurPlace;
+	}
+
+
+	public void setSurPlace(Livraison surPlace) {
+		SurPlace = surPlace;
+	}
+
+
 	public Livraison getADomicile() {
 		return ADomicile;
 	}
+
 
 	public void setADomicile(Livraison aDomicile) {
 		ADomicile = aDomicile;
 	}
 
-	public Livraison getVoiePostal() {
-		return VoiePostal;
-	}
-
-	public void setVoiePostal(Livraison voiePostal) {
-		VoiePostal = voiePostal;
-	}
 
 	@Override
 	public String toString() {
-		return "Invitation [modele=" + modele + ", ADomicile=" + ADomicile + ", VoiePostal=" + VoiePostal + "]";
+		return "Invitation [modele=" + modele + ", SurPlace=" + SurPlace + ", ADomicile=" + ADomicile + "]";
 	}
+	
 	
 	
 	

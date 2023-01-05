@@ -29,6 +29,7 @@ public abstract class Compte {
 	@Column(length = 25)
 	@JsonView(Views.ViewBase.class)
 	protected String mail ; 
+	@JsonView(Views.ViewBase.class)
 	protected String mdp ;
 	
 

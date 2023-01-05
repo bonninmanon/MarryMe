@@ -28,6 +28,7 @@ public abstract class Prestation {
 	protected double  prix ;
 	
 	@ManyToMany(mappedBy = "prestations")
+	@JsonView(Views.ViewPrestationWithMariages.class)
 	private List<Mariage> mariages;
 	
 	public Prestation( double prix) {

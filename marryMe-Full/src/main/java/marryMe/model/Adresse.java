@@ -7,13 +7,13 @@ import com.fasterxml.jackson.annotation.JsonView;
 @Embeddable
 public class Adresse {
 	
-	@JsonView(Views.ViewBase.class)
+	@JsonView({Views.ViewBase.class, Views.ViewClient.class})
 	private String numero ;
-	@JsonView(Views.ViewBase.class)
+	@JsonView({Views.ViewBase.class, Views.ViewClient.class})
 	private String  voie ;
-	@JsonView(Views.ViewBase.class)
+	@JsonView({Views.ViewBase.class, Views.ViewClient.class})
 	private String  ville ;
-	@JsonView(Views.ViewBase.class)
+	@JsonView({Views.ViewBase.class, Views.ViewClient.class})
 	private String  cp ;
 	
 	public Adresse() {}

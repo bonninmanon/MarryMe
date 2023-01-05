@@ -37,12 +37,15 @@ public class Mariage  {
 	private  String  theme ;
 	
 	@OneToMany(mappedBy = "mariage")
+	@JsonView(Views.ViewMariageWithInvites.class)
 	List<Invite> listeInvites = new ArrayList<>();
 	
 	@ManyToMany
+	@JsonView(Views.ViewMariageWithPrestations.class)
 	private List<Prestation> prestations=new ArrayList<>();
 	
 	@OneToOne
+	@JsonView(Views.ViewMariageWithClient.class)
 	private Client client;
 	
 	public Mariage( LocalDate date, String theme,Client client) {

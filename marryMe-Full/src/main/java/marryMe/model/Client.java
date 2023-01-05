@@ -17,6 +17,7 @@ public class Client extends Compte{
 	
 	
 	@OneToOne(mappedBy="client")
+	@JsonView(Views.ViewClientWithMariage.class)
 	private Mariage mariage;
 
 	public Client() {

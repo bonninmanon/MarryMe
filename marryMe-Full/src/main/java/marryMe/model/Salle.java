@@ -5,6 +5,8 @@ import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 
 
 @Entity
@@ -12,11 +14,15 @@ import javax.persistence.Table;
 public class Salle extends Prestation{
 	
 	@Column(length = 25, nullable = false)
+	@JsonView(Views.ViewBase.class)
 	private String  nom ;
+	@JsonView(Views.ViewBase.class)
 	private int  capacite;
+	@JsonView(Views.ViewBase.class)
     private  boolean  debout ;
     
-  @Embedded
+    @Embedded
+    @JsonView(Views.ViewBase.class)
     private Adresse adresse;
     
 	public Salle( double prix, String nom, int capacite, boolean debout) {
