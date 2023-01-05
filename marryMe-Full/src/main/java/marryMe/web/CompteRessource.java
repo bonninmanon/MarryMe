@@ -35,8 +35,6 @@ public class CompteRessource {
 	@Autowired
 	private IDAOCompte daoCompte;
 	
-
-
 	@GetMapping("")
 	@JsonView(Views.ViewCompte.class)
 	public List<Compte> findAll() {
@@ -56,7 +54,6 @@ public class CompteRessource {
 
 		return optCompte.get();
 	}
-
 
 
 	@PostMapping("")
