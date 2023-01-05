@@ -18,10 +18,6 @@ public class Beaute extends Prestation {
 	@JsonView(Views.ViewBase.class)
 	private boolean makeUp;
 	@JsonView(Views.ViewBase.class)
-	private boolean vetementHomme;
-	@JsonView(Views.ViewBase.class)
-	private boolean vetementFemme;
-	@JsonView(Views.ViewBase.class)
 	private Lieu lieu;
 	
 	@Embedded
@@ -32,15 +28,12 @@ public class Beaute extends Prestation {
 
 	}
 
-	public Beaute(double prix, boolean coiffure, boolean makeUp, boolean vetementHomme, boolean vetementFemme,
-			Lieu lieu) {
+	public Beaute(double prix, boolean coiffure, boolean makeUp, Lieu lieu, Adresse adresse) {
 		super(prix);
 		this.coiffure = coiffure;
 		this.makeUp = makeUp;
-		this.vetementHomme = vetementHomme;
-		this.vetementFemme = vetementFemme;
 		this.lieu = lieu;
-
+		this.adresse = adresse;
 	}
 
 	public boolean isCoiffure() {
@@ -57,22 +50,6 @@ public class Beaute extends Prestation {
 
 	public void setMakeUp(boolean makeUp) {
 		this.makeUp = makeUp;
-	}
-
-	public boolean isVetementHomme() {
-		return vetementHomme;
-	}
-
-	public void setVetementHomme(boolean vetementHomme) {
-		this.vetementHomme = vetementHomme;
-	}
-
-	public boolean isVetementFemme() {
-		return vetementFemme;
-	}
-
-	public void setVetementFemme(boolean vetementFemme) {
-		this.vetementFemme = vetementFemme;
 	}
 
 	public Lieu getLieu() {
@@ -93,8 +70,9 @@ public class Beaute extends Prestation {
 
 	@Override
 	public String toString() {
-		return "Beaute [coiffure=" + coiffure + ", makeUp=" + makeUp + ", vetementHomme=" + vetementHomme
-				+ ", vetementFemme=" + vetementFemme + ", lieu=" + lieu + ", adresse=" + adresse + "]";
+		return "Beaute [coiffure=" + coiffure + ", makeUp=" + makeUp + ", lieu=" + lieu + ", adresse=" + adresse + "]";
 	}
+
+	
 
 }

@@ -9,8 +9,11 @@ import org.springframework.data.repository.query.Param;
 
 import marryMe.model.Beaute;
 import marryMe.model.Cake;
+import marryMe.model.Capture;
 import marryMe.model.Prestation;
 import marryMe.model.Robe;
+import marryMe.model.Salle;
+import marryMe.model.Traiteur;
 
 
 
@@ -33,4 +36,25 @@ public interface IDAOPrestation extends JpaRepository<Prestation,Integer>{
 	
 	@Query("SELECT b from Beaute b where b.id = :id")
 	public Optional<Beaute> findBeauteById(@Param("id") Integer idBeaute);
+	
+	@Query("SELECT c from Capture c")
+	public List<Capture> findAllCapture();
+	
+	@Query("SELECT c from Capture c where c.id = :id")
+	public Optional<Capture> findCaptureById(@Param("id") Integer idCapture);
+	
+	@Query("SELECT s from Salle s")
+	public List<Salle> findAllSalle();
+	
+	@Query("SELECT s from Salle s where s.id = :id")
+	public Optional<Salle> findSalleById(@Param("id") Integer idSalle);
+	
+	@Query("SELECT t from Traiteur t")
+	public List<Traiteur> findAllTraiteur();
+	
+	@Query("SELECT t from Traiteur t where t.id = :id")
+	public Optional<Traiteur> findTraiteurById(@Param("id") Integer idTraiteur);
+	
 }
+
+

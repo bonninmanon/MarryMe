@@ -17,7 +17,13 @@ public class Views {
 	
 	public static class ViewRobe extends ViewPrestation {}
 	
+	public static class ViewSalle extends ViewPrestation {}
+	
+	public static class ViewTraiteur extends ViewPrestation {}
+	
 	public static class ViewCake extends ViewPrestation {}
+	
+	public static class ViewCapture extends ViewPrestation {}
 	
 	public static class ViewClient extends ViewBase {}
 	
