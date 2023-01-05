@@ -13,15 +13,18 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonView;
 
+import marryMe.model.Views.ViewBase;
+
 
 @Entity
-@Table(name="prestation")
-@Inheritance(strategy = InheritanceType.JOINED)
-public class Prestation {
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+public abstract class Prestation {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@JsonView(ViewBase.class)
 	private Integer id;
+	@JsonView(ViewBase.class)
 	protected double  prix ;
 	
 	@ManyToMany(mappedBy = "prestations")

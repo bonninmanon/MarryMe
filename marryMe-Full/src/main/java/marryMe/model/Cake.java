@@ -15,6 +15,7 @@ public class Cake extends Prestation {
 	private String Ganaches;
 	private Boolean alcoolisée;
 	
+	public Cake () {};
 	
 	public Cake(double prix, String design, String saveur, String genoise, String ganaches, Boolean alcoolisée) {
 		super(prix);
@@ -24,9 +25,6 @@ public class Cake extends Prestation {
 		Ganaches = ganaches;
 		this.alcoolisée = alcoolisée;
 	}
-
-
-
 
 	public String getDesign() {
 		return design;

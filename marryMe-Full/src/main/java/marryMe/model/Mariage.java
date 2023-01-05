@@ -21,8 +21,6 @@ import com.fasterxml.jackson.annotation.JsonView;
 import marryMe.model.Views.ViewBase;
 
 
-
-
 @Entity
 public class Mariage  {
 	
@@ -39,10 +37,10 @@ public class Mariage  {
 	private  String  theme ;
 	
 	@OneToMany(mappedBy = "mariage")
-	List<Invite> listeInvites = new ArrayList();
+	List<Invite> listeInvites = new ArrayList<>();
 	
 	@ManyToMany
-	private List<Prestation> prestations=new ArrayList();
+	private List<Prestation> prestations=new ArrayList<>();
 	
 	@OneToOne
 	private Client client;

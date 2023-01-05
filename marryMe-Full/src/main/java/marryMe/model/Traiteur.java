@@ -3,14 +3,16 @@ package marryMe.model;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(name="traiteur")
 public class Traiteur extends Prestation {
 	
-
+	
 	private boolean vinDHonneur;
 	private Cuisine cuisine ;
 	
+	public Traiteur () {};
 		
 	public Traiteur(double prix, boolean vinDHonneur, Cuisine cuisine) {
 		super(prix);

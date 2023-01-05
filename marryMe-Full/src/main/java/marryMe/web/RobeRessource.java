@@ -21,74 +21,70 @@ import org.springframework.web.server.ResponseStatusException;
 
 import com.fasterxml.jackson.annotation.JsonView;
 
-import marryMe.dao.IDAOCompte;
-import marryMe.model.Compte;
+import marryMe.dao.IDAOPrestation;
+import marryMe.model.Robe;
+
 import marryMe.model.Views;
 
-
-
 @RestController
-@RequestMapping("/comptes")
+@RequestMapping("/robes")
 @CrossOrigin("*")
-public class CompteRessource {
-
-	@Autowired
-	private IDAOCompte daoCompte;
+public class RobeRessource {
 	
-
+	@Autowired
+	private IDAOPrestation daoRobe;
 
 	@GetMapping("")
-	@JsonView(Views.ViewCompte.class)
-	public List<Compte> findAll() {
-		List<Compte> comptes = daoCompte.findAll();
+	@JsonView(Views.ViewRobe.class)
+	public List<Robe> findAllRobe() {
+		List<Robe> Robes = daoRobe.findAllRobe();
 
-		return comptes;
+		return Robes;
 	}
 
 	@GetMapping("/{id}")
-	@JsonView(Views.ViewCompte.class)
-	public Compte findById(@PathVariable Integer id) {
-		Optional<Compte> optCompte = daoCompte.findById(id);
+	@JsonView(Views.ViewRobe.class)
+	public Robe findRobeById(@PathVariable Integer id) {
+		Optional<Robe> optRobe = daoRobe.findRobeById(id);
 
-		if (optCompte.isEmpty()) {
+		if (optRobe.isEmpty()) {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND);
 		}
 
-		return optCompte.get();
+		return optRobe.get();
 	}
-
 
 
 	@PostMapping("")
-	@JsonView(Views.ViewCompte.class)
-	public Compte create(@Valid @RequestBody Compte compte, BindingResult result) {
+	@JsonView(Views.ViewRobe.class)
+	public Robe create(@Valid @RequestBody Robe robe, BindingResult result) {
 		if (result.hasErrors()) {
-			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Le compte n'a pu être créé");
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "La robe n'a pu être créé");
 		}
 
-		compte = daoCompte.save(compte);
+		robe = daoRobe.save(robe);
 
-		return compte;
+		return robe;
 	}
 
 	@PutMapping("/{id}")
-	@JsonView(Views.ViewCompte.class)
-	public Compte update(@PathVariable Integer id, @RequestBody Compte compte) {
-		if (id != compte.getId() || !daoCompte.existsById(id)) {
+	@JsonView(Views.ViewRobe.class)
+	public Robe update(@PathVariable Integer id, @RequestBody Robe robe) {
+		if (id != robe.getId() || !daoRobe.existsById(id)) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
 		}
 
-		compte = daoCompte.save(compte);
+		robe = daoRobe.save(robe);
 
-		return compte;
+		return robe;
 	}
 
 	@DeleteMapping("/{id}")
 	public void delete(@PathVariable Integer id) {
-		if (!daoCompte.existsById(id)) {
+		if (!daoRobe.existsById(id)) {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND);
 		}
 
-		daoCompte.deleteById(id);
+		daoRobe.deleteById(id);
 	}
 }

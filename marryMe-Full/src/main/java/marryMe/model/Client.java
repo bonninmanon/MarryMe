@@ -9,7 +9,7 @@ import javax.persistence.Table;
 @Table(name="client")
 public class Client extends Compte{
 	
-	 @Embedded
+	@Embedded
 	private Adresse adresse;
 	
 	

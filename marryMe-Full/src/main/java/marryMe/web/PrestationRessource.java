@@ -63,7 +63,7 @@ public class PrestationRessource {
 	@JsonView(Views.ViewPrestation.class)
 	public Prestation create(@Valid @RequestBody Prestation prestation, BindingResult result) {
 		if (result.hasErrors()) {
-			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Le prestation n'a pu être créé");
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "La prestation n'a pu être créé");
 		}
 
 		prestation = daoPrestation.save(prestation);
