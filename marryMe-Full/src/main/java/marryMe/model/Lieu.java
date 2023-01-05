@@ -9,6 +9,14 @@ public enum Lieu {
 		this.prix = prix;
 	}
 
+	public int getPrix() {
+		return prix;
+	}
+
+	public void setPrix(int prix) {
+		this.prix = prix;
+	}
+
 
 
 }

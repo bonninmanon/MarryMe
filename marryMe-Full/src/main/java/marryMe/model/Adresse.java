@@ -1,11 +1,17 @@
 package marryMe.model;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Adresse {
+	
+
 	private String numero ;
 	private String  voie ;
 	private String  ville ;
 	private String  cp ;
 	
+	public Adresse() {}
 	
 	public Adresse(String numero, String voie, String ville, String cp) {
 		this.numero = numero;
@@ -54,11 +60,16 @@ public class Adresse {
 		this.cp = cp;
 	}
 
+	
+
 
 	@Override
 	public String toString() {
-		return "Adresse [numero=" + numero + ", voie=" + voie + ", ville=" + ville + ", cp=" + cp + "]";
+		return "Adresse [ numero=" + numero + ", voie=" + voie + ", ville=" + ville + ", cp=" + cp + "]";
 	}
+
+
+
 	
 	
 

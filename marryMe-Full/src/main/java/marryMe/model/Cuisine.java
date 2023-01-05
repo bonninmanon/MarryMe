@@ -9,5 +9,13 @@ public enum Cuisine {
 		this.prix = prix;
 	}
 
+	public double getPrix() {
+		return prix;
+	}
+
+	public void setPrix(double prix) {
+		this.prix = prix;
+	}
+
 
 }

@@ -1,20 +1,37 @@
 package marryMe.model;
 
-import javax.persistence.DiscriminatorValue;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 @Entity
-@DiscriminatorValue("client")
+@Table(name="client")
 public class Client extends Compte{
 	
+	 @Embedded
+	private Adresse adresse;
 	
+	
+	@OneToOne(mappedBy="client")
+	private Mariage mariage;
+
 	public Client() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Client(String nom, String prenom, String mail, String mdp) {
+
+	public Client(String nom, String prenom, String mail, String mdp, Adresse adresse) {
 		super(nom, prenom, mail, mdp);
-		// TODO Auto-generated constructor stub
+		this.adresse = adresse;
 	}
+
+
+
+
+
+
+
+
 
 }

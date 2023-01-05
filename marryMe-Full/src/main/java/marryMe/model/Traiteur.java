@@ -1,74 +1,49 @@
 package marryMe.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="traiteur")
 public class Traiteur extends Prestation {
-	private boolean vinDHonneur;
-	private Cuisine Cocktail ;
-	private Cuisine Repas ;
-	private Cuisine AmusesBouches;
-	private Cuisine CuisineDuMonde;
-	private Cuisine Cafe;
 	
-	public Traiteur(double prix, boolean vinDHonneur, Cuisine cocktail, Cuisine repas, Cuisine amusesBouches,
-			Cuisine cuisineDuMonde, Cuisine cafe) {
+
+	private boolean vinDHonneur;
+	private Cuisine cuisine ;
+	
+		
+	public Traiteur(double prix, boolean vinDHonneur, Cuisine cuisine) {
 		super(prix);
 		this.vinDHonneur = vinDHonneur;
-		Cocktail = cocktail;
-		Repas = repas;
-		AmusesBouches = amusesBouches;
-		CuisineDuMonde = cuisineDuMonde;
-		Cafe = cafe;
+		this.cuisine = cuisine;
 	}
+
 
 	public boolean isVinDHonneur() {
 		return vinDHonneur;
 	}
 
+
 	public void setVinDHonneur(boolean vinDHonneur) {
 		this.vinDHonneur = vinDHonneur;
 	}
 
-	public Cuisine getCocktail() {
-		return Cocktail;
+
+	public Cuisine getCuisine() {
+		return cuisine;
 	}
 
-	public void setCocktail(Cuisine cocktail) {
-		Cocktail = cocktail;
+
+	public void setCuisine(Cuisine cuisine) {
+		this.cuisine = cuisine;
 	}
 
-	public Cuisine getRepas() {
-		return Repas;
+
+	@Override
+	public String toString() {
+		return "Traiteur [vinDHonneur=" + vinDHonneur + ", cuisine=" + cuisine + "]";
 	}
 
-	public void setRepas(Cuisine repas) {
-		Repas = repas;
-	}
-
-	public Cuisine getAmusesBouches() {
-		return AmusesBouches;
-	}
-
-	public void setAmusesBouches(Cuisine amusesBouches) {
-		AmusesBouches = amusesBouches;
-	}
-
-	public Cuisine getCuisineDuMonde() {
-		return CuisineDuMonde;
-	}
-
-	public void setCuisineDuMonde(Cuisine cuisineDuMonde) {
-		CuisineDuMonde = cuisineDuMonde;
-	}
-
-	public Cuisine getCafe() {
-		return Cafe;
-	}
-
-	public void setCafe(Cuisine cafe) {
-		Cafe = cafe;
-	}
-
-	
-	
 	
 	
 }
