@@ -1,15 +1,19 @@
 package marryMe.model;
 
+import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+
+
 @Entity
 @Table(name="salle")
 public class Salle extends Prestation{
-
+	
+	@Column(length = 25, nullable = false)
 	private String  nom ;
-     private int  capacite;
+	private int  capacite;
     private  boolean  debout ;
     
   @Embedded

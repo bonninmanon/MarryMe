@@ -37,9 +37,12 @@ public class test {
 		
 		Beaute b2 = new Beaute(1500, true, true, false, true, Lieu.Domicile);
 		b2.setAdresse(a);
-		Cake cake = new Cake(150,"bo gato","tkt il est bon");
+		Cake cake = new Cake(150,"rafaello","vanille");
+		Cake cake2 = new Cake(250,"coffe","chocolat");
+		
 		
 		cake = daoPrestation.save(cake);
+		cake2 = daoPrestation.save(cake2);
 
 		b2 = daoPrestation.save(b2);
 		
@@ -49,10 +52,13 @@ public class test {
 		
 		m.getPrestations().add(b);
 		m.getPrestations().add(cake);
+		m.getPrestations().add(cake2);
 		
 		
 		m2.getPrestations().add(b2);
 		m2.getPrestations().add(cake);
+		m2.getPrestations().add(cake2);
+		
 		
 		
 		

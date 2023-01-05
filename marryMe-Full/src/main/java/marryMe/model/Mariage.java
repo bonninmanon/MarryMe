@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,6 +12,15 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.NotNull;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonView;
+
+import marryMe.model.Views.ViewBase;
+
+
 
 
 @Entity
@@ -18,8 +28,14 @@ public class Mariage  {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@JsonView(ViewBase.class)
 	private Integer id;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@NotNull(message = "La date de fin est obligatoire")
+	@JsonView(ViewBase.class)
 	private LocalDate date ; 
+	@Column(length = 25, nullable = false)
+	@JsonView(ViewBase.class)
 	private  String  theme ;
 	
 	@OneToMany(mappedBy = "mariage")
@@ -41,7 +57,7 @@ public class Mariage  {
 	 
 
 	public Mariage() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 

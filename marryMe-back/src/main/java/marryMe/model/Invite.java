@@ -23,7 +23,7 @@ public class Invite {
 	private int nbreEnfant;
 	private int nbreAdulte;
 	
-	 @Embedded
+	@Embedded
     private Adresse adresse;
     
 	private String adresseEmail;

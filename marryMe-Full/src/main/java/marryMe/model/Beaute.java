@@ -22,7 +22,7 @@ public class Beaute extends Prestation  {
 
 
 public Beaute() {
-	// TODO Auto-generated constructor stub
+	
 }
 
 

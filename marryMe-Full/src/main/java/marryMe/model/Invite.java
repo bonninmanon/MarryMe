@@ -9,6 +9,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
+import marryMe.model.Views.ViewBase;
+
 
 
 @Entity
@@ -17,18 +21,37 @@ public class Invite {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@JsonView(ViewBase.class)
+
 	private Integer id;
+	@JsonView(ViewBase.class)
+
 	private String denomination ;
+	@JsonView(ViewBase.class)
+
 	private String nomfamille;
+	@JsonView(ViewBase.class)
+
 	private int nbreEnfant;
+	@JsonView(ViewBase.class)
+
 	private int nbreAdulte;
 	
 	 @Embedded
+		@JsonView(ViewBase.class)
+
     private Adresse adresse;
-    
+		@JsonView(ViewBase.class)
+
 	private String adresseEmail;
+		@JsonView(ViewBase.class)
+
 	private String ceremonieCivile;
+		@JsonView(ViewBase.class)
+
 	private String ceremonieReligieuse;
+		@JsonView(ViewBase.class)
+
 	private String vinHonneur;
 	
 	@ManyToOne

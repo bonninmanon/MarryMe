@@ -11,6 +11,9 @@ import javax.persistence.InheritanceType;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
+
 @Entity
 @Table(name="prestation")
 @Inheritance(strategy = InheritanceType.JOINED)
