@@ -3,16 +3,22 @@ package marryMe.model;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 
 @Entity
 @Table(name="cake")
 public class Cake extends Prestation {
 	
-	
+	@JsonView(Views.ViewBase.class)
 	private String design ;
+	@JsonView(Views.ViewBase.class)
 	private String saveur;
+	@JsonView(Views.ViewBase.class)
 	private String Genoise;
+	@JsonView(Views.ViewBase.class)
 	private String Ganaches;
+	@JsonView(Views.ViewBase.class)
 	private Boolean alcoolisée;
 	
 	public Cake () {};

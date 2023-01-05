@@ -5,15 +5,19 @@ package marryMe.model;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 
 
 @Entity
 @Table(name="invitation")
 public class Invitation extends Prestation {
 	
-
+	@JsonView(Views.ViewBase.class)
 	private String modele;
+	@JsonView(Views.ViewBase.class)
 	private Livraison ADomicile;
+	@JsonView(Views.ViewBase.class)
 	private Livraison VoiePostal;
 	
 	

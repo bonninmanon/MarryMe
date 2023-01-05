@@ -3,14 +3,19 @@ package marryMe.model;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 @Entity
 @Table(name="capture")
 public class Capture extends Prestation {
 
-
+	@JsonView(Views.ViewBase.class)
 	private boolean photoShoot ;
+	@JsonView(Views.ViewBase.class)
 	private boolean bestOf ;
+	@JsonView(Views.ViewBase.class)
 	private boolean livreDor ; //livre d'or 
+	@JsonView(Views.ViewBase.class)
 	private boolean miniAlbum ;  // mini album
 	
 	public Capture( double prix, boolean photoShoot, boolean bestOf, boolean livreDor, boolean miniAlbum) {

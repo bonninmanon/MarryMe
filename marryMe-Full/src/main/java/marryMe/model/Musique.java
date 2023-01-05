@@ -3,12 +3,15 @@ package marryMe.model;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 @Entity
 @Table(name="musique")
 public class Musique extends Prestation {
 	
-
+	@JsonView(Views.ViewBase.class)
 	private String specialite;
+	@JsonView(Views.ViewBase.class)
 	private boolean animation;
 	
 	public Musique( double prix, String specialite, boolean animation) {

@@ -2,13 +2,18 @@ package marryMe.model;
 
 import javax.persistence.Embeddable;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 @Embeddable
 public class Adresse {
 	
-
+	@JsonView(Views.ViewBase.class)
 	private String numero ;
+	@JsonView(Views.ViewBase.class)
 	private String  voie ;
+	@JsonView(Views.ViewBase.class)
 	private String  ville ;
+	@JsonView(Views.ViewBase.class)
 	private String  cp ;
 	
 	public Adresse() {}

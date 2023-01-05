@@ -3,13 +3,16 @@ package marryMe.model;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 
 @Entity
 @Table(name="traiteur")
 public class Traiteur extends Prestation {
 	
-	
+	@JsonView(Views.ViewBase.class)
 	private boolean vinDHonneur;
+	@JsonView(Views.ViewBase.class)
 	private Cuisine cuisine ;
 	
 	public Traiteur () {};

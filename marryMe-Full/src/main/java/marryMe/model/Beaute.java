@@ -13,9 +13,13 @@ import marryMe.model.Views.ViewBase;
 @Table(name = "beaute")
 public class Beaute extends Prestation {
 
+	@JsonView(Views.ViewBase.class)
 	private boolean coiffure;
+	@JsonView(Views.ViewBase.class)
 	private boolean makeUp;
+	@JsonView(Views.ViewBase.class)
 	private boolean vetementHomme;
+	@JsonView(Views.ViewBase.class)
 	private boolean vetementFemme;
 	private Lieu lieu;
 	
