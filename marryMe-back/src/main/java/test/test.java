@@ -6,11 +6,15 @@ import java.time.LocalDate;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import marryMe.config.ApplicationConfig;
+import marryMe.dao.IDAOCompte;
 import marryMe.dao.IDAOMariage;
 import marryMe.dao.IDAOPrestation;
+import marryMe.model.Admin;
 import marryMe.model.Adresse;
 import marryMe.model.Beaute;
 import marryMe.model.Cake;
+import marryMe.model.Client;
+import marryMe.model.Compte;
 import marryMe.model.Lieu;
 import marryMe.model.Mariage;
 import marryMe.model.Robe;
@@ -27,10 +31,13 @@ public class test {
 		
 		IDAOPrestation daoPrestation = context.getBean(IDAOPrestation.class);
 		IDAOMariage daoMariage = context.getBean(IDAOMariage.class);
+		IDAOCompte daoCompte = context.getBean(IDAOCompte.class);
 		
 		
 		
 		Adresse a = new Adresse("1 bis", "rue de paris", "Paris", "cp");
+		Adresse a1 = new Adresse("2", "rue de paris", "toulouse", "cp");
+		
 		Beaute b = new Beaute(1100, false, true, false, true, Lieu.Domicile);
 		b.setAdresse(a);
 	
@@ -44,12 +51,22 @@ public class test {
 		Robe robe2 =  new Robe(1000, "sirene", 40);
 		Robe robe3 =  new Robe(900, "soft", 42);
 		
+		Client client = new Client("doe", "joe", null, null, a);
+		Client client1 = new Client("doe", "joe", null, null, a1);
+		
+		Admin admin=new Admin("ily", "mehy", "khemy@meny.com", null);
+				
 		cake = daoPrestation.save(cake);
 		cake2 = daoPrestation.save(cake2);
 		robe1 = daoPrestation.save(robe1);
 		robe2 = daoPrestation.save(robe2);
 		robe3 = daoPrestation.save(robe3);
-
+		robe3 = daoPrestation.save(robe3);
+		
+		client = daoCompte.save(client);
+		client1 = daoCompte.save(client1);
+		admin = daoCompte.save(admin);
+		
 		b2 = daoPrestation.save(b2);
 		
 		Mariage m = new Mariage(LocalDate.parse("2022-12-31"),"Clown",null);
@@ -62,6 +79,7 @@ public class test {
 		m.getPrestations().add(robe1);
 		m.getPrestations().add(robe2);
 		m.getPrestations().add(robe3);
+		
 		
 		
 		m2.getPrestations().add(b2);
