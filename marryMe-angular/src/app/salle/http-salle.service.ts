@@ -1,9 +1,48 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Salle } from 'src/model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HttpSalleService {
 
-  constructor() { }
-}
+    serviceUrl: string;
+    salles: Array<Salle> = new Array<Salle>();
+  
+    constructor(private http: HttpClient, private appConfig: AppConfigService) {
+      this.serviceUrl = appConfig.backEndUrl + "salles/";
+      this.load();
+     }
+  load() {
+    throw new Error('Method not implemented.');
+  }
+  
+    findAll(): Array<Salle> {
+      return this.salles;
+    }
+  
+    findById(id: number): Observable<Salle> {
+      return this.http.get<Salle>(this.serviceUrl + id);
+    }
+  
+    create(salle: Salle): void {
+      this.http.post<Salle>(this.serviceUrl, salle).subscribe(resp => {
+        this.load();
+      });
+    }
+  
+    update(salle: Salle): void {
+      this.http.put<Salle>(this.serviceUrl + salle.id, salle).subscribe(resp => {
+        this.load();
+      });
+    }
+  
+    remove(id: number): void {
+      this.http.delete<void>(this.serviceUrl + id).subscribe(resp => {
+        this.load();
+      });
+  
+    }
+  }

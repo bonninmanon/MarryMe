@@ -12,3 +12,21 @@ export class Connexion {
         this.type=type;
     }
 }
+
+export class Salle {
+    id: number;
+    prix:number;
+    nom: string;
+    capacite: number;
+    debout: string;
+   
+
+    constructor(id?: number, prix?: number,  nom?: string ,capacite?:number, debout?:string) {
+        this.id = id;
+        this.prix = prix;
+        this.nom = nom;
+        this.capacite=capacite;
+        this.debout=debout;
+
+    }
+}

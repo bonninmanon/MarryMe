@@ -31,7 +31,7 @@ import { SalleComponent } from './salle/salle.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [ConnexionHttpService],
+  providers: [ConnexionHttpService, SalleHttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
