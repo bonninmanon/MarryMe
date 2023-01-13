@@ -12,6 +12,7 @@ import { PanierComponent } from './panier/panier.component';
 import { FormsModule } from '@angular/forms';
 import { ConnexionHttpService } from './connexion/connexion-http.service';
 import { HttpClientModule } from '@angular/common/http';
+import { SalleComponent } from './salle/salle.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     AccueilComponent,
     RobeComponent,
     CakeComponent,
-    PanierComponent
+    PanierComponent,
+    SalleComponent
   ],
   imports: [
     BrowserModule,
