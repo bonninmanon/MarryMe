@@ -21,9 +21,12 @@ import org.springframework.web.server.ResponseStatusException;
 
 import com.fasterxml.jackson.annotation.JsonView;
 
+
 import marryMe.dao.IDAOCompte;
 import marryMe.model.Compte;
 import marryMe.model.Views;
+import marryMe.model.Views.ViewBase;
+import marryMe.web.dto.AuthDTO;
 
 
 
@@ -54,6 +57,17 @@ public class CompteRessource {
 
 		return optCompte.get();
 	}
+	
+	@PostMapping("/auth")
+	@JsonView(ViewBase.class)
+public Compte findBy(@RequestBody AuthDTO authDTO) {
+	Optional<Compte>  optcompte = daoCompte.findByLoginAndPassword(authDTO.getMail(),authDTO.getPassword());
+	if (optcompte.isEmpty()){
+		throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+	}
+
+	return optcompte.get();
+}
 
 
 	@PostMapping("")
