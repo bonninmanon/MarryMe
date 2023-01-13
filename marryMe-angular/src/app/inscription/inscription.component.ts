@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-inscription',
+  selector: 'inscription,[inscription]',
   templateUrl: './inscription.component.html',
   styleUrls: ['./inscription.component.scss']
 })

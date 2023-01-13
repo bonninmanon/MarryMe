@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-robe',
+  selector: 'robe,[robe]',
   templateUrl: './robe.component.html',
   styleUrls: ['./robe.component.scss']
 })
+
 export class RobeComponent {
 
 }

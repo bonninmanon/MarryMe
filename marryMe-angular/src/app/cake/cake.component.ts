@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-cake',
+  selector: 'cake,[cake]',
   templateUrl: './cake.component.html',
   styleUrls: ['./cake.component.scss']
 })

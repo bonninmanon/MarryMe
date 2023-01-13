@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-connexion',
+  selector: 'connexion,[connexion]',
   templateUrl: './connexion.component.html',
   styleUrls: ['./connexion.component.scss']
 })

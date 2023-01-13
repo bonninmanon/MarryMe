@@ -9,6 +9,9 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { RobeComponent } from './robe/robe.component';
 import { CakeComponent } from './cake/cake.component';
 import { PanierComponent } from './panier/panier.component';
+import { FormsModule } from '@angular/forms';
+import { ConnexionHttpService } from './connexion/connexion-http.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,9 +25,11 @@ import { PanierComponent } from './panier/panier.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ConnexionHttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
