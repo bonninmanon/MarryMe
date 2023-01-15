@@ -1,0 +1,91 @@
+body{
+    background-image: url("assets/bodyPanier.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    height: 98vh;
+
+  }
+
+  table {
+    width: 70%;
+    border: none;
+    border-collapse : collapse;
+    margin:auto;
+  }
+
+  table tbody tr td {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: #dfe0f08f;
+  }
+
+  table thead tr th {
+    border: none;
+  }
+
+  thead {
+    background-color: #777aa3cc;
+    border: 0.5px solid;
+    border-color: white;
+  }
+
+  th {
+    text-align:center;
+    vertical-align: middle;
+    font-family: Verdana;
+    font-weight: lighter;
+    font-size: 75%;
+    color: white;
+  }
+
+  td {
+    text-align: center;
+    vertical-align: middle;
+    font-family: Verdana;
+    font-size: 70%;
+    color: black;
+
+  }
+
+#navPage {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+  h1 {
+    font-family: 'Alex Brush';
+    font-weight: bold;
+    font-size: 50px;
+    color: black;
+  }
+
+  #navPage button {
+    width: 200px;
+    height: 30px;
+  }
+
+  button {
+    border-color: white;
+    border-radius: 5px;
+    background-color: #777aa3cc;
+    color: white;
+    height: 30px;
+  }
+
+  .prixTotal{
+    font-size: 14px;
+    font-family: Verdana;
+    font-weight: medium;
+    color: white;
+  }
+
+
+  table tfoot td {
+  border-left: none;
+  border-right: none;
+  border-top: double;
+  border-color: white;
+  background-color: #777aa3cc;
+  }
