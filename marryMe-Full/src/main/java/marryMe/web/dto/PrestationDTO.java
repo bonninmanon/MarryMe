@@ -6,7 +6,8 @@ public class PrestationDTO {
 	
 	private Integer idPrestation;
 	private double prix;	
-	private List<CakeDTO> cakes;
+//	private List<CakeDTO> cakes;
+
 	
 	
 	public PrestationDTO() {
@@ -17,7 +18,7 @@ public class PrestationDTO {
 		super();
 		this.idPrestation = idPrestation;
 		this.prix = prix;
-		this.cakes = cakes;
+//		this.cakes = cakes;
 	}
 
 	public Integer getIdPrestation() {
@@ -36,13 +37,13 @@ public class PrestationDTO {
 		this.prix = prix;
 	}
 
-	public List<CakeDTO> getCakes() {
-		return cakes;
-	}
-
-	public void setCakes(List<CakeDTO> cakes) {
-		this.cakes = cakes;
-	}
+//	public List<CakeDTO> getCakes() {
+//		return cakes;
+//	}
+//
+//	public void setCakes(List<CakeDTO> cakes) {
+//		this.cakes = cakes;
+//	}
 
 	
 	

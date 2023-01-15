@@ -1,5 +1,6 @@
 package marryMe.web;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,10 +22,13 @@ import org.springframework.web.server.ResponseStatusException;
 
 import com.fasterxml.jackson.annotation.JsonView;
 
-
 import marryMe.dao.IDAOMariage;
+
 import marryMe.model.Mariage;
+
 import marryMe.model.Views;
+import marryMe.web.dto.MariageDTO;
+import marryMe.web.dto.PrestationDTO;
 
 
 @RestController
@@ -36,10 +40,9 @@ public class MariageRessource {
 	private IDAOMariage daoMariage;
 	
 //	@Autowired
-//	private IDAOInvite daoInvite;
-//	
-//	@Autowired
 //	private IDAOPrestation daoPrestation;
+
+
 
 	@GetMapping("")
 	@JsonView(Views.ViewMariage.class)
@@ -61,7 +64,39 @@ public class MariageRessource {
 		return optMariage.get();
 	}
 
+	@GetMapping("/{id}/detail")		
+	
+	public MariageDTO findDTOById(@PathVariable Integer id) {
+		Optional<Mariage> optMariage = daoMariage.findById(id);
 
+		if (optMariage.isEmpty()) {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+		}
+		
+		Mariage mariage = optMariage.get();
+		MariageDTO mariageDTO = new MariageDTO();
+//		PrestationDTO prestationDTO = new PrestationDTO();
+		
+		
+		mariageDTO.setIdMariage(mariage.getId());
+		mariageDTO.setDate(mariage.getDate());
+		mariageDTO.setTheme(mariage.getTheme());
+
+		
+		
+//		List<Prestation> prestations = daoPrestation.findAllByMariage(mariageDTO.getIdMariage());
+		List<PrestationDTO> prestationdto= new ArrayList<>();
+		
+//		for (Prestation prestation : prestations) {
+//		
+//			prestationDTO.setIdPrestation(prestation.getId());
+//			prestationDTO.setPrix(prestation.getPrix());
+//				
+//			prestationdto.add(prestationDTO);
+//		}
+			mariageDTO.setPrestations(prestationdto);
+			return mariageDTO;
+	}
 
 	@PostMapping("")
 	@JsonView(Views.ViewMariage.class)
