@@ -139,6 +139,7 @@ public class MariageRessource {
 				cakeDTO.setDesign(cake.getDesign());
 				cakeDTO.setGenoise(cake.getGenoise());
 				cakeDTO.setGanaches(cake.getGanaches());
+				cakeDTO.setNombreInvite(cake.getNombreInvite());
 			    
 			    cakeDto.add(cakeDTO);
 			}

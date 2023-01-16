@@ -20,17 +20,34 @@ public class Cake extends Prestation {
 	private String Ganaches;
 	@JsonView(Views.ViewBase.class)
 	private Boolean alcoolisée;
+	@JsonView(Views.ViewBase.class)
+	private int NombreInvite;
+	
 	
 	public Cake () {}
 
-	public Cake(double prix, String design, String cremes, String genoise, String ganaches, Boolean alcoolisée) {
+	
+	public int getNombreInvite() {
+		return NombreInvite;
+	}
+
+
+	public void setNombreInvite(int nombreInvite) {
+		NombreInvite = nombreInvite;
+	}
+
+
+	public Cake(double prix, String design, String cremes, String genoise, String ganaches, Boolean alcoolisée,
+			int nombreInvite) {
 		super(prix);
 		this.design = design;
 		this.Cremes = cremes;
 		this.Genoise = genoise;
 		this.Ganaches = ganaches;
 		this.alcoolisée = alcoolisée;
+		this.NombreInvite = nombreInvite;
 	}
+
 
 	public String getDesign() {
 		return design;
