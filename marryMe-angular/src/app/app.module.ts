@@ -17,6 +17,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HttpPanierService } from './panier/http-panier.service';
 import { HttpSalleService } from './salle/salle-http.service';
 import { HttpRobeService } from './robe/http-robe.service';
+import { HttpCakeService } from './cake/http-cake.service';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import { HttpRobeService } from './robe/http-robe.service';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [HttpPanierService, HttpSalleService, HttpRobeService],
+  providers: [HttpPanierService, HttpSalleService, HttpRobeService,HttpCakeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

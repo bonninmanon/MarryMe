@@ -56,3 +56,25 @@ export class Salle {
 
     }
 }
+
+
+export class Cake extends Prestation{
+    design: string;
+    cremes: string;
+    genoise: string;
+    ganaches: string;
+    nombreInvite:String;
+    alcoolisée:boolean;
+    
+
+    constructor(id?: number, prix?: number, design?: string,  cremes?: string, genoise?: string,  ganaches?: string, nombreInvite?: String,  alcoolisée?: boolean){
+        super(id,prix);
+        this.design=design;
+        this.cremes= cremes;
+        this.genoise= genoise;
+        this.ganaches= ganaches;
+        this.nombreInvite= nombreInvite;
+        this.alcoolisée=alcoolisée;
+        
+    }
+}

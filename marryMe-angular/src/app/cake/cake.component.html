@@ -13,23 +13,37 @@
     <img src="assets/designcake.png" >
     <img src="assets/design2.png" >
 </body>
+
+
  
   <div class=" u-clearfix u-image u-shading u-section-1" >
       <div class="u-clearfix">
         <div class="u-custom-color-2 u-form u-form-1">
           <div  style="padding: 25px;" >
             <div class=" u-form-select ">
-              <label  class="u-custom-font u-font-lobster u-label u-label-1">Design</label>
+              <label  class="u-custom-font u-font-lobster u-label u-label-2">Nombre d'invités - Tarifs</label>
               <div class="u-form-select-wrapper">
-                <select  name="select" class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
-                  <option value="Caramel cake" >Caramel cake</option>
-                  <option value="Mango cake" >Mango cake</option>
-                  <option value="Rafaello cake" >Rafaello cake</option>
-                  <option value="Flower cake" >Flower cake</option>
-                  <option value="Coffe cake" >Coffe cake</option>
-                  <option value="Art cake">Art cake</option>
-                  <option value="Soft cake" >Soft cake</option>
-                  <option value="Love cake" >Love cake</option>
+                <select [(ngModel)]="nombreInvite" class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
+                  <option value="">Selectionner votre nombre d'invités</option>
+                  <option value="petit">10-59 personnes / 250€</option>
+                  <option value="big">60-100 personnes / 400€</option>
+                </select>
+                <svg class="u-caret u-caret-svg" version="1.1"  x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" >
+                  <polygon class="st0" points="8,12 2,4 14,4 "></polygon></svg>
+              </div>
+              <div class=" u-form-select ">
+                <label  class="u-custom-font u-font-lobster u-label u-label-2">design</label>
+                <div class="u-form-select-wrapper">
+                  <select [(ngModel)]="design"  class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
+                  <option selected >Selectionner un design</option>
+                  <option value="Caramel cake" >Caramel cake </option>
+                  <option value="Mango cake" >Mango cake </option>
+                  <option value="Rafaello cake" >Rafaello cake </option>
+                  <option value="Flower cake" >Flower cake </option>
+                  <option value="Coffe cake" >Coffe cake </option>
+                  <option value="Art cake">Art cake </option>
+                  <option value="Soft cake" >Soft cake </option>
+                  <option value="Love cake" >Love cake </option>
                 </select>
                 <svg class="u-caret u-caret-svg" version="1.1"  x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" >
                   <polygon class="st0" points="8,12 2,4 14,4 "></polygon></svg>
@@ -38,7 +52,8 @@
             <div class=" u-form-select ">
               <label  class="u-custom-font u-font-lobster u-label u-label-2">Génoise</label>
               <div class="u-form-select-wrapper">
-                <select  name="select-1" class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
+                <select  [(ngModel)]="genoise"  class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
+                  <option selected  >Selectionner une génoise</option>
                   <option value="Red Velvet" >Red Velvet</option>
                   <option value="Moelleux chocolat" >Moelleux chocolat</option>
                   <option value="Moelleux caramel" >Moelleux caramel</option>
@@ -53,7 +68,8 @@
             <div class=" u-form-select ">
               <label  class="u-custom-font u-font-lobster u-label u-label-4">Crèmes légères meringuées</label>
               <div class="u-form-select-wrapper">
-                <select  class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
+                <select [(ngModel)]="cremes" class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
+                  <option selected >Selectionner une créme</option>
                   <option value="Vanille" >Vanille</option>
                   <option value="Fruit (selon la saison)" >Fruit (selon la saison)</option>
                   <option value="Cacao" >Cacao</option>
@@ -63,7 +79,7 @@
                   <option value="Praliné" >Praliné</option>
                   <option value="Nougat" >Nougat</option>
                   <option value="Oréo" >Oréo</option>
-                  <option value="Nutella (retravaillé)" data-calc="">Nutella (retravaillé)</option>
+                  <option value="Nutella (retravaillé)" >Nutella (retravaillé)</option>
                   <option value="Fleurs (violette, coquelicot, rose...)" >Fleurs (violette, coquelicot, rose...)</option>
                   <option value="Tiramisu" >Tiramisu</option>
                   <option value="Bombon (barbapapa, pomme d'amour, bubble gum, réglisse)" >Bombon (barbapapa, pomme d'amour, bubble gum, réglisse)</option>
@@ -75,7 +91,8 @@
             <div class=" u-form-select">
               <label class="u-custom-font u-font-lobster u-label u-label-5">Ganaches</label>
               <div class="u-form-select-wrapper">
-                <select  class="u-border-1 u-input u-input-rectangle">
+                <select [(ngModel)]="ganaches" class="u-border-1 u-input u-input-rectangle">
+                  <option selected >Selectionner un ganache</option>
                   <option value="Chocolat Noir" >Chocolat Noir</option>
                   <option value="Chocolat au Lait" >Chocolat au Lait</option>
                   <option value="Chocolat Blanc" >Chocolat Blanc</option>
@@ -100,16 +117,13 @@
                   <label class="u-custom-font u-font-lobster u-label u-label-9" >Non</label>
                 </div>
               </div>
-            <div>
-              <label  class="u-custom-font u-font-lobster u-label u-label-10">Nombre d'invités</label>
-              <input type="number" class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
-            </div>
+              
             <div class=" u-form-textarea ">
               <label  class="u-custom-font u-font-lobster u-label u-label-11">Message</label>
               <textarea rows="4" cols="50"  name="textarea" class="u-border-1 u-border-grey-30 u-input u-input-rectangle" required=""></textarea>
             </div>
             <div class="u-align-left  u-form-submit ">
-              <a href="/cake" class="u-btn u-custom-font u-font-lobster u-button-style u-palette-2-light-2 u-btn-1">Ajouter au panier</a>
+              <button (click)="reservercake()"href="/cake" class="u-btn u-custom-font u-font-lobster u-button-style u-palette-2-light-2 u-btn-1">Ajouter au panier</button>
             </div>
       </div>
     </div>
