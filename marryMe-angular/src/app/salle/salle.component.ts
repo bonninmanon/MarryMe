@@ -3,9 +3,8 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Salle } from 'src/model';
-import { SalleHttpService } from './matiere-http.service';
+import { HttpSalleService } from './salle-http.service';
 
-import { ConnexionHttpService } from '../connexion/connexion-http.service';
 
 @Component({
   selector: 'salle,[salle]',
@@ -13,10 +12,12 @@ import { ConnexionHttpService } from '../connexion/connexion-http.service';
   styleUrls: ['./salle.component.scss']
 })
 export class SalleComponent {
-  
-  formSalle: Salle = null;
+  myimages: string = "assets/images"
 
-  constructor(private salleService: SalleHttpService) {
+
+  formSalle: Salle = new Salle;
+
+  constructor(private salleService: HttpSalleService) {
   }
 
   list(): Array<Salle> {

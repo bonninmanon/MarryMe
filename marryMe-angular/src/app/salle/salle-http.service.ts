@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Salle } from 'src/model';
+import { AppConfigService } from '../app-config.service';
+
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +14,7 @@ export class HttpSalleService {
     salles: Array<Salle> = new Array<Salle>();
   
     constructor(private http: HttpClient, private appConfig: AppConfigService) {
-      this.serviceUrl = appConfig.backEndUrl + "salles/";
-      this.load();
+      this.serviceUrl = appConfig.backEndUrl + "salle/";
      }
   load() {
     throw new Error('Method not implemented.');
