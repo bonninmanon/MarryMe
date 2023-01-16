@@ -51,54 +51,13 @@ export class ConnexionComponent {
  
 //l'animation de debut
   
-  ngOnInit() {
-  gsap.timeline({paused: true})
-  .staggerFrom(document.querySelectorAll('h1 span'), 1, {top: -50, opacity: 0, ease: "power2.out"}, 0.3)
-  .staggerFrom(document.querySelectorAll('.btn-first'), 1, {opacity: 0, ease: "power2.out"}, 0.3)
-  .from(document.querySelector('.l1'), 1, {width: 0, ease: "power2.out"}, '-=2')
-  .from(document.querySelector('.l2'), 1, {width: 0, ease: "power2.out"}, '-=2')
-  .from(document.querySelector('.logo'), 0.4, {transform: "scale(0)", ease: "power2.out"}, '-=2')
- 
-  
-  .play();
-  $('.medias').fadeIn(3000)
-}
 
 
-//affichhage du tableau connexion et désactivé les elements de la page
-showForm() {
-  const card = this.el.nativeElement.querySelector('#card');
-  const navigationItems = this.el.nativeElement.querySelector('#navigationItems');
-  const btn1 = this.el.nativeElement.querySelector('#btn1');
-  const btn2 = this.el.nativeElement.querySelector('#btn2');
-  const medias = this.el.nativeElement.querySelector('#medias');
-  const phrase = this.el.nativeElement.querySelector('#phrase');
-  const phrase1 = this.el.nativeElement.querySelector('#phrase1');
-  const phrase2 = this.el.nativeElement.querySelector('#phrase2');
-  const phrase3 = this.el.nativeElement.querySelector('#phrase3');
-  this.renderer.listen(btn2, 'click', (e) => {
-    e.preventDefault();
-    this.renderer.addClass(card, 'show');
-    this.renderer.setStyle(card, 'z-index', '6');
-    
-    this.renderer.setStyle(navigationItems, 'display', 'none');
-    this.renderer.setStyle(btn1, 'display', 'none');
-    this.renderer.setStyle(btn2, 'display', 'none');
-    this.renderer.setStyle(medias, 'display', 'none');
-   
-    this.renderer.setStyle(phrase, 'display', 'none');
-    this.renderer.setStyle(phrase1, 'display', 'none');
-    this.renderer.setStyle(phrase2, 'display', 'none');
-    this.renderer.setStyle(phrase3, 'display', 'none');
-    
 
-    console.log("dddddddddddddddddd")
-  });
  
 
 
 
-}
 
 
 
