@@ -1,5 +1,5 @@
 .u-section-1 {
-    background-image: linear-gradient(0deg, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("assets/body-cake.jpg");
+    background-image: linear-gradient(0deg, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("assets/cake4.webp");
     background-position: 50% 50%;
   }
   
@@ -223,3 +223,10 @@
     background-color: #f0e2e2;
   }
   
+  .u-form-send-success {
+    background: #62C584;
+  }
+
+  .u-form-send-message {
+    z-index: 1;
+  }
