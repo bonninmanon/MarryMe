@@ -1,8 +1,7 @@
 package marryMe.web;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -26,9 +25,9 @@ import com.fasterxml.jackson.annotation.JsonView;
 
 import marryMe.dao.IDAOMariage;
 import marryMe.dao.IDAOPrestation;
-import marryMe.model.Adresse;
+
 import marryMe.model.Cake;
-import marryMe.model.Cuisine;
+
 import marryMe.model.Mariage;
 import marryMe.model.Prestation;
 import marryMe.model.Robe;
@@ -136,7 +135,7 @@ public class MariageRessource {
 				cakeDTO.setIdCake(cake.getId());
 				cakeDTO.setPrixCake(cake.getPrix());
 				cakeDTO.setAlcoolisée(cake.getAlcoolisée());
-				cakeDTO.setSaveur(cake.getSaveur());
+				cakeDTO.setCremes(cake.getCremes());
 				cakeDTO.setDesign(cake.getDesign());
 				cakeDTO.setGenoise(cake.getGenoise());
 				cakeDTO.setGanaches(cake.getGanaches());

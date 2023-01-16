@@ -13,7 +13,7 @@ public class Cake extends Prestation {
 	@JsonView(Views.ViewBase.class)
 	private String design ;
 	@JsonView(Views.ViewBase.class)
-	private String saveur;
+	private String Cremes;
 	@JsonView(Views.ViewBase.class)
 	private String Genoise;
 	@JsonView(Views.ViewBase.class)
@@ -21,14 +21,14 @@ public class Cake extends Prestation {
 	@JsonView(Views.ViewBase.class)
 	private Boolean alcoolisée;
 	
-	public Cake () {};
-	
-	public Cake(double prix, String design, String saveur, String genoise, String ganaches, Boolean alcoolisée) {
+	public Cake () {}
+
+	public Cake(double prix, String design, String cremes, String genoise, String ganaches, Boolean alcoolisée) {
 		super(prix);
 		this.design = design;
-		this.saveur = saveur;
-		Genoise = genoise;
-		Ganaches = ganaches;
+		this.Cremes = cremes;
+		this.Genoise = genoise;
+		this.Ganaches = ganaches;
 		this.alcoolisée = alcoolisée;
 	}
 
@@ -36,81 +36,41 @@ public class Cake extends Prestation {
 		return design;
 	}
 
-
-
-
 	public void setDesign(String design) {
 		this.design = design;
 	}
 
-
-
-
-	public String getSaveur() {
-		return saveur;
+	public String getCremes() {
+		return Cremes;
 	}
 
-
-
-
-	public void setSaveur(String saveur) {
-		this.saveur = saveur;
+	public void setCremes(String cremes) {
+		Cremes = cremes;
 	}
-
-
-
 
 	public String getGenoise() {
 		return Genoise;
 	}
 
-
-
-
 	public void setGenoise(String genoise) {
 		Genoise = genoise;
 	}
-
-
-
 
 	public String getGanaches() {
 		return Ganaches;
 	}
 
-
-
-
 	public void setGanaches(String ganaches) {
 		Ganaches = ganaches;
 	}
-
-
-
 
 	public Boolean getAlcoolisée() {
 		return alcoolisée;
 	}
 
-
-
-
 	public void setAlcoolisée(Boolean alcoolisée) {
 		this.alcoolisée = alcoolisée;
-	}
-
-
-
-
-	@Override
-	public String toString() {
-		return "Cake [design=" + design + ", saveur=" + saveur + ", Genoise=" + Genoise + ", Ganaches=" + Ganaches
-				+ ", alcoolisée=" + alcoolisée + "]";
-	}
-
-
-	
-
+	};
 	
 	
 	
