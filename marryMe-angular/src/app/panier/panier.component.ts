@@ -9,7 +9,11 @@ import { HttpPanierService } from './http-panier.service';
   styleUrls: ['./panier.component.scss']
 })
 export class PanierComponent {
+
   constructor(private cS: HttpPanierService, private router: Router){
+
+  //constructor(private cS: PanierHttpService, private router: Router){
+
     
   }
 }

@@ -16,6 +16,8 @@ import { SalleComponent } from './salle/salle.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HttpPanierService } from './panier/http-panier.service';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
