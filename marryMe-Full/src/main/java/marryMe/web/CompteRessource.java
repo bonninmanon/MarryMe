@@ -23,10 +23,12 @@ import com.fasterxml.jackson.annotation.JsonView;
 
 
 import marryMe.dao.IDAOCompte;
+import marryMe.model.Client;
 import marryMe.model.Compte;
 import marryMe.model.Views;
 import marryMe.model.Views.ViewBase;
 import marryMe.web.dto.AuthDTO;
+import marryMe.web.dto.CompteDTO;
 
 
 
@@ -68,14 +70,28 @@ public Compte findBy(@RequestBody AuthDTO authDTO) {
 
 	return optcompte.get();
 }
+	
+	
 
+	
+	
+	
 
-	@PostMapping("")
+	@PostMapping("crea")
 	@JsonView(Views.ViewCompte.class)
-	public Compte create(@Valid @RequestBody Compte compte, BindingResult result) {
+	public Compte create(@Valid @RequestBody CompteDTO comptedto, BindingResult result) {
 		if (result.hasErrors()) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Le compte n'a pu être créé");
 		}
+		
+		Compte compte=new Client();
+		
+		compte.setNom(comptedto.getNom());
+		compte.setPrenom(comptedto.getPrenom());
+		compte.setMail(comptedto.getMail());
+		compte.setMdp(comptedto.getMdp());
+		
+		
 
 		compte = daoCompte.save(compte);
 

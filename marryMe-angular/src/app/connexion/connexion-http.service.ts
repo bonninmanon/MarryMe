@@ -11,13 +11,14 @@ export class ConnexionHttpService {
 
   serviceUrl: string;
   connexions: Connexion = new Connexion;
+  
 
   constructor(private http: HttpClient, private appConfig: AppConfigService) {
     this.serviceUrl = appConfig.backEndUrl + "comptes/";
   
    }
 
-
+   
   findByMailAndPassword(mail: String, mdp:string): Observable<Connexion> {
   
     return this.http.post<Connexion>(this.serviceUrl + "auth", {
@@ -25,6 +26,19 @@ export class ConnexionHttpService {
       "mdp": mdp
     });
   }
+
+  
+  creationCompte(nom :string,prenom:string, mail: String, mdp:string): Observable<Connexion> {
+  
+    return this.http.post<Connexion>(this.serviceUrl + "crea", {
+      "nom":nom,
+      "prenom":prenom,
+      "mail": mail,
+      "mdp": mdp
+    });
+  }
+
+
 
   create(connexion: Connexion): void {
     this.http.post<Connexion>(this.serviceUrl,connexion).subscribe(resp => {

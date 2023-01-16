@@ -25,13 +25,24 @@ export class ConnexionComponent {
   }
 
   
+
+
+  inscription(nom :string,prenom:string, mail: String, mdp:string): void {
+  this.connexionService.creationCompte(nom,prenom,mail,mdp).subscribe (resp => {
+    confirm("'BRAVO VOUS ETES BIEN ENREGISTRE CHEZ NOUS VEUILLEZ VOUS CONNECTER SVP.....:)'")
+    this.router.navigate(["/accueil"]);
+    this.formConnexion = resp;
+  })
+};
+
+
   verif(mail: string,mdp:string): void {
     this.connexionService.findByMailAndPassword(mail,mdp).subscribe(resp => {
       this.formConnexion = resp;
       if(resp.type){
        
         if(resp.type=='medecin') {
-          console.log('gggggggggggggggggg');
+          
         this.router.navigate(["/medecin"]);
         }
       }
