@@ -8,8 +8,41 @@ public class PrestationDTO {
 	private double prix;	
 	private CakeDTO cake;
 	private RobeDTO robe;
+	private SalleDTO salle;
+	private TraiteurDTO traiteur;
+
 	
-	
+
+	public PrestationDTO(Integer idPrestation, double prix, CakeDTO cake, RobeDTO robe, SalleDTO salle,
+			TraiteurDTO traiteur) {
+		super();
+		this.idPrestation = idPrestation;
+		this.prix = prix;
+		this.cake = cake;
+		this.robe = robe;
+		this.salle = salle;
+		this.traiteur = traiteur;
+	}
+
+
+	public SalleDTO getSalle() {
+		return salle;
+	}
+
+
+	public void setSalle(SalleDTO salle) {
+		this.salle = salle;
+	}
+
+
+	public TraiteurDTO getTraiteur() {
+		return traiteur;
+	}
+
+
+	public void setTraiteur(TraiteurDTO traiteur) {
+		this.traiteur = traiteur;
+	}
 
 
 	public CakeDTO getCake() {

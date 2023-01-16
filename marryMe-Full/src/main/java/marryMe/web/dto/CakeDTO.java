@@ -4,7 +4,7 @@ package marryMe.web.dto;
 public class CakeDTO {
 	
 	private Integer idCake;
-	private int prixCake;
+	private double prixCake;
 	private String design;
 	private String saveur;
 	private String Genoise;
@@ -16,7 +16,7 @@ public class CakeDTO {
 		}
 
 
-		public CakeDTO(Integer idCake, int prixCake, String design, String saveur, String genoise, String ganaches,
+		public CakeDTO(Integer idCake, double prixCake, String design, String saveur, String genoise, String ganaches,
 				Boolean alcoolisée) {
 			super();
 			this.idCake = idCake;
@@ -77,11 +77,11 @@ public class CakeDTO {
 			this.idCake = idCake;
 		}
 
-		public int getPrixCake() {
+		public double getPrixCake() {
 			return prixCake;
 		}
 
-		public void setPrixCake(int prixCake) {
+		public void setPrixCake(double prixCake) {
 			this.prixCake = prixCake;
 		}
 

@@ -4,10 +4,11 @@ import marryMe.model.Adresse;
 
 public class SalleDTO {
 	
+	private Integer idSalle;
+	private double prixSalle;
 	private String  nom ;
 	private int  capacite;
-    private  boolean  debout ;
-    private Adresse adresse;
+
     
     public SalleDTO() {
 		// TODO Auto-generated constructor stub
@@ -15,6 +16,24 @@ public class SalleDTO {
 
 	public String getNom() {
 		return nom;
+	}
+	
+	
+
+	public Integer getIdSalle() {
+		return idSalle;
+	}
+
+	public void setIdSalle(Integer idSalle) {
+		this.idSalle = idSalle;
+	}
+
+	public double getPrixSalle() {
+		return prixSalle;
+	}
+
+	public void setPrixSalle(double prixSalle) {
+		this.prixSalle = prixSalle;
 	}
 
 	public void setNom(String nom) {
@@ -29,35 +48,19 @@ public class SalleDTO {
 		this.capacite = capacite;
 	}
 
-	public boolean isDebout() {
-		return debout;
-	}
 
-	public void setDebout(boolean debout) {
-		this.debout = debout;
-	}
 
-	public Adresse getAdresse() {
-		return adresse;
-	}
-
-	public void setAdresse(Adresse adresse) {
-		this.adresse = adresse;
-	}
-
-	public SalleDTO(String nom, int capacite, boolean debout, Adresse adresse) {
+	public SalleDTO(Integer idSalle, double prixSalle, String nom, int capacite) {
 		super();
+		this.idSalle = idSalle;
+		this.prixSalle = prixSalle;
 		this.nom = nom;
 		this.capacite = capacite;
-		this.debout = debout;
-		this.adresse = adresse;
+
 	}
 
-	@Override
-	public String toString() {
-		return "salleDTO [nom=" + nom + ", capacite=" + capacite + ", debout=" + debout + ", adresse=" + adresse + "]";
-	}
-    
+
+
 	
 
 }

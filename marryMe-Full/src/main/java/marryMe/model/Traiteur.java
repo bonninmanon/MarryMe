@@ -13,18 +13,18 @@ public class Traiteur extends Prestation {
 	@JsonView(Views.ViewBase.class)
 	private boolean vinDHonneur;
 	@JsonView(Views.ViewBase.class)
-	private Cuisine cuisine ;
+	private String cuisine ;
 	
 	public Traiteur () {};
 		
-	public Traiteur(double prix, boolean vinDHonneur, Cuisine cuisine) {
+	public Traiteur(double prix, boolean vinDHonneur, String cuisine) {
 		super(prix);
 		this.vinDHonneur = vinDHonneur;
 		this.cuisine = cuisine;
 	}
 
 
-	public boolean isVinDHonneur() {
+	public boolean getVinDHonneur() {
 		return vinDHonneur;
 	}
 
@@ -34,12 +34,12 @@ public class Traiteur extends Prestation {
 	}
 
 
-	public Cuisine getCuisine() {
+	public String getCuisine() {
 		return cuisine;
 	}
 
 
-	public void setCuisine(Cuisine cuisine) {
+	public void setCuisine(String cuisine) {
 		this.cuisine = cuisine;
 	}
 

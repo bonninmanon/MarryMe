@@ -14,13 +14,13 @@ public class Robe extends Prestation {
 	@JsonView(Views.ViewBase.class)
 	private String model ;
 	@JsonView(Views.ViewBase.class)
-	private int taille;
+	private String taille;
 		
 	
 	public Robe() {}
 		
 	
-	public Robe(double prix, String model, int taille) {
+	public Robe(double prix, String model, String taille) {
 		super(prix);
 		this.model = model;
 		this.taille = taille;
@@ -37,12 +37,12 @@ public class Robe extends Prestation {
 	}
 
 
-	public int getTaille() {
+	public String getTaille() {
 		return taille;
 	}
 
 
-	public void setTaille(int taille) {
+	public void setTaille(String taille) {
 		this.taille = taille;
 	}
 

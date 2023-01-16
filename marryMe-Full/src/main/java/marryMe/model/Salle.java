@@ -18,18 +18,14 @@ public class Salle extends Prestation{
 	private String  nom ;
 	@JsonView(Views.ViewBase.class)
 	private int  capacite;
-	@JsonView(Views.ViewBase.class)
-    private  boolean  debout ;
+
+
     
-    @Embedded
-    @JsonView(Views.ViewBase.class)
-    private Adresse adresse;
-    
-	public Salle( double prix, String nom, int capacite, boolean debout) {
+	public Salle( double prix, String nom, int capacite) {
 		super( prix);
 		this.nom = nom;
 		this.capacite = capacite;
-		this.debout = debout;
+	
 	}
     
     public Salle() {
@@ -52,17 +48,10 @@ public class Salle extends Prestation{
 		this.capacite = capacite;
 	}
 
-	public boolean isDebout() {
-		return debout;
-	}
-
-	public void setDebout(boolean debout) {
-		this.debout = debout;
-	}
 
 	@Override
 	public String toString() {
-		return "Salle [nom=" + nom + ", capacite=" + capacite + ", debout=" + debout + "]";
+		return "Salle [nom=" + nom + ", capacite=" + capacite + "]";
 	}
     
     

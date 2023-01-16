@@ -1,6 +1,8 @@
 package marryMe.web;
 
-
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -24,15 +26,21 @@ import com.fasterxml.jackson.annotation.JsonView;
 
 import marryMe.dao.IDAOMariage;
 import marryMe.dao.IDAOPrestation;
+import marryMe.model.Adresse;
 import marryMe.model.Cake;
+import marryMe.model.Cuisine;
 import marryMe.model.Mariage;
 import marryMe.model.Prestation;
 import marryMe.model.Robe;
 import marryMe.model.Salle;
+import marryMe.model.Traiteur;
 import marryMe.model.Views;
-
+import marryMe.web.dto.CakeDTO;
 import marryMe.web.dto.MariageDTO;
 import marryMe.web.dto.PrestationDTO;
+import marryMe.web.dto.RobeDTO;
+import marryMe.web.dto.SalleDTO;
+import marryMe.web.dto.TraiteurDTO;
 
 
 
@@ -69,70 +77,115 @@ public class MariageRessource {
 		return optMariage.get();
 	}
 
-//	@GetMapping("/{id}/detail")		
-//	
-//	public MariageDTO findDTOById(@PathVariable Integer id) {
-//		Optional<Mariage> optMariage = daoMariage.findById(id);
-//		
-//
-//		if (optMariage.isEmpty()) {
-//			throw new ResponseStatusException(HttpStatus.NOT_FOUND);
-//		}
-//		
-//		Mariage mariage = optMariage.get();
-//	
-//		MariageDTO mariageDTO = new MariageDTO();
-//     	PrestationDTO prestationDTO = new PrestationDTO();
-//		
-//		mariageDTO.setIdMariage(mariage.getId());
-//		mariageDTO.setDate(mariage.getDate());
-//		mariageDTO.setTheme(mariage.getTheme());
-//		
-//		
-	//	List<Prestation> prestations = daoPrestation.findAllByMariage(mariageDTO.getIdMariage());
-//		List<PrestationDTO> prestationdto= new ArrayList<>();
-//		
-//		prestationDTO.setIdPrestation(prestation.getId());
-//		prestationDTO.setPrix(prestation.getPrix());
-//		prestationdto.add(prestationDTO);
-
-//		Prestation pCake = new Cake();
-//		Cake cake = (Cake) pCake;
-//		
-//		Prestation pRobe = new Robe();
-//		Robe robe = (Robe) pRobe;
-//		
-//		Prestation pSalle = new Salle();
-//		Salle salle = (Salle) pSalle;
-//		
-//		private String design ;
-//		private String saveur;
-//		private String Genoise;
-//		private String Ganaches;
-//		private Boolean alcoolisée;
+	@GetMapping("/{id}/detail")		
+	
+	public MariageDTO findDTOById(@PathVariable Integer id) {
+		Optional<Mariage> optMariage = daoMariage.findById(id);
 		
-//		for(Prestation prestation : prestations) {
-//		
-//			if(prestation instanceof Cake) {
-//				//pCake.setId(mariage.getId());
-//			//	cake.setIdCake(prestation.getId());
+
+		if (optMariage.isEmpty()) {
+		throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+		}
+		
+	Mariage mariage = optMariage.get();
+
+		MariageDTO mariageDTO = new MariageDTO();
+   	PrestationDTO prestationDTO = new PrestationDTO();
+
+   	
+	mariageDTO.setIdMariage(mariage.getId());
+	mariageDTO.setDate(mariage.getDate());
+	mariageDTO.setTheme(mariage.getTheme());
+	
+	
+	List<Prestation> prestations = daoPrestation.findAllByMariage(mariageDTO.getIdMariage());
+	
+	List<RobeDTO> robeDto=new ArrayList<>();
+	mariageDTO.setRobes(robeDto);
+		
+	List<CakeDTO> cakeDto=new ArrayList<>();
+	mariageDTO.setCakes(cakeDto);
+	
+	List<SalleDTO> salleDto=new ArrayList<>();
+	mariageDTO.setSalles(salleDto);
+	
+	List<TraiteurDTO> traiteurDto=new ArrayList<>();
+	mariageDTO.setTraiteurs(traiteurDto);
+	
+		for(Prestation prestation : prestations) {
+			
+//			if(prestation instanceof Cake cake) {
+//				// Cake cake = (Cake)prestation;
+//				CakeDTO cakeDto = new CakeDTO();
 //				
+//				cakeDto.setIdCake(cake.getId());
+//				cakeDto.setPrixCake(cake.getPrix());
+//				cakeDto.setAlcoolisée(cake.getAlcoolisée());
+//				cakeDto.setSaveur(cake.getSaveur());
+//				cakeDto.setDesign(cake.getDesign());
+//				cakeDto.setGenoise(cake.getGenoise());
+//				cakeDto.setGanaches(cake.getGanaches());
+//				
+//				mariageDTO.setCakes(cakeDto);
 //			}
-//			
-//			if(prestation instanceof Robe) {
-//				
-//				
-//			}
-//			
-//			if(prestation instanceof Salle) {
-//				
-//				
-//			}
-//		
-//		}
-//			mariageDTO.setPrestations(prestationdto);
-//			return mariageDTO;
-//	}
+			
+			if(prestation instanceof Cake cake) {
+				
+				CakeDTO cakeDTO = new CakeDTO();
+				
+				cakeDTO.setIdCake(cake.getId());
+				cakeDTO.setPrixCake(cake.getPrix());
+				cakeDTO.setAlcoolisée(cake.getAlcoolisée());
+				cakeDTO.setSaveur(cake.getSaveur());
+				cakeDTO.setDesign(cake.getDesign());
+				cakeDTO.setGenoise(cake.getGenoise());
+				cakeDTO.setGanaches(cake.getGanaches());
+			    
+			    cakeDto.add(cakeDTO);
+			}
+			
+			if(prestation instanceof Robe robe) {
+				
+				RobeDTO robeDTO = new RobeDTO();
+				
+				robeDTO.setIdRobe(robe.getId());
+				robeDTO.setPrixRobe(robe.getPrix());
+				robeDTO.setTaille(robe.getTaille());
+				robeDTO.setModel(robe.getModel());
+				robeDTO.setTaille(robe.getTaille());
+			    
+			    robeDto.add(robeDTO);
+			}
+			
+			if(prestation instanceof Salle salle) {
+				
+				SalleDTO salleDTO = new SalleDTO();
+				
+				salleDTO.setIdSalle(salle.getId());
+				salleDTO.setPrixSalle(salle.getPrix());
+				salleDTO.setNom(salle.getNom());
+				salleDTO.setCapacite(salle.getCapacite());
+			    
+				salleDto.add(salleDTO);
+			}
+			
+			if(prestation instanceof Traiteur traiteur) {
+				
+				TraiteurDTO traiteurDTO = new TraiteurDTO();
+				
+				traiteurDTO.setIdTraiteur(traiteur.getId());
+				traiteurDTO.setPrixTraiteur(traiteur.getPrix());
+				traiteurDTO.setVinDHonneur(traiteur.getVinDHonneur());
+				traiteurDTO.setCuisine(traiteur.getCuisine());
+			    
+				traiteurDto.add(traiteurDTO);
+			}
+
+		}
+		
+		return mariageDTO;
+	}
+
 
 	@PostMapping("")
 	@JsonView(Views.ViewMariage.class)

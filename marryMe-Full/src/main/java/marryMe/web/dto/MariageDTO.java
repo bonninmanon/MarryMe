@@ -9,33 +9,31 @@ public class MariageDTO {
 	private Integer idMariage;
 	private LocalDate date ;	
 	private String  theme;
-	private List<PrestationDTO> prestations;
-	private RobeDTO robes;
-	private SalleDTO salles;
-	private CakeDTO cakes;
+	//private SalleDTO salles;
+	//private CakeDTO cakes;
+	//private SalleDTO robes;
+	//private SalleDTO traiteurs;
 	
-	
-
+	private List<RobeDTO> robes;
+	private List<CakeDTO> cakes;
+	private List<SalleDTO> salles;
+	private List<TraiteurDTO> traiteurs;
 
 	public MariageDTO() {
 		
 	}
+	
+	
 
-
-
-
-	public MariageDTO(Integer idMariage, LocalDate date, String theme, List<PrestationDTO> prestations, RobeDTO robes,
-			SalleDTO salles, CakeDTO cakes) {
-		super();
-		this.idMariage = idMariage;
-		this.date = date;
-		this.theme = theme;
-		this.prestations = prestations;
-		this.robes = robes;
-		this.salles = salles;
-		this.cakes = cakes;
+	public List<TraiteurDTO> getTraiteurs() {
+		return traiteurs;
 	}
 
+
+
+	public void setTraiteurs(List<TraiteurDTO> traiteurs) {
+		this.traiteurs = traiteurs;
+	}
 
 
 
@@ -43,99 +41,62 @@ public class MariageDTO {
 		return idMariage;
 	}
 
-
-
-
 	public void setIdMariage(Integer idMariage) {
 		this.idMariage = idMariage;
 	}
-
-
-
 
 	public LocalDate getDate() {
 		return date;
 	}
 
-
-
-
 	public void setDate(LocalDate date) {
 		this.date = date;
 	}
-
-
-
 
 	public String getTheme() {
 		return theme;
 	}
 
-
-
-
 	public void setTheme(String theme) {
 		this.theme = theme;
 	}
 
-
-
-
-	public List<PrestationDTO> getPrestations() {
-		return prestations;
-	}
-
-
-
-
-	public void setPrestations(List<PrestationDTO> prestations) {
-		this.prestations = prestations;
-	}
-
-
-
-
-	public RobeDTO getRobes() {
+	public List<RobeDTO> getRobes() {
 		return robes;
 	}
 
-
-
-
-	public void setRobes(RobeDTO robes) {
+	public void setRobes(List<RobeDTO> robes) {
 		this.robes = robes;
 	}
 
-
-
-
-	public SalleDTO getSalles() {
-		return salles;
-	}
-
-
-
-
-	public void setSalles(SalleDTO salles) {
-		this.salles = salles;
-	}
-
-
-
-
-	public CakeDTO getCakes() {
+	public List<CakeDTO> getCakes() {
 		return cakes;
 	}
 
-
-
-
-	public void setCakes(CakeDTO cakes) {
+	public void setCakes(List<CakeDTO> cakes) {
 		this.cakes = cakes;
 	}
 
+	public List<SalleDTO> getSalles() {
+		return salles;
+	}
 
+	public void setSalles(List<SalleDTO> salles) {
+		this.salles = salles;
+	}
 
+	public MariageDTO(Integer idMariage, LocalDate date, String theme, List<RobeDTO> robes, List<CakeDTO> cakes,
+			List<SalleDTO> salles) {
+		super();
+		this.idMariage = idMariage;
+		this.date = date;
+		this.theme = theme;
+		this.robes = robes;
+		this.cakes = cakes;
+		this.salles = salles;
+	}
+	
+	
 
 	
 	

@@ -8,4 +8,29 @@ import { Component } from '@angular/core';
 
 export class RobeComponent {
 
+  elsa(){
+
+  }
+
+  esmeralda(){
+    
+  }
+  beaute(){
+    
+  }
+  dona(){
+    
+  }
+  deborah(){
+    
+  }
+  delta(){
+    
+  }
+  ariella(){
+    
+  }
+  bijoux(){
+    
+  }
 }

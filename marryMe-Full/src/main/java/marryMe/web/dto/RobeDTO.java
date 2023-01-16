@@ -3,13 +3,39 @@ package marryMe.web.dto;
 public class RobeDTO {
 
 	private Integer idRobe;
-	private Integer prixRobe;
+	private double prixRobe;
 	private String model ;
 	private String taille;
 	
 	public RobeDTO() {
 		// TODO Auto-generated constructor stub
 	}
+	
+	
+
+	public Integer getIdRobe() {
+		return idRobe;
+	}
+
+
+
+	public void setIdRobe(Integer idRobe) {
+		this.idRobe = idRobe;
+	}
+
+
+
+	public double getPrixRobe() {
+		return prixRobe;
+	}
+
+
+
+	public void setPrixRobe(double prixRobe) {
+		this.prixRobe = prixRobe;
+	}
+
+
 
 	public String getModel() {
 		return model;
@@ -27,11 +53,17 @@ public class RobeDTO {
 		this.taille = taille;
 	}
 
-	public RobeDTO(String model, String taille) {
+
+
+	public RobeDTO(Integer idRobe, Integer prixRobe, String model, String taille) {
 		super();
+		this.idRobe = idRobe;
+		this.prixRobe = prixRobe;
 		this.model = model;
 		this.taille = taille;
 	}
+
+
 
 	@Override
 	public String toString() {
