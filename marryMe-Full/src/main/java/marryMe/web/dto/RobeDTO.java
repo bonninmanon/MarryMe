@@ -6,12 +6,28 @@ public class RobeDTO {
 	private double prixRobe;
 	private String model ;
 	private String taille;
+	private String nom;
 	
 	public RobeDTO() {
 		// TODO Auto-generated constructor stub
 	}
 	
 	
+	
+
+	public String getNom() {
+		return nom;
+	}
+
+
+
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+
+
 
 	public Integer getIdRobe() {
 		return idRobe;
@@ -55,13 +71,19 @@ public class RobeDTO {
 
 
 
-	public RobeDTO(Integer idRobe, Integer prixRobe, String model, String taille) {
+	
+
+
+
+	public RobeDTO(Integer idRobe, double prixRobe, String model, String taille, String nom) {
 		super();
 		this.idRobe = idRobe;
 		this.prixRobe = prixRobe;
 		this.model = model;
 		this.taille = taille;
+		this.nom = nom;
 	}
+
 
 
 
