@@ -4,12 +4,11 @@ import { Connexion } from '../model';
 import { AppConfigService } from '../app-config.service';
 import { HttpClient } from '@angular/common/http';
 
-
 @Injectable({
   providedIn: 'root'
 })
 export class ConnexionHttpService {
-
+a
   serviceUrl: string;
   connexions: Connexion = new Connexion;
 
@@ -27,4 +26,18 @@ export class ConnexionHttpService {
     });
   }
 
+  create(connexion: Connexion): void {
+    this.http.post<Connexion>(this.serviceUrl,connexion).subscribe(resp => {
+      this.load();
+    });
+  }
+ 
+
+  private load(): void {
+    this.http.get<Connexion>(this.serviceUrl).subscribe(response => {
+      this.connexions = response;
+    });
+  }
+
 }
+

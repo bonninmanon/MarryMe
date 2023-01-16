@@ -1,1 +1,90 @@
-<p>connexion works!</p>
+
+
+
+
+	<body>
+
+	<div class="home">
+			<video class="video-slide active" src="assets/vid.mp4" autoplay="autoplay" [muted]="'muted'" ></video>
+		</div>
+		<div class="container">
+
+			<div class="lignes">
+
+					<div class="l1"></div>
+					<div class="l2"></div>
+			</div>
+			<header>
+
+				<div class="menu-btn" ></div>
+				<div class="navigation">
+					<div class="navigation-items" id="navigationItems" >
+					    <a href="#">Home</a>
+						<a href="#">Robe</a>
+						<a href="#">Cake</a>
+						<a href="#">Salles</a>
+						<a href="#">Connexion</a>
+						<a href="#">Panier</a>
+					</div>
+				</div>
+			</header>
+
+			<div class="container-first"  id="containerFirst">
+					<h1 ><span id="phrase">le bonheur </span><span id="phrase1">qui  </span><span id="phrase2">vous  </span><span id="phrase3">unit </span></h1>
+					<div class="container-btns">
+							<button class="btn-first " id="btn1" >nous contacter</button>
+							<button class="btn-first " id="btn2" (click)="showForm()">se connecter</button>
+					</div>
+			</div>
+
+
+
+
+			<ul class="medias" id="medias">
+					<li class="bulle"><img src="assets/fb.jpg" class="logo-medias"></li>
+					<li class="bulle"><img src="assets/insta.jpg" class="logo-medias"></li>
+					<li class="bulle"><img src="assets/snap.jpg" class="logo-medias"></li>
+					<li class="bulle"><img src="assets/tik.jpg" class="logo-medias"></li>
+			</ul>
+
+	</div>
+
+
+						<div class="formWrapper">
+							<div class="card" id="card">
+								<div class="card-header">
+									<div id="forLogin" class="form-header active" (click)="ngBeforeViewInit()">Se connecter</div>
+
+									<div id="forRegister" class="form-header" (click)="ngAfterViewInit()" >S'inscrire</div>
+								</div>
+								<div class="card-body" id="formContainer" >
+									<form action="" id="loginForm">
+										<input type="text" class="form-control" placeholder="@Utilisateur" id="id" name="mail" [(ngModel)]="formConnexion.mail"/>
+										<input type="password" class="form-control" placeholder="Mot de passe" id="id" name="password" [(ngModel)]="formConnexion.mdp"/>
+										<label for="remember">
+											<input type="checkbox" class="form-check" id="remember" />
+											Se Souvenir de moi
+										</label>
+										<button class="formButton"(click)="verif(formConnexion.mail,formConnexion.mdp)">Connexion</button>
+										<button class="formButton" routerLink="/connexion" routerLinkActive="active">Retour</button>
+									</form>
+
+									<form action="" id="registerForm" class="toggleForm">
+										<input type="text" class="form-control" placeholder="Nom..." id="id" name="nom" [(ngModel)]="formConnexion.nom" />
+										<input type="text" class="form-control" placeholder="Prénom..." id="id" name="prenom" [(ngModel)]="formConnexion.prenom"/>
+										<input type="text" class="form-control" placeholder="@utilisateur..."  id="id" name="mail" [(ngModel)]="formConnexion.mail"/>
+										<input type="text" class="form-control" placeholder="Mot de passe..."id="id" name="password" [(ngModel)]="formConnexion.mdp" />
+										<input type="text" class="form-control" placeholder="Confirmer mot de passe..."  />
+										<label for="remember">
+											<input type="checkbox" class="form-check" id="privacy" />
+											J'accepte les termes de l'accord
+										</label>
+										<button class="formButton" (click)="save()">Inscription</button>
+									</form>
+								</div>
+							</div>
+						</div>
+
+				
+
+	</body>

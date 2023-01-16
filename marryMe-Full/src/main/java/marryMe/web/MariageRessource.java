@@ -69,70 +69,70 @@ public class MariageRessource {
 		return optMariage.get();
 	}
 
-	@GetMapping("/{id}/detail")		
-	
-	public MariageDTO findDTOById(@PathVariable Integer id) {
-		Optional<Mariage> optMariage = daoMariage.findById(id);
-		
-
-		if (optMariage.isEmpty()) {
-			throw new ResponseStatusException(HttpStatus.NOT_FOUND);
-		}
-		
-		Mariage mariage = optMariage.get();
-	
-		MariageDTO mariageDTO = new MariageDTO();
-     	PrestationDTO prestationDTO = new PrestationDTO();
-		
-		mariageDTO.setIdMariage(mariage.getId());
-		mariageDTO.setDate(mariage.getDate());
-		mariageDTO.setTheme(mariage.getTheme());
-		
-		
-		List<Prestation> prestations = daoPrestation.findAllByMariage(mariageDTO.getIdMariage());
+//	@GetMapping("/{id}/detail")		
+//	
+//	public MariageDTO findDTOById(@PathVariable Integer id) {
+//		Optional<Mariage> optMariage = daoMariage.findById(id);
+//		
+//
+//		if (optMariage.isEmpty()) {
+//			throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+//		}
+//		
+//		Mariage mariage = optMariage.get();
+//	
+//		MariageDTO mariageDTO = new MariageDTO();
+//     	PrestationDTO prestationDTO = new PrestationDTO();
+//		
+//		mariageDTO.setIdMariage(mariage.getId());
+//		mariageDTO.setDate(mariage.getDate());
+//		mariageDTO.setTheme(mariage.getTheme());
+//		
+//		
+	//	List<Prestation> prestations = daoPrestation.findAllByMariage(mariageDTO.getIdMariage());
 //		List<PrestationDTO> prestationdto= new ArrayList<>();
 //		
 //		prestationDTO.setIdPrestation(prestation.getId());
 //		prestationDTO.setPrix(prestation.getPrix());
 //		prestationdto.add(prestationDTO);
 
-		Prestation pCake = new Cake();
-		Cake cake = (Cake) pCake;
-		
-		Prestation pRobe = new Robe();
-		Robe robe = (Robe) pRobe;
-		
-		Prestation pSalle = new Salle();
-		Salle salle = (Salle) pSalle;
-		
+//		Prestation pCake = new Cake();
+//		Cake cake = (Cake) pCake;
+//		
+//		Prestation pRobe = new Robe();
+//		Robe robe = (Robe) pRobe;
+//		
+//		Prestation pSalle = new Salle();
+//		Salle salle = (Salle) pSalle;
+//		
 //		private String design ;
 //		private String saveur;
 //		private String Genoise;
 //		private String Ganaches;
 //		private Boolean alcoolisée;
 		
-		for(Prestation prestation : prestations) {
-		
-			if(prestation instanceof Cake) {
-				//pCake.setId(mariage.getId());
-				cake.setIdCake(prestation.getId());
-				
-			}
-			
-			if(prestation instanceof Robe) {
-				
-				
-			}
-			
-			if(prestation instanceof Salle) {
-				
-				
-			}
-		
-		}
-			mariageDTO.setPrestations(prestationdto);
-			return mariageDTO;
-	}
+//		for(Prestation prestation : prestations) {
+//		
+//			if(prestation instanceof Cake) {
+//				//pCake.setId(mariage.getId());
+//			//	cake.setIdCake(prestation.getId());
+//				
+//			}
+//			
+//			if(prestation instanceof Robe) {
+//				
+//				
+//			}
+//			
+//			if(prestation instanceof Salle) {
+//				
+//				
+//			}
+//		
+//		}
+//			mariageDTO.setPrestations(prestationdto);
+//			return mariageDTO;
+//	}
 
 	@PostMapping("")
 	@JsonView(Views.ViewMariage.class)
