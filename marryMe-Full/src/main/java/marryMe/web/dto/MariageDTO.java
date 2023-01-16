@@ -8,7 +8,10 @@ public class MariageDTO {
 	private Integer idMariage;
 	private LocalDate date ;	
 	private String  theme;
-	private PrestationDTO prestations;
+	private List<PrestationDTO> prestations;
+	private RobeDTO robes;
+	private SalleDTO salles;
+	private CakeDTO cakes;
 	
 	
 

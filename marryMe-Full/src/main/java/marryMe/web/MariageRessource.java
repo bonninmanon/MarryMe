@@ -23,9 +23,12 @@ import org.springframework.web.server.ResponseStatusException;
 import com.fasterxml.jackson.annotation.JsonView;
 
 import marryMe.dao.IDAOMariage;
-
+import marryMe.dao.IDAOPrestation;
+import marryMe.model.Cake;
 import marryMe.model.Mariage;
 import marryMe.model.Prestation;
+import marryMe.model.Robe;
+import marryMe.model.Salle;
 import marryMe.model.Views;
 
 import marryMe.web.dto.MariageDTO;
@@ -40,9 +43,9 @@ public class MariageRessource {
 
 	@Autowired
 	private IDAOMariage daoMariage;
-
-//	@Autowired
-//	private IDAOPrestation daoPrestation;
+	
+	@Autowired
+	private IDAOPrestation daoPrestation;
 
 
 
@@ -79,19 +82,54 @@ public class MariageRessource {
 		Mariage mariage = optMariage.get();
 	
 		MariageDTO mariageDTO = new MariageDTO();
-		PrestationDTO prestationdto= new PrestationDTO();
+     	PrestationDTO prestationDTO = new PrestationDTO();
 		
 		mariageDTO.setIdMariage(mariage.getId());
 		mariageDTO.setDate(mariage.getDate());
 		mariageDTO.setTheme(mariage.getTheme());
-
-//		List<Prestation> prestations = mariage.getPrestations();
-//		for (Prestation p : prestations) {
+		
+		
+		List<Prestation> prestations = daoPrestation.findAllByMariage(mariageDTO.getIdMariage());
+//		List<PrestationDTO> prestationdto= new ArrayList<>();
 //		
-//		}
+//		prestationDTO.setIdPrestation(prestation.getId());
+//		prestationDTO.setPrix(prestation.getPrix());
+//		prestationdto.add(prestationDTO);
+
+		Prestation pCake = new Cake();
+		Cake cake = (Cake) pCake;
 		
-//		Optional<Prestation> prestations = daoPrestation.findById(mariageDTO.getIdMariage());
+		Prestation pRobe = new Robe();
+		Robe robe = (Robe) pRobe;
 		
+		Prestation pSalle = new Salle();
+		Salle salle = (Salle) pSalle;
+		
+//		private String design ;
+//		private String saveur;
+//		private String Genoise;
+//		private String Ganaches;
+//		private Boolean alcoolisée;
+		
+		for(Prestation prestation : prestations) {
+		
+			if(prestation instanceof Cake) {
+				//pCake.setId(mariage.getId());
+				cake.setIdCake(prestation.getId());
+				
+			}
+			
+			if(prestation instanceof Robe) {
+				
+				
+			}
+			
+			if(prestation instanceof Salle) {
+				
+				
+			}
+		
+		}
 			mariageDTO.setPrestations(prestationdto);
 			return mariageDTO;
 	}
