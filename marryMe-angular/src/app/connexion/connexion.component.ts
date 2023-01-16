@@ -3,7 +3,7 @@ import { Component, ElementRef, Renderer2 } from '@angular/core';
 
 import { Router } from '@angular/router';
 import gsap from 'gsap';
-import { Connexion } from 'src/model';
+import { Connexion } from '../model';
 
 import { ConnexionHttpService } from './connexion-http.service';
 

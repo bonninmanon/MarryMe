@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ConnexionHttpService {
-a
+
   serviceUrl: string;
   connexions: Connexion = new Connexion;
 
