@@ -3,7 +3,9 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class HttpSalleService {
+export class AppConfigService {
+
+  backEndUrl: string = "http://localhost:8080/";
 
   constructor() { }
 }
