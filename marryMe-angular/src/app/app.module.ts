@@ -16,6 +16,7 @@ import { SalleComponent } from './salle/salle.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HttpPanierService } from './panier/http-panier.service';
 import { HttpSalleService } from './salle/salle-http.service';
+import { HttpRobeService } from './robe/http-robe.service';
 
 @NgModule({
   declarations: [
@@ -35,9 +36,9 @@ import { HttpSalleService } from './salle/salle-http.service';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
-  providers: [HttpPanierService, HttpSalleService],
+  providers: [HttpPanierService, HttpSalleService, HttpRobeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
