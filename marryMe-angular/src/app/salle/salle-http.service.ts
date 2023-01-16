@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Salle } from 'src/model';
+import { Salle } from '../model';
 import { AppConfigService } from '../app-config.service';
 
 

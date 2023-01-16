@@ -24,7 +24,6 @@ export class Connexion {
     }
 }
 
-<<<<<<< HEAD
 export class Robe extends Prestation{
     model: string;
     taille: string;
@@ -36,7 +35,6 @@ export class Robe extends Prestation{
     }
 }
 
-=======
 export class Salle {
     id: number;
     prix:number;
@@ -54,4 +52,3 @@ export class Salle {
 
     }
 }
->>>>>>> master

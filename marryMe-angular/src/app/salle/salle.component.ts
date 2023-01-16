@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Salle } from 'src/model';
+import { Salle } from '../model';
 import { HttpSalleService } from './salle-http.service';
 
 

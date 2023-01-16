@@ -10,19 +10,12 @@ import { RobeComponent } from './robe/robe.component';
 import { CakeComponent } from './cake/cake.component';
 import { PanierComponent } from './panier/panier.component';
 import { FormsModule } from '@angular/forms';
-<<<<<<< HEAD
 
 import { HttpClientModule } from '@angular/common/http';
 import { SalleComponent } from './salle/salle.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HttpPanierService } from './panier/http-panier.service';
-
-
-=======
-import { HttpClientModule } from '@angular/common/http';
-import { SalleComponent } from './salle/salle.component';
 import { HttpSalleService } from './salle/salle-http.service';
->>>>>>> master
 
 @NgModule({
   declarations: [
@@ -34,12 +27,9 @@ import { HttpSalleService } from './salle/salle-http.service';
     CakeComponent,
     PanierComponent,
     SalleComponent,
-<<<<<<< HEAD
     NavbarComponent,
 
 
-=======
->>>>>>> master
   ],
   imports: [
     BrowserModule,
@@ -47,11 +37,7 @@ import { HttpSalleService } from './salle/salle-http.service';
     FormsModule,
     HttpClientModule
   ],
-<<<<<<< HEAD
-  providers: [HttpPanierService],
-=======
-  providers: [HttpSalleService],
->>>>>>> master
+  providers: [HttpPanierService, HttpSalleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
