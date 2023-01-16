@@ -1,6 +1,6 @@
 package marryMe.web;
 
-import java.util.ArrayList;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -25,10 +25,12 @@ import com.fasterxml.jackson.annotation.JsonView;
 import marryMe.dao.IDAOMariage;
 
 import marryMe.model.Mariage;
-
+import marryMe.model.Prestation;
 import marryMe.model.Views;
+
 import marryMe.web.dto.MariageDTO;
 import marryMe.web.dto.PrestationDTO;
+
 
 
 @RestController
@@ -38,7 +40,7 @@ public class MariageRessource {
 
 	@Autowired
 	private IDAOMariage daoMariage;
-	
+
 //	@Autowired
 //	private IDAOPrestation daoPrestation;
 
@@ -68,32 +70,28 @@ public class MariageRessource {
 	
 	public MariageDTO findDTOById(@PathVariable Integer id) {
 		Optional<Mariage> optMariage = daoMariage.findById(id);
+		
 
 		if (optMariage.isEmpty()) {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND);
 		}
 		
 		Mariage mariage = optMariage.get();
+	
 		MariageDTO mariageDTO = new MariageDTO();
-//		PrestationDTO prestationDTO = new PrestationDTO();
-		
+		PrestationDTO prestationdto= new PrestationDTO();
 		
 		mariageDTO.setIdMariage(mariage.getId());
 		mariageDTO.setDate(mariage.getDate());
 		mariageDTO.setTheme(mariage.getTheme());
 
-		
-		
-//		List<Prestation> prestations = daoPrestation.findAllByMariage(mariageDTO.getIdMariage());
-		List<PrestationDTO> prestationdto= new ArrayList<>();
-		
-//		for (Prestation prestation : prestations) {
+//		List<Prestation> prestations = mariage.getPrestations();
+//		for (Prestation p : prestations) {
 //		
-//			prestationDTO.setIdPrestation(prestation.getId());
-//			prestationDTO.setPrix(prestation.getPrix());
-//				
-//			prestationdto.add(prestationDTO);
 //		}
+		
+//		Optional<Prestation> prestations = daoPrestation.findById(mariageDTO.getIdMariage());
+		
 			mariageDTO.setPrestations(prestationdto);
 			return mariageDTO;
 	}
