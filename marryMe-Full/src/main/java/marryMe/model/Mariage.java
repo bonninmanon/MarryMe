@@ -44,6 +44,21 @@ public class Mariage  {
 	@JsonView(Views.ViewMariageWithPrestations.class)
 	private List<Prestation> prestations=new ArrayList<>();
 	
+
+	
+	@OneToOne(mappedBy ="mariage")
+	private Robe robe ;
+	
+	@OneToOne(mappedBy ="mariage")
+   private Salle salle;
+   
+	
+	@OneToOne(mappedBy ="mariage")
+   private Traiteur traiteur;
+   
+
+   
+	
 	@OneToOne
 	@JsonView(Views.ViewMariageWithClient.class)
 	private Client client;

@@ -12,5 +12,15 @@ public interface IDAOCompte extends JpaRepository<Compte,Integer>{
 	
 
 	Optional<Compte> findByLoginAndPassword(String mail, String mdp);
+	
+	
+//	
+//	@Query("INSERT INTO matiere (nom,prenom,mail,mdp) VALUES (?,?,?,?)")
+//
+//	Optional<Compte> insertByNomPrenomLoginAndPassword(String nom,String prenom,String mail, String mdp);
+//	
+//	
+	
+	
 
 }

@@ -55,6 +55,20 @@ public interface IDAOPrestation extends JpaRepository<Prestation,Integer>{
 	@Query("SELECT t from Traiteur t where t.id = :id")
 	public Optional<Traiteur> findTraiteurById(@Param("id") Integer idTraiteur);
 	
+	
+	@Query("SELECT s from Prestation s where s.id = :id")
+	public Optional<Prestation> findAllById(@Param("id") Integer idPrestation);
+	
+	
+//	
+//@Query("INSERT INTO robe(model, taille) VALUES (:model, :taille)")
+//
+//
+//   public Optional<Robe> insertById(String model,int taille);
+	
+//@Query("INSERT INTO matiere (libelle,quest) VALUES (?,?))")
+//public Optional<Prestation> findPresatationById(@Param("id") Integer idMariage);
+//
 }
 
 

@@ -3,6 +3,7 @@ package marryMe.model;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonView;
@@ -21,6 +22,9 @@ public class Salle extends Prestation{
 	@JsonView(Views.ViewBase.class)
     private  boolean  debout ;
     
+	
+	@OneToOne
+	private Mariage mariage;
     @Embedded
     @JsonView(Views.ViewBase.class)
     private Adresse adresse;

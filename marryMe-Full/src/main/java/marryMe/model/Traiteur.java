@@ -1,6 +1,7 @@
 package marryMe.model;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonView;
@@ -14,6 +15,10 @@ public class Traiteur extends Prestation {
 	private boolean vinDHonneur;
 	@JsonView(Views.ViewBase.class)
 	private Cuisine cuisine ;
+	
+	
+	@OneToOne
+	private Mariage mariage;
 	
 	public Traiteur () {};
 		

@@ -2,6 +2,7 @@ package marryMe.model;
 
 
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
@@ -15,6 +16,9 @@ public class Robe extends Prestation {
 	private String model ;
 	@JsonView(Views.ViewBase.class)
 	private int taille;
+	
+	@OneToOne
+	private Mariage mariage;
 		
 	
 	public Robe() {}

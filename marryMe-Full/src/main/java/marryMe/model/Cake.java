@@ -1,6 +1,7 @@
 package marryMe.model;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonView;
@@ -20,6 +21,8 @@ public class Cake extends Prestation {
 	private String Ganaches;
 	@JsonView(Views.ViewBase.class)
 	private Boolean alcoolisée;
+	
+
 	
 	public Cake () {};
 	

@@ -29,6 +29,18 @@ export class ConnexionHttpService {
     });
   }
 
+  create(connexion: Connexion): void {
+    this.http.post<Connexion>(this.serviceUrl,connexion).subscribe(resp => {
+      this.load();
+    });
+  }
  
+
+  private load(): void {
+    this.http.get<Connexion>(this.serviceUrl).subscribe(response => {
+      this.connexions = response;
+    });
+  }
+
   }
 

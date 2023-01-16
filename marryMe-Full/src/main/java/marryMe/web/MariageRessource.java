@@ -34,6 +34,7 @@ public class MariageRessource {
 
 	@Autowired
 	private IDAOMariage daoMariage;
+
 	
 //	@Autowired
 //	private IDAOInvite daoInvite;
@@ -53,6 +54,8 @@ public class MariageRessource {
 	@JsonView(Views.ViewMariage.class)
 	public Mariage findById(@PathVariable Integer id) {
 		Optional<Mariage> optMariage = daoMariage.findById(id);
+
+
 
 		if (optMariage.isEmpty()) {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND);
@@ -74,7 +77,13 @@ public class MariageRessource {
 
 		return mariage;
 	}
+	
+	////////////////////////////////////
+	
+	
+	
 
+	
 	@PutMapping("/{id}")
 	@JsonView(Views.ViewMariage.class)
 	public Mariage update(@PathVariable Integer id, @RequestBody Mariage mariage) {

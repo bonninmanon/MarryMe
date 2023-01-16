@@ -27,6 +27,7 @@ import marryMe.model.Compte;
 import marryMe.model.Views;
 import marryMe.model.Views.ViewBase;
 import marryMe.web.dto.AuthDTO;
+import marryMe.web.dto.InfoDTO;
 
 
 
@@ -68,6 +69,19 @@ public Compte findBy(@RequestBody AuthDTO authDTO) {
 
 	return optcompte.get();
 }
+	
+	
+//	@PostMapping("/InfoDTO")
+//	@JsonView(ViewBase.class)
+//public Compte create(@RequestBody InfoDTO infoDTO) {
+//	Optional<Compte>  optcompte = daoCompte.insertByNomPrenomLoginAndPassword(infoDTO.getNom(),infoDTO.getPrenom(),infoDTO.getMail(),infoDTO.getMdp());
+//	if (optcompte.isEmpty()){
+//		throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+//	}
+//
+//	return optcompte.get();
+//}
+	
 
 
 	@PostMapping("")
