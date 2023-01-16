@@ -153,7 +153,6 @@ public class MariageRessource {
 				robeDTO.setTaille(robe.getTaille());
 				robeDTO.setModel(robe.getModel());
 				robeDTO.setTaille(robe.getTaille());
-				robeDTO.setNom(robe.getNom());
 			    
 			    robeDto.add(robeDTO);
 			}

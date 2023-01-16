@@ -61,7 +61,7 @@ public class RobeRessource {
 		if (result.hasErrors()) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "La robe n'a pu être créé");
 		}
-
+		
 		robe = daoRobe.save(robe);
 
 		return robe;

@@ -18,6 +18,7 @@ import { HttpPanierService } from './panier/http-panier.service';
 import { HttpSalleService } from './salle/salle-http.service';
 import { HttpRobeService } from './robe/http-robe.service';
 import { HttpCakeService } from './cake/http-cake.service';
+import { MariageComponent } from './mariage/mariage.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { HttpCakeService } from './cake/http-cake.service';
     PanierComponent,
     SalleComponent,
     NavbarComponent,
+    MariageComponent,
 
 
   ],

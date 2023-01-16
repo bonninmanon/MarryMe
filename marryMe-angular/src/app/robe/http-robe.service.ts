@@ -19,8 +19,8 @@ export class HttpRobeService {
    }
 
 
-  create(prix: number, nom: string, taille: string): Observable<Robe> {
-    let robeDTO = {"nom": nom, "taille": taille, "prix": prix };
+  create(prix: number, model: string, taille: string): Observable<Robe> {
+    let robeDTO = {"model": model, "taille": taille, "prix": prix };
 
     return this.http.post<Robe>(this.serviceUrl, robeDTO);
   }
