@@ -15,38 +15,11 @@ public class Robe extends Prestation {
 	private String model ;
 	@JsonView(Views.ViewBase.class)
 	private String taille;
-	@JsonView(Views.ViewBase.class)
-	private String nom;
+
 		
 	
 	public Robe() {}
 	
-	
-		
-	
-	public Robe(double prix, String model, String taille, String nom) {
-		super(prix);
-		this.model = model;
-		this.taille = taille;
-		this.nom = nom;
-	}
-
-
-
-
-	public String getNom() {
-		return nom;
-	}
-
-
-
-
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
-
-
-
 
 	public Robe(double prix, String model, String taille) {
 		super(prix);
@@ -79,7 +52,7 @@ public class Robe extends Prestation {
 
 	@Override
 	public String toString() {
-		return "Robe [model=" + model + ", taille=" + taille + ", nom=" + nom + "]";
+		return "Robe [model=" + model + ", taille=" + taille + "]";
 	}
 
 
