@@ -9,7 +9,8 @@ import org.springframework.data.repository.query.Param;
 
 import marryMe.model.Beaute;
 import marryMe.model.Cake;
-import marryMe.model.Capture;
+
+
 import marryMe.model.Prestation;
 import marryMe.model.Robe;
 import marryMe.model.Salle;
@@ -37,12 +38,7 @@ public interface IDAOPrestation extends JpaRepository<Prestation,Integer>{
 	@Query("SELECT b from Beaute b where b.id = :id")
 	public Optional<Beaute> findBeauteById(@Param("id") Integer idBeaute);
 	
-	@Query("SELECT c from Capture c")
-	public List<Capture> findAllCapture();
-	
-	@Query("SELECT c from Capture c where c.id = :id")
-	public Optional<Capture> findCaptureById(@Param("id") Integer idCapture);
-	
+		
 	@Query("SELECT s from Salle s")
 	public List<Salle> findAllSalle();
 	
@@ -54,6 +50,15 @@ public interface IDAOPrestation extends JpaRepository<Prestation,Integer>{
 	
 	@Query("SELECT t from Traiteur t where t.id = :id")
 	public Optional<Traiteur> findTraiteurById(@Param("id") Integer idTraiteur);
+	
+//
+//	@Query("SELECT p from mariage_prestations p where p.mariage.id = :id")
+//	public List<Prestation> findAllByMariage(@Param("id")Integer idMariage);
+
+	
+	
+
+
 	
 }
 

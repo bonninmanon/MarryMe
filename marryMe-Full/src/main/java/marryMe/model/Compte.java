@@ -20,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
 
 
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @DiscriminatorColumn(name = "type_compte", columnDefinition = "enum('Admin', 'Client')")
 @JsonTypeInfo(
 		use = JsonTypeInfo.Id.NAME, 
@@ -33,7 +33,7 @@ import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
 public abstract class Compte {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	@JsonView(Views.ViewBase.class)
 	protected Integer id;
 	@Column(length = 25, nullable = false)

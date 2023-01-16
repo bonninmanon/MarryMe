@@ -6,6 +6,7 @@ import { ConnexionComponent } from './connexion/connexion.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { PanierComponent } from './panier/panier.component';
 import { RobeComponent } from './robe/robe.component';
+import { SalleComponent } from './salle/salle.component';
 
 const routes: Routes = [
   {path: "connexion", component: ConnexionComponent, pathMatch: 'full'},
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: "cake", component: CakeComponent},
   {path: "robe", component: RobeComponent},
   {path: "panier", component: PanierComponent},
+  {path: "salle", component: SalleComponent},
 ];
 
 @NgModule({

@@ -1,1 +1,75 @@
-<p>panier works!</p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Titre du document</title>
+  <link href='https://fonts.googleapis.com/css?family=Alex Brush' rel='stylesheet'>
+  </head>
+
+<body>
+
+
+    <div id="navPage">
+
+    <h1> Votre Panier </h1>
+      <button type="button">Ajouter</button>
+
+
+    </div>
+
+  <table border>
+    <thead>
+      <tr>
+        <th> # </th>
+        <th> Dénomination </th>
+        <th> Prix <br/> unitaire </th>
+        <th> Quantités </th>
+        <th> TVA </th>
+        <th> Prix total </th>
+        <th> Modifier/Supprimer </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td> 1 </td>
+        <td> Robe princesse </td>
+        <td> 2000 € </td>
+        <td> 1 </td>
+        <td> 20% </td>
+        <td> 2400 € </td>
+        <td>
+          <button type="button">Modifier</button>
+          <button type="button">Supprimer</button>
+        </td>
+      </tr>
+
+      <tr>
+        <td> 2 </td>
+        <td> Cake framboise </td>
+        <td> 200 € </td>
+        <td> 1 </td>
+        <td> 20% </td>
+        <td> 240€ </td>
+        <td>
+          <button type="button">Modifier</button>
+          <button type="button">Supprimer</button>
+        </td>
+      </tr>
+
+    </tbody>
+
+      <tfoot>
+        <td> <div class="prixTotal"> # </div> </td>
+        <td> <div class="prixTotal"> Total: </div> </td>
+        <td> <div class="prixTotal"> 2200 € </div> </td>
+        <td> <div class="prixTotal"> 2 </div> </td>
+        <td> <div class="prixTotal"> 20% </div> </td>
+        <td> <div class="prixTotal"> 2680 € </div> </td>
+        <td colspan="4"> </td>
+      </tfoot>
+
+  </table>
+
+</body>
+
+</html>

@@ -10,9 +10,12 @@ import { RobeComponent } from './robe/robe.component';
 import { CakeComponent } from './cake/cake.component';
 import { PanierComponent } from './panier/panier.component';
 import { FormsModule } from '@angular/forms';
-import { ConnexionHttpService } from './connexion/connexion-http.service';
+
 import { HttpClientModule } from '@angular/common/http';
 import { SalleComponent } from './salle/salle.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { HttpPanierService } from './panier/http-panier.service';
+import { HttpSalleService } from './salle/salle-http.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { SalleComponent } from './salle/salle.component';
     RobeComponent,
     CakeComponent,
     PanierComponent,
-    SalleComponent
+    SalleComponent,
+    NavbarComponent,
+
+
   ],
   imports: [
     BrowserModule,
@@ -31,7 +37,7 @@ import { SalleComponent } from './salle/salle.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [ConnexionHttpService],
+  providers: [HttpPanierService, HttpSalleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

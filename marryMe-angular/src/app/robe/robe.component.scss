@@ -1,0 +1,83 @@
+body {
+  background-size: 100% auto;
+  padding: 20px;
+}
+
+h1 {
+    margin-left: 10%;
+    font-family: 'Alex Brush';
+    font-size: 50px;
+  }
+  
+  h2 {
+    font-family: 'Alex Brush';
+    font-size: 30px;
+  }
+  
+  p {
+    margin-left: 2%;
+    font-family: Verdana;
+    font-style: oblique;
+    color: 35232a;
+    font-size: 13px;
+  }
+  
+  .cardimgtop {
+    width: 300px;
+    border-radius: 5px;
+  }
+  
+  .cardfooter {
+    background-color: #f4eeec;
+    height: 30px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  
+  .cardfooter p {
+    padding-top: 6px;
+  }
+  
+  .coll {
+    border: 1px solid #f4eeec;
+    border-radius: 5px;
+    background-color: white;
+  }
+  
+  .cardQT button{
+  margin-left: 7%;
+  
+  }
+
+  #choix {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 2%;
+  }
+  
+  #choix2 {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 2%;
+  }
+  
+  
+  .cardbody p b {
+    font-size: 130%;
+  }
+  
+  button {
+    border-color: #2fe5f3;
+    border-radius: 5px;
+    background: none;
+    color: #2fe5f3;
+    height: 30px;
+    margin-top: 20px;
+  }
+  
+  select {
+    border-color: #f4eeec;
+    background-color: #f4eeec;
+    border-radius: 3px;
+  }
+  

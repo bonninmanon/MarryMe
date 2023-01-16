@@ -1,10 +1,8 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
 import { Observable } from 'rxjs';
-import { Connexion } from 'src/model';
+import { Connexion } from '../model';
 import { AppConfigService } from '../app-config.service';
-
+import { HttpClient } from '@angular/common/http';
 
 
 @Injectable({
@@ -29,6 +27,4 @@ export class ConnexionHttpService {
     });
   }
 
- 
-  }
-
+}

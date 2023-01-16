@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { ConnexionHttpService } from '../connexion/connexion-http.service';
+import { HttpPanierService } from './http-panier.service';
+
 
 @Component({
   selector: 'panier,[panier]',
@@ -8,7 +9,7 @@ import { ConnexionHttpService } from '../connexion/connexion-http.service';
   styleUrls: ['./panier.component.scss']
 })
 export class PanierComponent {
-  constructor(private cS: ConnexionHttpService, private router: Router){
+  constructor(private cS: HttpPanierService, private router: Router){
     
   }
 }

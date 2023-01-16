@@ -1,5 +1,6 @@
 package marryMe.web;
 
+
 import java.util.List;
 import java.util.Optional;
 
@@ -22,8 +23,10 @@ import org.springframework.web.server.ResponseStatusException;
 import com.fasterxml.jackson.annotation.JsonView;
 
 import marryMe.dao.IDAOPrestation;
+
 import marryMe.model.Prestation;
 import marryMe.model.Views;
+
 
 @RestController
 @RequestMapping("/prestations")
@@ -32,9 +35,9 @@ public class PrestationRessource {
 
 	@Autowired
 	private IDAOPrestation daoPrestation;
-	
+//	
 //	@Autowired
-//	private IDAOMariage daoMariage;
+//	private IDAOPrestation daoCake;
 
 
 	@GetMapping("")
@@ -70,6 +73,32 @@ public class PrestationRessource {
 
 		return prestation;
 	}
+	
+//	@GetMapping("/{id}/detail")	
+//	public PrestationDTO findDTOById(@PathVariable Integer id) {
+//		Optional<Prestation> optPrestation = daoPrestation.findById(id);
+//
+//		if (optPrestation.isEmpty()) {
+//			throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+//		}
+//		
+//		Prestation prestation = optPrestation.get();
+//		PrestationDTO prestationDTO = new PrestationDTO();
+//
+//		
+//		prestationDTO.setIdPrestation(prestation.getId());
+//		prestationDTO.setPrix(prestation.getPrix());
+//		
+//		
+//
+//		CakeDTO cakedto= new CakeDTO();
+//		RobeDTO robedto= new RobeDTO();
+//
+//		prestationDTO.setCakes(cakedto);
+//		prestationDTO.setRobes(robedto);
+//			return prestationDTO;
+//	}
+
 
 	@PutMapping("/{id}")
 	@JsonView(Views.ViewPrestation.class)
