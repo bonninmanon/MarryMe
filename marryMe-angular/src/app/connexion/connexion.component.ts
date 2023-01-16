@@ -41,9 +41,9 @@ export class ConnexionComponent {
       this.formConnexion = resp;
       if(resp.type){
        
-        if(resp.type=='medecin') {
+        if(resp.type=='') {
           
-        this.router.navigate(["/medecin"]);
+        this.router.navigate([""]);
         }
       }
       
