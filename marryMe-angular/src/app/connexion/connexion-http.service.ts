@@ -1,17 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
 import { Observable } from 'rxjs';
-import { Connexion } from 'src/model';
 import { AppConfigService } from '../app-config.service';
-
-
+import { Connexion } from '../model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ConnexionHttpService {
-
+a
   serviceUrl: string;
   connexions: Connexion = new Connexion;
 
@@ -21,11 +18,11 @@ export class ConnexionHttpService {
    }
 
 
-  findByMailAndPassword(mail: String, mdp:string): Observable<Connexion> {
+  findByMailAndPassword(mail: String, password:string): Observable<Connexion> {
   
     return this.http.post<Connexion>(this.serviceUrl + "auth", {
-      "mail": mail,
-      "mdp": mdp
+      "mdp": mdp,
+      "password": password
     });
   }
 

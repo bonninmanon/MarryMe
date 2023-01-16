@@ -10,7 +10,7 @@ import { ConnexionHttpService } from './connexion-http.service';
 declare var $: any;
 
 @Component({
-  selector: 'connexion',
+  selector: 'connexion,[connexion]',
   templateUrl: './connexion.component.html',
   styleUrls: ['./connexion.component.scss']
 })
