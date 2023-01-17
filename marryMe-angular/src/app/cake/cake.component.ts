@@ -28,8 +28,9 @@ export class CakeComponent {
   {
     console.log(this.nombreInvite);
     if(this.nombreInvite=="petit"){this.prix = 250}
-    else if (this.nombreInvite=="big"){this.prix = 250}
-    else if (this.nombreInvite=="very big"){this.prix = 30000}
+    else if (this.nombreInvite=="moyen"){this.prix = 320}
+    else if (this.nombreInvite=="big"){this.prix = 500}
+    else if (this.nombreInvite=="very big"){this.prix = 750}
     //this.prix = (this.nombreInvite=="petit")? 250 : 400 ;
  
     

@@ -21,12 +21,15 @@
         <div class="u-custom-color-2 u-form u-form-1">
           <div  style="padding: 25px;" >
             <div class=" u-form-select ">
+              <h4 class="u-custom-font u-font-lobster">Nous réalisons votre gâteau sur mesure <p></p>si vous ne trouvez pas votre parfum demandez le!</h4>
               <label  class="u-custom-font u-font-lobster u-label u-label-2">Nombre d'invités - Tarifs</label>
               <div class="u-form-select-wrapper">
-                <select [(ngModel)]="nombreInvite" class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
-                  <option value="">Selectionner votre nombre d'invités</option>
-                  <option value="petit">10-59 personnes / 250€</option>
-                  <option value="big">60-100 personnes / 400€</option>
+                <select  [(ngModel)]="nombreInvite" class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
+                  <optgroup label="Selectionner votre nombre d'invités"></optgroup>
+                  <option value="petit">10-30 personnes / 180€</option>
+                  <option value="moyen">31-60 personnes / 320€</option>
+                  <option value="big">61-100 personnes / 500€</option>
+                  <option value=" very big"> > 100 personnes / 750€</option>
                 </select>
                 <svg class="u-caret u-caret-svg" version="1.1"  x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" >
                   <polygon class="st0" points="8,12 2,4 14,4 "></polygon></svg>

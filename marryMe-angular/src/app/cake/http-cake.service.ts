@@ -18,7 +18,7 @@ export class HttpCakeService {
    }
 
    create(prix: number,design: string,cremes: string,genoise: string,ganaches: string , nombreInvite: string, alcoolisée:boolean): Observable<Cake> {
-    let cakeDTO = {"design": design, "cremes": cremes, "genoise": genoise, "ganaches": ganaches  , "nombreInvite": nombreInvite,"alcoolisée": alcoolisée};
+    let cakeDTO = {"prix": prix,"design": design, "cremes": cremes, "genoise": genoise, "ganaches": ganaches  , "nombreInvite": nombreInvite,"alcoolisée": alcoolisée};
 
     return this.http.post<Cake>(this.serviceUrl, cakeDTO);
   }
