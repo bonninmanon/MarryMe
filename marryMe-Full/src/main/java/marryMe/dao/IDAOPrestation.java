@@ -3,14 +3,15 @@ package marryMe.dao;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import marryMe.model.Beaute;
 import marryMe.model.Cake;
-
-
+import marryMe.model.Compte;
 import marryMe.model.Prestation;
 import marryMe.model.Robe;
 import marryMe.model.Salle;
@@ -55,12 +56,8 @@ public interface IDAOPrestation extends JpaRepository<Prestation,Integer>{
 	@Query("SELECT p from Prestation p left join p.mariages m where m.id = :id")
 	public List<Prestation> findAllByMariage(@Param("id")Integer idMariage);
 
-	@Query("SELECT r from Robe r left join r.mariages m where m.id = :id")
-	public List<Robe> findAllRobeByMariage(@Param("id")Integer idMariage);
-
-	
-	
-
+	@Query("Select r from Robe r where r.model = :model and r.taille = :taille")
+	Optional<Robe> findByModelAndTaille(String model, String taille);
 
 	
 }

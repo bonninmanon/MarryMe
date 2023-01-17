@@ -10,6 +10,8 @@ import { HttpRobeService } from './http-robe.service';
 })
 
 export class RobeComponent {
+
+  idRobe: number;  
   prix: number;
   model: string;
   tailleElsa: string;
@@ -27,8 +29,9 @@ export class RobeComponent {
   constructor(private rS: HttpRobeService, private router: Router, private route: ActivatedRoute){
     this.route.params.subscribe(params => { 
         console.log(params);
-        this.idMariage = params['idMariage'];
+        this.idMariage = params['id'];
         console.log(this.idMariage);
+        this.rS.setMariageId(this.idMariage);
     });
   }
 
@@ -37,9 +40,10 @@ export class RobeComponent {
       this.prix= 2000 ;
       this.model="Elsa";
       this.taille = this.tailleElsa;
+
       console.log("prix:" +this.prix + " model:" +this.model + " taille:" + this.taille)
     
-      this.rS.create(this.prix, this.model, this.taille).subscribe(resp => {this.connecte = resp;})
+      this.rS.create(this.prix, this.model, this.taille).subscribe(resp => {this.connecte = resp;}) 
 
   }
 

@@ -27,7 +27,7 @@ import marryMe.dao.IDAOMariage;
 import marryMe.dao.IDAOPrestation;
 
 import marryMe.model.Cake;
-
+import marryMe.model.Compte;
 import marryMe.model.Mariage;
 import marryMe.model.Prestation;
 import marryMe.model.Robe;
@@ -54,9 +54,8 @@ public class MariageRessource {
 	@Autowired
 	private IDAOPrestation daoPrestation;
 	
-//	@Autowired
-//	private IDAOPrestation daoRobe;
-
+	@Autowired
+	private IDAOPrestation daoRobe;
 
 
 	@GetMapping("")
@@ -67,7 +66,7 @@ public class MariageRessource {
 		return mariages;
 	}
 
-	@GetMapping("/{id}")
+	/* @GetMapping("/{id}")
 	@JsonView(Views.ViewMariage.class)
 	public Mariage findById(@PathVariable Integer id) {
 		Optional<Mariage> optMariage = daoMariage.findById(id);
@@ -77,7 +76,7 @@ public class MariageRessource {
 		}
 
 		return optMariage.get();
-	}
+	} */
 
 	@GetMapping("/{id}/detail")		
 	
@@ -227,6 +226,97 @@ public class MariageRessource {
 		daoMariage.deleteById(id);
 	}
 	
+	
+	/*@PostMapping("/{id}/robe")
+	@JsonView(Views.ViewRobe.class)
+	public Robe create(@PathVariable Integer id, @Valid @RequestBody Robe robe, BindingResult result) {
+		if (result.hasErrors()) {
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "La robe n'a pas pu être créée");
+		}
+		
+		robe = daoRobe.save(robe);
+		
+		Optional<Mariage> optMariage = daoMariage.findById(id);
+		
+		if (optMariage.isPresent()) {
+			Mariage mar = optMariage.get();
+			
+			mar.getPrestations().add(robe);
+			daoMariage.save(mar);
+		}
+		
+		return robe;
+	} */
+	
+	/* @PostMapping("/{id}/robe")
+	@JsonView(Views.ViewRobe.class)
+	public Robe create(@PathVariable Integer id, @Valid @RequestBody Robe robe, BindingResult result) {
+		if (result.hasErrors()) {
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "La robe n'a pas pu être créée");
+		}
+		
+		Optional<Robe> optRobe = daoRobe.findByModelAndTaille(robe.getModel(), robe.getTaille()); */
+
+		/* if (optRobe.isPresent()) {
+			robe = daoRobe.save(robe);
+		} */
+		
+		/* if(!optRobe.isPresent()) {
+			Robe r = optRobe.get();
+			r = daoRobe.save(r);
+			
+		}
+
+		Optional<Mariage> optMariage = daoMariage.findById(id);
+		
+		if (optMariage.isPresent()) {
+			Mariage mar = optMariage.get();
+			
+			mar.getPrestations().add(robe);
+			daoMariage.save(mar);
+		}
+		
+		return robe;
+	}  */
+
+	@PostMapping("/{id}/robe")
+	@JsonView(Views.ViewRobe.class)
+	public Robe create(@PathVariable Integer id, @Valid @RequestBody Robe robe, BindingResult result) {
+		if (result.hasErrors()) {
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "La robe n'a pas pu être créée");
+		}
+		
+		Optional<Robe> optRobe = daoRobe.findByModelAndTaille(robe.getModel(), robe.getTaille());
+		
+		Optional<Mariage> optMariage = daoMariage.findById(id);
+		
+		// PAS de robe trouvée
+		if(optRobe.isEmpty()) {
+			robe = daoRobe.save(robe);
+		}
+		
+		// Robe trouvée
+		else if (optRobe.isPresent()){
+			robe = optRobe.get();
+		}
+
+		
+		if (optMariage.isPresent()) {
+			
+			try {
+				Mariage mar = optMariage.get();
+				
+				mar.getPrestations().add(robe);
+				daoMariage.save(mar);
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			
+		}
+		
+
+		return robe;
+	} 
 	
 	
 }

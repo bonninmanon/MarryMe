@@ -14,7 +14,7 @@ const routes: Routes = [
   {path: "inscription", component: InscriptionComponent},
   {path: "accueil", component: AccueilComponent},
   {path: "cake", component: CakeComponent},
-  {path: "robe/:idMariage", component: RobeComponent},
+  {path: "mariages/:id/robe", component: RobeComponent},
   {path: "panier", component: PanierComponent},
   {path: "salle", component: SalleComponent},
   {path: "mariage/:id", component: MariageComponent},
