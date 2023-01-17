@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Cake } from '../model';
 import { HttpCakeService } from './http-cake.service';
 
@@ -17,21 +17,25 @@ export class CakeComponent {
   nombreInvite:string;
   alcoolisee:string;
   message:string;
+  idMariage: number;
 
-
-  formCake: Cake = null;
   connecte: Cake= new Cake();
 
-  constructor(private cakeService: HttpCakeService, private router: Router) {
+  constructor(private cakeService: HttpCakeService, private router: Router, private route: ActivatedRoute){
+    this.route.params.subscribe(params => { 
+        console.log(params);
+        this.idMariage = params['id'];
+        console.log(this.idMariage);
+        this.cakeService.setMariageId(this.idMariage);
+    });
   }
-
   reservercake()
   {
     console.log(this.nombreInvite);
     if(this.nombreInvite=="10-30"){this.prix = 250}
     else if (this.nombreInvite=="31-60"){this.prix = 320}
     else if (this.nombreInvite=="61-100"){this.prix = 500}
-    else if (this.nombreInvite=="> 100"){this.prix = 750}
+    else if (this.nombreInvite==" >100 "){this.prix = 750}
     //this.prix = (this.nombreInvite=="petit")? 250 : 400 ;
  
     

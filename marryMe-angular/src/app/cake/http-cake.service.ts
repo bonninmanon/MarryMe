@@ -14,8 +14,8 @@ export class HttpCakeService {
 
 
   constructor(private http: HttpClient, private appConfig: AppConfigService) {
-    this.serviceUrl = appConfig.backEndUrl + "cakes/";
-   }
+    //this.serviceUrl = appConfig.backEndUrl + "cakes/";
+ } 
 
    setMariageId(id: number){
     this.serviceUrl = this.appConfig.backEndUrl + "mariages/"+id+"/cake";
