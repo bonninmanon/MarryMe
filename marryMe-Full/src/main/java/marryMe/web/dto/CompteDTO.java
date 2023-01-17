@@ -1,5 +1,7 @@
 package marryMe.web.dto;
 
+import java.time.LocalDate;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class CompteDTO {
@@ -15,6 +17,15 @@ public class CompteDTO {
 	
 	@JsonProperty("mdp")
 	private String mdp;
+	
+	@JsonProperty("date")
+	private LocalDate date;
+	
+	@JsonProperty("theme")
+	private String theme;
+	
+	
+
 	
 	public CompteDTO() {}
 
@@ -48,6 +59,22 @@ public class CompteDTO {
 
 	public void setMdp(String mdp) {
 		this.mdp = mdp;
+	}
+
+	public LocalDate getDate() {
+		return date;
+	}
+
+	public void setDate(LocalDate date) {
+		this.date = date;
+	}
+
+	public String getTheme() {
+		return theme;
+	}
+
+	public void setTheme(String theme) {
+		this.theme = theme;
 	}
 	
 	

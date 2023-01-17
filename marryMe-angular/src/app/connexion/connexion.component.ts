@@ -3,7 +3,8 @@ import { Component, ElementRef, Renderer2 } from '@angular/core';
 
 import { Router } from '@angular/router';
 import gsap from 'gsap';
-import { Connexion } from '../model';
+import { MariageHttpService } from '../mariage/mariage-http.service';
+import { Connexion, Mariage } from '../model';
 
 import { ConnexionHttpService } from './connexion-http.service';
 
@@ -21,14 +22,14 @@ export class ConnexionComponent {
   container: any;
   
 
-  constructor(private connexionService: ConnexionHttpService, private router: Router,private renderer: Renderer2, private el: ElementRef) {
+  constructor(private connexionService: ConnexionHttpService,private  mariageService: MariageHttpService, private router: Router,private renderer: Renderer2, private el: ElementRef) {
   }
 
   
 
 
-  inscription(nom :string,prenom:string, mail: String, mdp:string): void {
-  this.connexionService.creationCompte(nom,prenom,mail,mdp).subscribe (resp => {
+  inscription(nom :string,prenom:string, mail: String, mdp:string,date:Date,theme:string): void {
+  this.connexionService.creationCompte(nom,prenom,mail,mdp,date,theme).subscribe (resp => {
     confirm("'BRAVO VOUS ETES BIEN ENREGISTRE CHEZ NOUS VEUILLEZ VOUS CONNECTER SVP.....:)'")
     this.router.navigate(["/accueil"]);
     this.formConnexion = resp;
@@ -50,7 +51,9 @@ export class ConnexionComponent {
     });
   }
 
-
+  listMariage(): Array<Mariage> {
+    return this.mariageService.findAll();
+  }
 
   save(): void {
     this.connexionService.create(this.formConnexion);

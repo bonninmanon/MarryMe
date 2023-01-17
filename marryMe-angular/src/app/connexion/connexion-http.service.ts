@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Connexion } from '../model';
+import { Connexion, Mariage } from '../model';
 import { AppConfigService } from '../app-config.service';
 import { HttpClient } from '@angular/common/http';
 
@@ -28,13 +28,15 @@ export class ConnexionHttpService {
   }
 
   
-  creationCompte(nom :string,prenom:string, mail: String, mdp:string): Observable<Connexion> {
+  creationCompte(nom :string,prenom:string, mail: String, mdp:string,date:Date,theme:string): Observable<Connexion> {
   
     return this.http.post<Connexion>(this.serviceUrl + "crea", {
       "nom":nom,
       "prenom":prenom,
       "mail": mail,
-      "mdp": mdp
+      "mdp": mdp,
+      "theme":theme,
+      "date":date
     });
   }
 

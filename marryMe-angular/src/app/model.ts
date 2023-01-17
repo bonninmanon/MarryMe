@@ -16,15 +16,28 @@ export class Connexion {
     mail: string;
     mdp: string;
     type:string;
-   
+   mariage:Mariage;
 
-    constructor(id?: number, mail?: string,  mdp?: string ,type?:string,nom?:string,prenom?:string) {
+    constructor(id?: number, mail?: string,  mdp?: string ,type?:string,nom?:string,prenom?:string,mariage?:Mariage) {
         this.id = id;
         this.nom=nom;
         this.prenom=prenom;
         this.mail = mail;
         this.mdp = mdp;
         this.type=type;
+        this.mariage=mariage || new Mariage();
+    }
+}
+export class Mariage {
+    id: number;
+    date: Date;
+    theme:string;
+
+    constructor(id?: number, date?: Date,theme?: string){
+        
+        this.id = id;
+        this.date = date;
+        this.theme=theme;
     }
 }
 

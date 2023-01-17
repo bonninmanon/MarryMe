@@ -31,6 +31,26 @@ public class Client extends Compte{
 	}
 
 
+	public Adresse getAdresse() {
+		return adresse;
+	}
+
+
+	public void setAdresse(Adresse adresse) {
+		this.adresse = adresse;
+	}
+
+
+	public Mariage getMariage() {
+		return mariage;
+	}
+
+
+	public void setMariage(Mariage mariage) {
+		this.mariage = mariage;
+	}
+
+
 
 
 

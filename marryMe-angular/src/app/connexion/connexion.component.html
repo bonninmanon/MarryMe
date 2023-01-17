@@ -34,12 +34,20 @@
 										<input type="text" class="form-control" placeholder="Prénom..." id="id" name="prenom" [(ngModel)]="formConnexion.prenom"/>
 										<input type="text" class="form-control" placeholder="@utilisateur..."  id="id" name="mail" [(ngModel)]="formConnexion.mail"/>
 										<input type="text" class="form-control" placeholder="Mot de passe..."id="id" name="password" [(ngModel)]="formConnexion.mdp" />
-										<input type="text" class="form-control" placeholder="Confirmer mot de passe..."  />
+										<input type="date"  class="form-control" value="2023-01-20" id="id" name="date" [(ngModel)]="formConnexion.mariage.date"/>
+										<div class="form-group">
+											<label for="mariage">Mariage:</label>
+											<select class="form-control" name="theme" [(ngModel)]="formConnexion.mariage.theme">
+												<option value="">Sélectionner un théme</option>
+												<option style="color: black;" *ngFor="let mar of listMariage()"  [value]="mar.theme">{{mar.id}} - {{mar.theme}}</option>
+											</select>
+										</div>
+						
 										<label for="remember">
 											<input type="checkbox" class="form-check" id="privacy" />
 											J'accepte les termes de l'accord
 										</label>
-										<button class="formButton" (click)="inscription(formConnexion.nom,formConnexion.prenom,formConnexion.mail,formConnexion.mdp)">Inscription</button>
+										<button class="formButton" routerLink="/accueil" routerLinkActive="active" (click)="inscription(formConnexion.nom,formConnexion.prenom,formConnexion.mail,formConnexion.mdp,formConnexion.mariage.date,formConnexion.mariage.theme)">Inscription</button>
 									</form>
 								</div>
 							</div>

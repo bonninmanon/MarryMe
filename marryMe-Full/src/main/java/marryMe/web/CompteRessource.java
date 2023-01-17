@@ -23,8 +23,10 @@ import com.fasterxml.jackson.annotation.JsonView;
 
 
 import marryMe.dao.IDAOCompte;
+import marryMe.dao.IDAOMariage;
 import marryMe.model.Client;
 import marryMe.model.Compte;
+import marryMe.model.Mariage;
 import marryMe.model.Views;
 import marryMe.model.Views.ViewBase;
 import marryMe.web.dto.AuthDTO;
@@ -39,13 +41,18 @@ public class CompteRessource {
 
 	@Autowired
 	private IDAOCompte daoCompte;
+	@Autowired
+	private IDAOMariage daoMariage;
 	
 	@GetMapping("")
 	@JsonView(Views.ViewCompte.class)
-	public List<Compte> findAll() {
-		List<Compte> comptes = daoCompte.findAll();
+	public List<Mariage> findAll() {
+		//List<Compte> comptes = daoCompte.findAll();
+		
+		List<Mariage> mariages = daoMariage.findAll();
+		
 
-		return comptes;
+		return mariages;
 	}
 
 	@GetMapping("/{id}")
@@ -67,6 +74,8 @@ public Compte findBy(@RequestBody AuthDTO authDTO) {
 	if (optcompte.isEmpty()){
 		throw new ResponseStatusException(HttpStatus.NOT_FOUND);
 	}
+	
+	
 
 	return optcompte.get();
 }
@@ -84,16 +93,25 @@ public Compte findBy(@RequestBody AuthDTO authDTO) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Le compte n'a pu être créé");
 		}
 		
-		Compte compte=new Client();
+		Client compte=new Client();
+		Mariage mariage=new Mariage();
 		
 		compte.setNom(comptedto.getNom());
 		compte.setPrenom(comptedto.getPrenom());
 		compte.setMail(comptedto.getMail());
 		compte.setMdp(comptedto.getMdp());
 		
-		
-
 		compte = daoCompte.save(compte);
+		
+		mariage.setClient(compte);
+		
+		mariage.setDate(comptedto.getDate());
+		mariage.setTheme(comptedto.getTheme());
+	
+		mariage = daoMariage.save(mariage);
+		
+	
+		
 
 		return compte;
 	}

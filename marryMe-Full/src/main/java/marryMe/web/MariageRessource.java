@@ -27,7 +27,6 @@ import marryMe.dao.IDAOMariage;
 import marryMe.dao.IDAOPrestation;
 
 import marryMe.model.Cake;
-import marryMe.model.Compte;
 import marryMe.model.Mariage;
 import marryMe.model.Prestation;
 import marryMe.model.Robe;
@@ -56,6 +55,9 @@ public class MariageRessource {
 	
 	@Autowired
 	private IDAOPrestation daoRobe;
+
+	@Autowired
+	private IDAOPrestation daoCake;
 
 
 	@GetMapping("")
@@ -317,6 +319,47 @@ public class MariageRessource {
 
 		return robe;
 	} 
+	
+	@PostMapping("/{id}/cake")
+	@JsonView(Views.ViewCake.class)
+	public Cake create(@PathVariable Integer id, @Valid @RequestBody Cake cake, BindingResult result) {
+		if (result.hasErrors()) {
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Le Cake n'a pas pu être créée");
+		}
+		
+		Optional<Cake> optCake = daoCake.findByDesignlAndCremesAndGenoiseAndGanachesAndAlcooliseeAndNombreInvite(cake.getDesign(), cake.getCremes(), cake.getGenoise() ,cake.getGanaches() , cake.getAlcoolisee() , cake.getNombreInvite());
+		
+		Optional<Mariage> optMariage = daoMariage.findById(id);
+		
+		// PAS de robe trouvée
+		if(optCake.isEmpty()) {
+			cake = daoCake.save(cake);
+		}
+		
+		// Robe trouvée
+		else if (optCake.isPresent()){
+			cake = optCake.get();
+		}
+
+		
+		if (optMariage.isPresent()) {
+			
+			try {
+				Mariage mar = optMariage.get();
+				
+				mar.getPrestations().add(cake);
+				daoMariage.save(mar);
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			
+		}
+		
+
+		return cake;
+	} 
+	
+	
 	
 	
 }

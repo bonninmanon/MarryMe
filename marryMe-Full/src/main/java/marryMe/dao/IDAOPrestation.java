@@ -58,6 +58,11 @@ public interface IDAOPrestation extends JpaRepository<Prestation,Integer>{
 
 	@Query("Select r from Robe r where r.model = :model and r.taille = :taille")
 	Optional<Robe> findByModelAndTaille(String model, String taille);
+	
+	@Query("Select c from Cake c where c.design = :design and c.cremes = :cremes and c.genoise=:genoise and c.ganaches=:ganaches and c.alcoolisee=:alcoolisee and c.nombreInvite=:nombreInvite")
+	Optional<Cake> findByDesignlAndCremesAndGenoiseAndGanachesAndAlcooliseeAndNombreInvite(String design, String cremes, String genoise, String ganaches, Boolean alcoolisee,String nombreInvite);
+	
+
 
 	
 }
