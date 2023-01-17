@@ -7,11 +7,11 @@ public class CakeDTO {
 	private Integer idCake;
 	private double prixCake;
 	private String design;
-	private String Cremes;
-	private String Genoise;
-	private String Ganaches;
+	private String cremes;
+	private String genoise;
+	private String ganaches;
 	private Boolean alcoolisee;
-	private String NombreInvite;
+	private String nombreInvite;
 	
 		
 
@@ -21,18 +21,22 @@ public class CakeDTO {
 		}
 
 
+
+
 		public CakeDTO(Integer idCake, double prixCake, String design, String cremes, String genoise, String ganaches,
 				Boolean alcoolisee, String nombreInvite) {
 			super();
 			this.idCake = idCake;
 			this.prixCake = prixCake;
 			this.design = design;
-			Cremes = cremes;
-			Genoise = genoise;
-			Ganaches = ganaches;
+			this.cremes = cremes;
+			this.genoise = genoise;
+			this.ganaches = ganaches;
 			this.alcoolisee = alcoolisee;
-			NombreInvite = nombreInvite;
+			this.nombreInvite = nombreInvite;
 		}
+
+
 
 
 		public Integer getIdCake() {
@@ -40,9 +44,13 @@ public class CakeDTO {
 		}
 
 
+
+
 		public void setIdCake(Integer idCake) {
 			this.idCake = idCake;
 		}
+
+
 
 
 		public double getPrixCake() {
@@ -50,9 +58,13 @@ public class CakeDTO {
 		}
 
 
+
+
 		public void setPrixCake(double prixCake) {
 			this.prixCake = prixCake;
 		}
+
+
 
 
 		public String getDesign() {
@@ -60,42 +72,55 @@ public class CakeDTO {
 		}
 
 
+
+
 		public void setDesign(String design) {
 			this.design = design;
 		}
 
 
+
+
 		public String getCremes() {
-			return Cremes;
+			return cremes;
 		}
+
+
 
 
 		public void setCremes(String cremes) {
-			Cremes = cremes;
+			this.cremes = cremes;
 		}
+
+
 
 
 		public String getGenoise() {
-			return Genoise;
+			return genoise;
 		}
+
+
 
 
 		public void setGenoise(String genoise) {
-			Genoise = genoise;
+			this.genoise = genoise;
 		}
+
+
 
 
 		public String getGanaches() {
-			return Ganaches;
+			return ganaches;
 		}
+
+
 
 
 		public void setGanaches(String ganaches) {
-			Ganaches = ganaches;
+			this.ganaches = ganaches;
 		}
 
 
-	
 
 
 		public Boolean getAlcoolisee() {
@@ -103,22 +128,30 @@ public class CakeDTO {
 		}
 
 
+
+
 		public void setAlcoolisee(Boolean alcoolisee) {
 			this.alcoolisee = alcoolisee;
 		}
 
 
+
+
 		public String getNombreInvite() {
-			return NombreInvite;
+			return nombreInvite;
 		}
+
+
 
 
 		public void setNombreInvite(String nombreInvite) {
-			NombreInvite = nombreInvite;
+			this.nombreInvite = nombreInvite;
 		}
 
 
-		
+
+
+
 
 
 	

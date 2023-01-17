@@ -17,6 +17,12 @@ export class HttpCakeService {
     this.serviceUrl = appConfig.backEndUrl + "cakes/";
    }
 
+   setMariageId(id: number){
+    this.serviceUrl = this.appConfig.backEndUrl + "mariages/"+id+"/cake";
+  
+   }
+
+
    create(prix: number,design: string,cremes: string,genoise: string,ganaches: string , nombreInvite: string, alcoolisee:boolean): Observable<Cake> {
     let cakeDTO = {"prix": prix,"design": design, "cremes": cremes, "genoise": genoise, "ganaches": ganaches  , "nombreInvite": nombreInvite,"alcoolisee": alcoolisee};
 

@@ -13,15 +13,15 @@ public class Cake extends Prestation {
 	@JsonView(Views.ViewBase.class)
 	private String design ;
 	@JsonView(Views.ViewBase.class)
-	private String Cremes;
+	private String cremes;
 	@JsonView(Views.ViewBase.class)
-	private String Genoise;
+	private String genoise;
 	@JsonView(Views.ViewBase.class)
-	private String Ganaches;
+	private String ganaches;
 	@JsonView(Views.ViewBase.class)
 	private Boolean alcoolisee;
 	@JsonView(Views.ViewBase.class)
-	private String NombreInvite;
+	private String nombreInvite;
 	
 	
 	public Cake () {}
@@ -31,11 +31,11 @@ public class Cake extends Prestation {
 			String nombreInvite) {
 		super(prix);
 		this.design = design;
-		Cremes = cremes;
-		Genoise = genoise;
-		Ganaches = ganaches;
+		this.cremes = cremes;
+		this.genoise = genoise;
+		this.ganaches = ganaches;
 		this.alcoolisee = alcoolisee;
-		NombreInvite = nombreInvite;
+		this.nombreInvite = nombreInvite;
 	}
 
 
@@ -50,35 +50,33 @@ public class Cake extends Prestation {
 
 
 	public String getCremes() {
-		return Cremes;
+		return cremes;
 	}
 
 
 	public void setCremes(String cremes) {
-		Cremes = cremes;
+		this.cremes = cremes;
 	}
 
 
 	public String getGenoise() {
-		return Genoise;
+		return genoise;
 	}
 
 
 	public void setGenoise(String genoise) {
-		Genoise = genoise;
+		this.genoise = genoise;
 	}
 
 
 	public String getGanaches() {
-		return Ganaches;
+		return ganaches;
 	}
 
 
 	public void setGanaches(String ganaches) {
-		Ganaches = ganaches;
+		this.ganaches = ganaches;
 	}
-
-
 
 
 	public Boolean getAlcoolisee() {
@@ -92,16 +90,14 @@ public class Cake extends Prestation {
 
 
 	public String getNombreInvite() {
-		return NombreInvite;
+		return nombreInvite;
 	}
 
 
 	public void setNombreInvite(String nombreInvite) {
-		NombreInvite = nombreInvite;
+		this.nombreInvite = nombreInvite;
 	}
 
-
-	
 
 	
 	
