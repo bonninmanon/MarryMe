@@ -31,6 +31,7 @@ export class Connexion {
 export class Robe extends Prestation{
     model: string;
     taille: string;
+prixRobe: any;
 
     constructor(id?: number, prix?: number, model?: string,  taille?: string){
         super(id,prix);
@@ -79,4 +80,12 @@ export class Cake extends Prestation{
         this.message=message;
         
     }
+}
+
+
+export class MariageDTO {
+    robes: Array<Robe>;
+    cakes: Array<Cake>;
+
+    constructor() { }
 }
