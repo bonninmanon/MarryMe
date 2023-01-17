@@ -21,7 +21,9 @@ import org.springframework.web.server.ResponseStatusException;
 
 import com.fasterxml.jackson.annotation.JsonView;
 
+import marryMe.dao.IDAOMariage;
 import marryMe.dao.IDAOPrestation;
+import marryMe.model.Mariage;
 import marryMe.model.Robe;
 
 import marryMe.model.Views;
@@ -33,6 +35,9 @@ public class RobeRessource {
 	
 	@Autowired
 	private IDAOPrestation daoRobe;
+	
+	@Autowired
+	private IDAOMariage daoMariage;
 
 	@GetMapping("")
 	@JsonView(Views.ViewRobe.class)
@@ -63,6 +68,18 @@ public class RobeRessource {
 		}
 		
 		robe = daoRobe.save(robe);
+		
+		 // TODO example, à déplacer ensuite au bon endroit ... (mariage peut-être ? )
+		// TODO dans cet example, on récupère un Mariage id qui existe
+		Optional<Mariage> optMariage = daoMariage.findById(2);
+		
+		if (optMariage.isPresent()) {
+			Mariage mariage = optMariage.get();
+			
+			mariage.getPrestations().add(robe);
+			daoMariage.save(mariage);
+		}
+		
 
 		return robe;
 	}
