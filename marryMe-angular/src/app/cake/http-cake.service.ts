@@ -17,8 +17,8 @@ export class HttpCakeService {
     this.serviceUrl = appConfig.backEndUrl + "cakes/";
    }
 
-   create(prix: number,design: string,cremes: string,genoise: string,ganaches: string , nombreInvite: string, alcoolisée:boolean): Observable<Cake> {
-    let cakeDTO = {"prix": prix,"design": design, "cremes": cremes, "genoise": genoise, "ganaches": ganaches  , "nombreInvite": nombreInvite,"alcoolisée": alcoolisée};
+   create(prix: number,design: string,cremes: string,genoise: string,ganaches: string , nombreInvite: string, alcoolisee:boolean): Observable<Cake> {
+    let cakeDTO = {"prix": prix,"design": design, "cremes": cremes, "genoise": genoise, "ganaches": ganaches  , "nombreInvite": nombreInvite,"alcoolisee": alcoolisee};
 
     return this.http.post<Cake>(this.serviceUrl, cakeDTO);
   }

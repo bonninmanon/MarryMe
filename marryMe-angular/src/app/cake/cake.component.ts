@@ -15,7 +15,8 @@ export class CakeComponent {
   genoise: string;
   ganaches: string;
   nombreInvite:string;
-  alcoolisée:boolean;
+  alcoolisee:string;
+  message:string;
 
 
   formCake: Cake = null;
@@ -27,16 +28,16 @@ export class CakeComponent {
   reservercake()
   {
     console.log(this.nombreInvite);
-    if(this.nombreInvite=="petit"){this.prix = 250}
-    else if (this.nombreInvite=="moyen"){this.prix = 320}
-    else if (this.nombreInvite=="big"){this.prix = 500}
-    else if (this.nombreInvite=="very big"){this.prix = 750}
+    if(this.nombreInvite=="10-30"){this.prix = 250}
+    else if (this.nombreInvite=="31-60"){this.prix = 320}
+    else if (this.nombreInvite=="61-100"){this.prix = 500}
+    else if (this.nombreInvite=="> 100"){this.prix = 750}
     //this.prix = (this.nombreInvite=="petit")? 250 : 400 ;
  
     
-    console.log("prix:" +this.prix + " design:" +this.design + " cremes:" + this.cremes + " genoise:" + this.genoise  + " ganaches:" + this.ganaches    + " alcoolisée:" + this.alcoolisée+ " nombreInvite:" + this.nombreInvite  )
+    console.log("prix:" +this.prix + " design:" +this.design + " cremes:" + this.cremes + " genoise:" + this.genoise  + " ganaches:" + this.ganaches    + " alcoolisee:" + this.alcoolisee+ " nombreInvite:" + this.nombreInvite  )
   
-    this.cakeService.create(this.prix, this.design, this.cremes, this.genoise, this.ganaches,this.nombreInvite,this.alcoolisée).subscribe(resp => {this.connecte = resp;})
+    this.cakeService.create(this.prix, this.design, this.cremes, this.genoise, this.ganaches,this.nombreInvite,(this.alcoolisee == "oui" ? true : false)).subscribe(resp => {this.connecte = resp;})
   }
 
 

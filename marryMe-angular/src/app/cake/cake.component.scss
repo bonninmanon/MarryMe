@@ -194,24 +194,18 @@
     color: inherit;
     font-size: inherit;
     font-family: inherit;
-    line-height: inherit;
-    letter-spacing: inherit;
-    text-transform: inherit;
-    font-style: inherit;
-    font-weight: inherit;
     border: 0 none transparent;
     outline-width: 0;
     margin: 0;
-    -webkit-text-decoration-skip: objects;
     font-style: initial;
     white-space: nowrap;
     -webkit-user-select: none;
         -ms-user-select: none;
             user-select: none;
-    vertical-align: middle;
     text-align: center;
     padding: 10px 30px;
-    align-self: flex-start;
+    align-self:center;
+    margin: auto;
   }
 
   .u-custom-color-2,

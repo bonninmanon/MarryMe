@@ -10,17 +10,19 @@ public class CakeDTO {
 	private String Cremes;
 	private String Genoise;
 	private String Ganaches;
-	private Boolean alcoolisée;
+	private Boolean alcoolisee;
 	private String NombreInvite;
+	
 		
-		
+
+
 		public CakeDTO() {
 			
 		}
 
 
 		public CakeDTO(Integer idCake, double prixCake, String design, String cremes, String genoise, String ganaches,
-				Boolean alcoolisée, String nombreInvite) {
+				Boolean alcoolisee, String nombreInvite) {
 			super();
 			this.idCake = idCake;
 			this.prixCake = prixCake;
@@ -28,7 +30,7 @@ public class CakeDTO {
 			Cremes = cremes;
 			Genoise = genoise;
 			Ganaches = ganaches;
-			this.alcoolisée = alcoolisée;
+			this.alcoolisee = alcoolisee;
 			NombreInvite = nombreInvite;
 		}
 
@@ -93,13 +95,16 @@ public class CakeDTO {
 		}
 
 
-		public Boolean getAlcoolisée() {
-			return alcoolisée;
+	
+
+
+		public Boolean getAlcoolisee() {
+			return alcoolisee;
 		}
 
 
-		public void setAlcoolisée(Boolean alcoolisée) {
-			this.alcoolisée = alcoolisée;
+		public void setAlcoolisee(Boolean alcoolisee) {
+			this.alcoolisee = alcoolisee;
 		}
 
 

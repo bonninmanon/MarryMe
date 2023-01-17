@@ -64,17 +64,19 @@ export class Cake extends Prestation{
     genoise: string;
     ganaches: string;
     nombreInvite:String;
-    alcoolisée:boolean;
+    alcoolisee:boolean;
+    message:string;
     
 
-    constructor(id?: number, prix?: number, design?: string,  cremes?: string, genoise?: string,  ganaches?: string, nombreInvite?: String,  alcoolisée?: boolean){
+    constructor(id?: number, prix?: number, design?: string,  cremes?: string, genoise?: string,  ganaches?: string, nombreInvite?: String,  alcoolisee?: boolean, message?:string){
         super(id,prix);
         this.design=design;
         this.cremes= cremes;
         this.genoise= genoise;
         this.ganaches= ganaches;
         this.nombreInvite= nombreInvite;
-        this.alcoolisée=alcoolisée;
+        this.alcoolisee=alcoolisee;
+        this.message=message;
         
     }
 }

@@ -53,6 +53,9 @@ public class MariageRessource {
 	
 	@Autowired
 	private IDAOPrestation daoPrestation;
+	
+//	@Autowired
+//	private IDAOPrestation daoRobe;
 
 
 
@@ -134,7 +137,7 @@ public class MariageRessource {
 				
 				cakeDTO.setIdCake(cake.getId());
 				cakeDTO.setPrixCake(cake.getPrix());
-				cakeDTO.setAlcoolisée(cake.getAlcoolisée());
+				cakeDTO.setAlcoolisee(cake.getAlcoolisee());
 				cakeDTO.setCremes(cake.getCremes());
 				cakeDTO.setDesign(cake.getDesign());
 				cakeDTO.setGenoise(cake.getGenoise());
@@ -142,6 +145,7 @@ public class MariageRessource {
 				cakeDTO.setNombreInvite(cake.getNombreInvite());
 			    
 			    cakeDto.add(cakeDTO);
+			 
 			}
 			
 			if(prestation instanceof Robe robe) {
@@ -155,6 +159,8 @@ public class MariageRessource {
 				robeDTO.setTaille(robe.getTaille());
 			    
 			    robeDto.add(robeDTO);
+			    
+			    
 			}
 			
 			if(prestation instanceof Salle salle) {
@@ -167,7 +173,8 @@ public class MariageRessource {
 				salleDTO.setCapacite(salle.getCapacite());
 			    
 				salleDto.add(salleDTO);
-			}
+				
+							}
 			
 			if(prestation instanceof Traiteur traiteur) {
 				
@@ -186,7 +193,7 @@ public class MariageRessource {
 		return mariageDTO;
 	}
 
-
+	
 	@PostMapping("")
 	@JsonView(Views.ViewMariage.class)
 	public Mariage create(@Valid @RequestBody Mariage mariage, BindingResult result) {

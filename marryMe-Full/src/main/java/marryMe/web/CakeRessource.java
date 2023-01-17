@@ -21,10 +21,11 @@ import org.springframework.web.server.ResponseStatusException;
 
 import com.fasterxml.jackson.annotation.JsonView;
 
+import marryMe.dao.IDAOMariage;
 import marryMe.dao.IDAOPrestation;
 import marryMe.model.Cake;
-
 import marryMe.model.Views;
+
 
 @RestController
 @RequestMapping("/cakes")
@@ -33,6 +34,8 @@ public class CakeRessource {
 	
 	@Autowired
 	private IDAOPrestation daoCake;
+	
+	
 
 	@GetMapping("")
 	@JsonView(Views.ViewCake.class)
@@ -87,4 +90,6 @@ public class CakeRessource {
 
 		daoCake.deleteById(id);
 	}
+
+	
 }
