@@ -12,9 +12,15 @@ export class HttpSalleService {
 
     serviceUrl: string;
     salles: Array<Salle> = new Array<Salle>();
+
+
+    setMariageId(id: number){
+      this.serviceUrl = this.appConfig.backEndUrl + "mariages/"+id+"/salle";
+    
+     }
   
     constructor(private http: HttpClient, private appConfig: AppConfigService) {
-      this.serviceUrl = appConfig.backEndUrl + "salle/";
+      this.serviceUrl = appConfig.backEndUrl + "salles";
      }
   load() {
     throw new Error('Method not implemented.');
@@ -28,11 +34,18 @@ export class HttpSalleService {
       return this.http.get<Salle>(this.serviceUrl + id);
     }
   
-    create(salle: Salle): void {
+    create(prix: number, nom: string, capacite: number): Observable<Salle> {
+      let salleDTO = {"prix": prix, "nom": nom, "capacite": capacite };
+  
+      return this.http.post<Salle>(this.serviceUrl, salleDTO);
+    }
+
+
+    /*create(salle: Salle): void {
       this.http.post<Salle>(this.serviceUrl, salle).subscribe(resp => {
         this.load();
       });
-    }
+    }*/
   
     update(salle: Salle): void {
       this.http.put<Salle>(this.serviceUrl + salle.id, salle).subscribe(resp => {

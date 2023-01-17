@@ -57,6 +57,8 @@ public class MariageRessource {
 	private IDAOPrestation daoRobe;
 
 	@Autowired
+	private IDAOPrestation daoSalle;
+	@Autowired
 	private IDAOPrestation daoCake;
 
 
@@ -359,7 +361,44 @@ public class MariageRessource {
 		return cake;
 	} 
 	
-	
+	@PostMapping("/{id}/salle")
+	@JsonView(Views.ViewSalle.class)
+	public Salle create(@PathVariable Integer id, @Valid @RequestBody Salle salle, BindingResult result) {
+		if (result.hasErrors()) {
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "La salle n'a pas pu être créée");
+		}
+		
+		Optional<Salle> optSalle = daoSalle.findByNom(salle.getNom());
+		
+		Optional<Mariage> optMariage = daoMariage.findById(id);
+		
+		// PAS de robe trouvée
+		if(optSalle.isEmpty()) {
+			salle = daoSalle.save(salle);
+		}
+		
+		// Robe trouvée
+		else if (optSalle.isPresent()){
+			salle = optSalle.get();
+		}
+
+		
+		if (optMariage.isPresent()) {
+			
+			try {
+				Mariage mar = optMariage.get();
+				
+				mar.getPrestations().add(salle);
+				daoMariage.save(mar);
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			
+		}
+		
+
+		return salle;
+	} 
 	
 	
 }

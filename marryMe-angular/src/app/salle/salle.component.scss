@@ -7,7 +7,14 @@
     color: #828282;
     background: #fff;
   }
-  
+  button {
+    border-color: #75de1f;
+    border-radius: 5px;
+    background: none;
+    color: #f32fcc;
+    height: 30px;
+    margin-top: 20px;
+  }
   #page {
     position: relative;
     overflow-x: hidden;
@@ -17,23 +24,7 @@
     -o-transition: 0.5s;
     transition: 0.5s;
   }
-  .offcanvas #page {
-    overflow: hidden;
-    position: absolute;
-  }
-  .offcanvas #page:after {
-    -webkit-transition: 2s;
-    -o-transition: 2s;
-    transition: 2s;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 101;
-    background: rgba(0, 0, 0, 0.7);
-    content: "";
-  }
+  
   
   a {
     color: #F14E95;
@@ -51,14 +42,14 @@
     margin-bottom: 20px;
   }
   
-  h1, h2, h3, h4, h5, h6, figure {
-    color: #000;
+  h2, h3, h4, h5, h6, figure {
+    color: rgb(15, 245, 207);
     font-family: "Work Sans", Arial, sans-serif;
     font-weight: 400;
     margin: 0 0 20px 0;
   }
   
-  ::-webkit-selection {
+ /* ::-webkit-selection {
     color: #fff;
     background: #F14E95;
   }
@@ -88,7 +79,7 @@
     width: 100%;
     float: left;
     position: relative;
-  }
+  }*/
   
   
   #fh5co-gallery-list {
@@ -135,7 +126,7 @@
     width: 100%;
     display: block;
   }
-  #fh5co-gallery-list li a:before {
+ /* #fh5co-gallery-list li a:before {
     position: absolute;
     top: 0;
     left: 0;
@@ -154,7 +145,7 @@
   }
   #fh5co-gallery-list li a:hover:before {
     background: rgba(0, 0, 0, 0.5);
-  }
+  }*/
   #fh5co-gallery-list li a .case-studies-summary {
     width: auto;
     bottom: 2em;
@@ -199,7 +190,7 @@
     }
   }
   
-  #map {
+ /* #map {
     width: 100%;
     height: 500px;
     position: relative;
@@ -208,33 +199,9 @@
     #map {
       height: 200px;
     }
-  }
+  }*/
   
-  .fh5co-social-icons {
-    margin: 0;
-    padding: 0;
-  }
-  .fh5co-social-icons li {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: -moz-inline-stack;
-    display: inline-block;
-    zoom: 1;
-    *display: inline;
-  }
-  .fh5co-social-icons li a {
-    display: -moz-inline-stack;
-    display: inline-block;
-    zoom: 1;
-    *display: inline;
-    color: #F14E95;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-  .fh5co-social-icons li a i {
-    font-size: 20px;
-  }
+ 
   
   
   form label {
@@ -268,7 +235,7 @@
       font-size: 40px;
     }
   }
-  .fh5co-heading p {
+ .fh5co-heading p {
     font-size: 18px;
     line-height: 1.5;
     color: #828282;
@@ -279,22 +246,12 @@
     letter-spacing: 2px;
     font-weight: 600;
     color: rgba(0, 0, 0, 0.4);
-  }
+  } 
   
   
+ 
   
-  @media screen and (max-width: 768px) {
-    #fh5co-footer .copyright .pull-left,
-    #fh5co-footer .copyright .pull-right {
-      float: none !important;
-      text-align: center;
-    }
-  }
-  #fh5co-footer .copyright .block {
-    display: block;
-  }
-  
-  .owl-carousel .owl-controls .owl-dot span {
+  /*.owl-carousel .owl-controls .owl-dot span {
     background: #e6e6e6;
   }
   .owl-carousel .owl-controls .owl-dot span:hover, .owl-carousel .owl-controls .owl-dot span:focus {
@@ -307,7 +264,7 @@
     background: transparent;
     border: 2px solid #F14E95;
   }
-  
+  */
   
   .uppercase {
     font-size: 14px;
@@ -317,46 +274,9 @@
     text-transform: uppercase;
   }
   
-  .gototop {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 999;
-    opacity: 0;
-    visibility: hidden;
-    -webkit-transition: 0.5s;
-    -o-transition: 0.5s;
-    transition: 0.5s;
-  }
-  .gototop.active {
-    opacity: 1;
-    visibility: visible;
-  }
-  .gototop a {
-    width: 50px;
-    height: 50px;
-    display: table;
-    background: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    text-align: center;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    -ms-border-radius: 4px;
-    border-radius: 4px;
-  }
-  .gototop a i {
-    height: 50px;
-    display: table-cell;
-    vertical-align: middle;
-  }
-  .gototop a:hover, .gototop a:active, .gototop a:focus {
-    text-decoration: none;
-    outline: none;
-  }
+ 
   
-  
-  
-  .form-control {
+  /*.form-control {
     box-shadow: none;
     background: transparent;
     border: 2px solid rgba(0, 0, 0, 0.1);
@@ -385,12 +305,9 @@
     width: 100%;
     height: 100%;
     z-index: 9999;
-    /*background: url(../images/loader.gif) center no-repeat #fff;*/
+    background: url(../images/loader.gif) center no-repeat #fff;
   }
   
-  .js .animate-box {
-     opacity: 0;
-  }
-  
-  /*# sourceMappingURL=style.css.map */
+ 
+ # sourceMappingURL=style.css.map */
   

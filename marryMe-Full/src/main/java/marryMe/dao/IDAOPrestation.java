@@ -64,6 +64,8 @@ public interface IDAOPrestation extends JpaRepository<Prestation,Integer>{
 	
 
 
+	@Query("Select s from Salle s where s.nom = :nom ")
+	Optional<Salle> findByNom(String nom);
 	
 }
 
