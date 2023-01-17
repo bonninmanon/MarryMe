@@ -10,7 +10,6 @@ import { RobeComponent } from './robe/robe.component';
 import { CakeComponent } from './cake/cake.component';
 import { PrestationComponent } from './prestation/prestation.component';
 import { FormsModule } from '@angular/forms';
-
 import { HttpClientModule } from '@angular/common/http';
 import { SalleComponent } from './salle/salle.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -35,7 +34,7 @@ import { HttpDecouvrirService } from './decouvrir/http-decouvrir.service';
     NavbarComponent,
     MariageComponent,
     DecouvrirComponent,
-
+  
 
   ],
   imports: [
@@ -44,7 +43,7 @@ import { HttpDecouvrirService } from './decouvrir/http-decouvrir.service';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [HttpPanierService, HttpSalleService, HttpRobeService,HttpCakeService,HttpDecouvrirService],
+  providers: [HttpPrestationService, HttpSalleService, HttpRobeService,HttpCakeService,HttpDecouvrirService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
