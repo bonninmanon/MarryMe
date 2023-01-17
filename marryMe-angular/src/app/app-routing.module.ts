@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AccueilComponent } from './accueil/accueil.component';
 import { CakeComponent } from './cake/cake.component';
 import { ConnexionComponent } from './connexion/connexion.component';
+import { DecouvrirComponent } from './decouvrir/decouvrir.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { MariageComponent } from './mariage/mariage.component';
 import { PanierComponent } from './panier/panier.component';
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: "panier", component: PanierComponent},
   {path: "salle", component: SalleComponent},
   {path: "mariage/:id", component: MariageComponent},
+  {path: "decouvrir", component: DecouvrirComponent},
 ];
 
 @NgModule({

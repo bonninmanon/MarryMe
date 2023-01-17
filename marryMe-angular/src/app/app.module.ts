@@ -19,6 +19,8 @@ import { HttpSalleService } from './salle/salle-http.service';
 import { HttpRobeService } from './robe/http-robe.service';
 import { HttpCakeService } from './cake/http-cake.service';
 import { MariageComponent } from './mariage/mariage.component';
+import { DecouvrirComponent } from './decouvrir/decouvrir.component';
+import { HttpDecouvrirService } from './decouvrir/http-decouvrir.service';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,7 @@ import { MariageComponent } from './mariage/mariage.component';
     SalleComponent,
     NavbarComponent,
     MariageComponent,
+    DecouvrirComponent,
 
 
   ],
@@ -41,7 +44,7 @@ import { MariageComponent } from './mariage/mariage.component';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [HttpPanierService, HttpSalleService, HttpRobeService,HttpCakeService],
+  providers: [HttpPanierService, HttpSalleService, HttpRobeService,HttpCakeService,HttpDecouvrirService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
