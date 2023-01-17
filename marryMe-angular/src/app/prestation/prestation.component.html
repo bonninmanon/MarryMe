@@ -11,7 +11,7 @@
     <div id="navPage">
 
     <h1> Votre Panier </h1>
-      <button type="button">Ajouter</button>
+
 
 
     </div>
@@ -21,37 +21,36 @@
       <tr>
         <th> # </th>
         <th> Dénomination </th>
-        <th> Prix <br/> unitaire </th>
+        <th> Prix HT </th>
         <th> Quantités </th>
         <th> TVA </th>
-        <th> Prix total </th>
+        <th> Prix TTC </th>
         <th> Modifier/Supprimer </th>
       </tr>
     </thead>
 
     <tbody>
-      <tr>
-        <td> 1 </td>
-        <td> Robe princesse </td>
-        <td> 2000 € </td>
+
+      <tr *ngFor="let robe of mariageDto.robes">
+        <td>  </td>
+        <td> Robe {{robe.model}} - {{robe.taille}} </td>
+        <td> {{robe.prix}} </td>
         <td> 1 </td>
         <td> 20% </td>
-        <td> 2400 € </td>
+        <td> {{robe}} </td>
         <td>
-          <button type="button">Modifier</button>
           <button type="button">Supprimer</button>
         </td>
       </tr>
 
-      <tr>
-        <td> 2 </td>
-        <td> Cake framboise </td>
-        <td> 200 € </td>
+      <tr *ngFor="let cake of mariageDto.cakes">
+        <td>  </td>
+        <td> Robe {{cake.design}} - {{cake.cremes}} - {{cake.genoise}} - {{cake.ganaches}} - {{cake.nombreInvite}}</td>
+        <td> {{cake.prix}} </td>
         <td> 1 </td>
         <td> 20% </td>
-        <td> 240€ </td>
+        <td> {{cake}} </td>
         <td>
-          <button type="button">Modifier</button>
           <button type="button">Supprimer</button>
         </td>
       </tr>

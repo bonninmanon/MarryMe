@@ -8,17 +8,19 @@ import { InscriptionComponent } from './inscription/inscription.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { RobeComponent } from './robe/robe.component';
 import { CakeComponent } from './cake/cake.component';
-import { PanierComponent } from './panier/panier.component';
+import { PrestationComponent } from './prestation/prestation.component';
 import { FormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
 import { SalleComponent } from './salle/salle.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { HttpPanierService } from './panier/http-panier.service';
+import { HttpPrestationService } from './prestation/http-prestation.service';
 import { HttpSalleService } from './salle/salle-http.service';
 import { HttpRobeService } from './robe/http-robe.service';
 import { HttpCakeService } from './cake/http-cake.service';
 import { MariageComponent } from './mariage/mariage.component';
+import { DecouvrirComponent } from './decouvrir/decouvrir.component';
+import { HttpDecouvrirService } from './decouvrir/http-decouvrir.service';
 
 @NgModule({
   declarations: [
@@ -28,10 +30,11 @@ import { MariageComponent } from './mariage/mariage.component';
     AccueilComponent,
     RobeComponent,
     CakeComponent,
-    PanierComponent,
+    PrestationComponent,
     SalleComponent,
     NavbarComponent,
     MariageComponent,
+    DecouvrirComponent,
 
 
   ],
@@ -41,7 +44,7 @@ import { MariageComponent } from './mariage/mariage.component';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [HttpPanierService, HttpSalleService, HttpRobeService,HttpCakeService],
+  providers: [HttpPanierService, HttpSalleService, HttpRobeService,HttpCakeService,HttpDecouvrirService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

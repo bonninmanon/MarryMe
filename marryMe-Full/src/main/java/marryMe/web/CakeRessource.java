@@ -21,7 +21,6 @@ import org.springframework.web.server.ResponseStatusException;
 
 import com.fasterxml.jackson.annotation.JsonView;
 
-import marryMe.dao.IDAOMariage;
 import marryMe.dao.IDAOPrestation;
 import marryMe.model.Cake;
 import marryMe.model.Views;
