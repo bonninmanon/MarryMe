@@ -68,16 +68,22 @@ public class CompteRessource {
 	}
 	
 	@PostMapping("/auth")
-	@JsonView(ViewBase.class)
-public Compte findBy(@RequestBody AuthDTO authDTO) {
+	@JsonView(Views.ViewClientWithMariage.class)
+public Client findBy(@RequestBody AuthDTO authDTO) {
 	Optional<Compte>  optcompte = daoCompte.findByLoginAndPassword(authDTO.getMail(),authDTO.getPassword());
 	if (optcompte.isEmpty()){
 		throw new ResponseStatusException(HttpStatus.NOT_FOUND);
 	}
+	Client compte=(Client) optcompte.get();
+	
+	
+	
+	
+	
 	
 	
 
-	return optcompte.get();
+	return compte;
 }
 	
 	

@@ -44,7 +44,7 @@ import { HttpDecouvrirService } from './decouvrir/http-decouvrir.service';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [HttpPanierService, HttpSalleService, HttpRobeService,HttpCakeService,HttpDecouvrirService],
+  providers: [HttpPrestationService, HttpSalleService, HttpRobeService,HttpCakeService,HttpDecouvrirService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
