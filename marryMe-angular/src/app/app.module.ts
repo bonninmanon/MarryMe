@@ -20,6 +20,7 @@ import { HttpCakeService } from './cake/http-cake.service';
 import { MariageComponent } from './mariage/mariage.component';
 import { DecouvrirComponent } from './decouvrir/decouvrir.component';
 import { HttpDecouvrirService } from './decouvrir/http-decouvrir.service';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { HttpDecouvrirService } from './decouvrir/http-decouvrir.service';
     NavbarComponent,
     MariageComponent,
     DecouvrirComponent,
+    FooterComponent,
   
 
   ],

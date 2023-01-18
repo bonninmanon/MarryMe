@@ -28,7 +28,7 @@ export class NavbarComponent {
    this.utilisateurc =this.utilisateurservice.getUtilisateur();
 
     console.log(this.utilisateurc);
-    this.router.navigate(["mariages/"+this.utilisateurc.id+"/cake"]);
+    this.router.navigate(["mariages/"+this.utilisateurc.mariage.id+"/cake"]);
 
   }
   passagerobe(){
@@ -36,7 +36,7 @@ export class NavbarComponent {
     this.utilisateurc =this.utilisateurservice.getUtilisateur();
  
      console.log(this.utilisateurc);
-     this.router.navigate(["mariages/"+this.utilisateurc.id+"/robe"]);
+     this.router.navigate(["mariages/"+this.utilisateurc.mariage.id+"/robe"]);
  
    }
    passagesalle(){
@@ -44,7 +44,7 @@ export class NavbarComponent {
     this.utilisateurc =this.utilisateurservice.getUtilisateur();
  
      console.log(this.utilisateurc);
-     this.router.navigate(["mariages/"+this.utilisateurc.id+"/salle"]);
+     this.router.navigate(["mariages/"+this.utilisateurc.mariage.id+"/salle"]);
  
    }
 
@@ -53,7 +53,7 @@ export class NavbarComponent {
     this.utilisateurc =this.utilisateurservice.getUtilisateur();
  
      console.log(this.utilisateurc);
-     this.router.navigate(["mariages/"+this.utilisateurc.id+"/detail"]);
+     this.router.navigate(["mariages/"+this.utilisateurc.mariage.id+"/detail"]);
  
    }
 
