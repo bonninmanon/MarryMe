@@ -400,5 +400,25 @@ public class MariageRessource {
 		return salle;
 	} 
 	
+
+	
+	@DeleteMapping("/{id}/robe/{idRobe}")
+	@JsonView(Views.ViewRobe.class)
+	public void deleteRobe(@PathVariable Integer id, @PathVariable Integer idRobe) {	
+		Optional<Mariage> optMariage = daoMariage.findById(id);
+		
+		if (optMariage.isPresent()) {
+			
+			try {
+				Mariage mar = optMariage.get();
+				
+				mar.getPrestations().removeIf(prestation -> prestation.getId() == idRobe);
+				daoMariage.save(mar);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+		}
+	} 
 	
 }

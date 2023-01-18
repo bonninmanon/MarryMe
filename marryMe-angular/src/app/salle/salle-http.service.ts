@@ -48,7 +48,7 @@ export class HttpSalleService {
     }*/
   
     update(salle: Salle): void {
-      this.http.put<Salle>(this.serviceUrl + salle.id, salle).subscribe(resp => {
+      this.http.put<Salle>(this.serviceUrl + salle.idSalle, salle).subscribe(resp => {
         this.load();
       });
     }
