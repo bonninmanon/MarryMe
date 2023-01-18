@@ -41,38 +41,39 @@ export class Mariage {
     }
 }
 
-export class Robe extends Prestation{
+export class Robe {
+    idRobe: number;
+    prixRobe: number;
     model: string;
     taille: string;
-prixRobe: any;
 
-    constructor(id?: number, prix?: number, model?: string,  taille?: string){
-        super(id,prix);
+    constructor(idRobe?: number, prixRobe?: number, model?: string,  taille?: string){
+        this.idRobe = idRobe;
+        this.prixRobe = prixRobe;
         this.model = model;
         this.taille = taille;
     }
 }
 
 export class Salle {
-    id: number;
-    prix:number;
+    idSalle: number;
+    prixSalle:number;
     nom: string;
     capacite: number;
-    debout: string;
    
-
-    constructor(id?: number, prix?: number,  nom?: string ,capacite?:number, debout?:string) {
-        this.id = id;
-        this.prix = prix;
+    constructor(idSalle?: number, prixSalle?: number,  nom?: string ,capacite?:number) {
+        this.idSalle = idSalle;
+        this.prixSalle = prixSalle;
         this.nom = nom;
         this.capacite=capacite;
-        this.debout=debout;
 
     }
 }
 
 
-export class Cake extends Prestation{
+export class Cake{
+    idCake: number;
+    prixCake: number;
     design: string;
     cremes: string;
     genoise: string;
@@ -80,10 +81,12 @@ export class Cake extends Prestation{
     nombreInvite:String;
     alcoolisee:boolean;
     message:string;
+
     
 
-    constructor(id?: number, prix?: number, design?: string,  cremes?: string, genoise?: string,  ganaches?: string, nombreInvite?: String,  alcoolisee?: boolean, message?:string){
-        super(id,prix);
+    constructor(idCake?: number, prixCake?: number, design?: string,  cremes?: string, genoise?: string,  ganaches?: string, nombreInvite?: String,  alcoolisee?: boolean, message?:string){
+        this.idCake= idCake;
+        this.prixCake = prixCake;
         this.design=design;
         this.cremes= cremes;
         this.genoise= genoise;
@@ -99,6 +102,6 @@ export class Cake extends Prestation{
 export class MariageDTO {
     robes: Array<Robe>;
     cakes: Array<Cake>;
-
+    salles: Array<Salle>;
     constructor() { }
 }

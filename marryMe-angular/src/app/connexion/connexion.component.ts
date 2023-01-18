@@ -7,6 +7,7 @@ import { MariageHttpService } from '../mariage/mariage-http.service';
 import { Connexion, Mariage } from '../model';
 
 import { ConnexionHttpService } from './connexion-http.service';
+import { UtilisateurService } from './utilisateur.service';
 
 declare var $: any;
 
@@ -22,7 +23,7 @@ export class ConnexionComponent {
   container: any;
   
 
-  constructor(private connexionService: ConnexionHttpService,private  mariageService: MariageHttpService, private router: Router,private renderer: Renderer2, private el: ElementRef) {
+  constructor(private utilisateurService: UtilisateurService,private connexionService: ConnexionHttpService,private  mariageService: MariageHttpService, private router: Router,private renderer: Renderer2, private el: ElementRef) {
   }
 
   
@@ -40,13 +41,14 @@ export class ConnexionComponent {
   verif(mail: string,mdp:string): void {
     this.connexionService.findByMailAndPassword(mail,mdp).subscribe(resp => {
       this.formConnexion = resp;
-      if(resp.type){
+      this.utilisateurService.setUtilisateur(resp);
+      
        
-        if(resp.type=='') {
+        if(resp.type=='client') {
           
-        this.router.navigate([""]);
+        this.router.navigate(["mariages/"+resp.mariage.id+"/robe"]);
         }
-      }
+      
       
     });
   }

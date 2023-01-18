@@ -13,11 +13,11 @@ import { SalleComponent } from './salle/salle.component';
 const routes: Routes = [
   {path: "connexion", component: ConnexionComponent, pathMatch: 'full'},
   {path: "inscription", component: InscriptionComponent},
-  {path: "accueil", component: AccueilComponent},
+  {path: "", component: AccueilComponent},
   {path: "mariages/:id/cake", component: CakeComponent},
   {path: "mariages/:id/robe", component: RobeComponent},
   {path: "mariages/:id/detail", component: PrestationComponent},
-  {path: "salle", component: SalleComponent},
+  {path: "mariages/:id/salle", component: SalleComponent},
   {path: "mariage/:id", component: MariageComponent},
   {path: "decouvrir", component: DecouvrirComponent},
 ];

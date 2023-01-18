@@ -12,13 +12,13 @@ import { HttpPrestationService } from './http-prestation.service';
 })
 export class PrestationComponent {
 
-
   connecte: Prestation = new Prestation();
   idMariage: number;
 
   prestationService: any;
   prestations: Array<any> = new Array<any>();
   mariageDto: MariageDTO = new MariageDTO();
+
 
   constructor(private pS: HttpPrestationService, private router: Router, private route: ActivatedRoute){
     this.route.params.subscribe(params => { 
@@ -45,11 +45,15 @@ export class PrestationComponent {
       }
     })
 
-
-    
   }
 
+  removeRobe(robe: any) {
+    let idx: number = this.mariageDto.robes.indexOf(robe);
 
- 
+    this.mariageDto.robes.splice(idx, 1);
+    this.pS.removeRobe(robe.idRobe).subscribe();
+  }
+    
+
 }
 
