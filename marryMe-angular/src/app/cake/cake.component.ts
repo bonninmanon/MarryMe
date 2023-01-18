@@ -48,5 +48,8 @@ export class CakeComponent {
   choixCake(designImgClic : string) {
        this.design=designImgClic;
   }
+  choixGenoise(genoiseImgClic : string) {
+    this.genoise=genoiseImgClic;
+  }
 
 }
