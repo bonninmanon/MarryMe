@@ -1,5 +1,5 @@
 .u-section-1 {
-    background-image: linear-gradient(0deg, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("assets/cake4.webp");
+    background-image: linear-gradient(0deg, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("assets/body-cake.jpg");
     background-position: 50% 50%;
   }
   
@@ -225,5 +225,64 @@
 
   }
 
+  .coll {
+    border: 1px solid #f4eeec;
+    border-radius: 5px;
+    background-color: white;
+  }
+  
+  .cardQT button{
+  margin-left: 7%;
+  
+  }
 
+  #choix {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 2%;
+  }
+  
+  #choix2 {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 2%;
+  }
+  
+  
+  .cardbody p b {
+    font-size: 130%;
+    
+    
+  }
 
+  img
+  {
+    width: 300px ;
+    height: 400px; ;
+  }
+
+  .cardimgtop {
+    width: 300px;
+    border-radius: 5px;
+  }
+  
+ 
+  
+  .cardfooter p {
+    padding-top: 6px;
+  }
+
+  h1 {
+    margin-left: 10%;
+    font-family: 'Alex Brush';
+    font-size: 50px;
+  }
+
+  p {
+    
+    text-align: center;
+  }
+
+  .cliquable {
+    cursor: pointer;
+  }

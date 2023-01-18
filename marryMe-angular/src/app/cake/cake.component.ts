@@ -44,5 +44,8 @@ export class CakeComponent {
     this.cakeService.create(this.prix, this.design, this.cremes, this.genoise, this.ganaches,this.nombreInvite,(this.alcoolisee == "oui" ? true : false)).subscribe(resp => {this.connecte = resp;})
   }
 
+  choixCake(designImgClic : string) {
+       this.design=designImgClic;
+  }
 
 }
