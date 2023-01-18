@@ -9,12 +9,14 @@
 
 <navbar></navbar>
     <div id="navPage">
-
+  
     <h1> Votre Panier </h1>
-
-
-
+     Panier de Monsieur et Madame: {{nom | uppercase}} <br/>
+     Thème du mariage: {{theme}}
+     
     </div>
+    <br/>
+    <br/>
 
   <table border>
     <thead>
@@ -66,7 +68,7 @@
       </tr>
 
     </tbody>
-
+           
       <tfoot>
         <td> <div class="prixTotal"> # </div> </td>
         <td> <div class="prixTotal"> Totaux: </div> </td>
@@ -78,6 +80,7 @@
 
   </table>
 
-</body>
 
+</body>
+<app-footer></app-footer>
 </html>

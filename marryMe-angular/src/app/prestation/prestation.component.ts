@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { NonNullableFormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { MariageDTO, Prestation, Robe } from '../model';
+import { UtilisateurService } from '../connexion/utilisateur.service';
+import { Connexion, MariageDTO, Prestation, Robe } from '../model';
 import { HttpPrestationService } from './http-prestation.service';
 
 
@@ -21,18 +22,22 @@ export class PrestationComponent {
   prestations: Array<any> = new Array<any>();
   mariageDto: MariageDTO = new MariageDTO();
   total: number = 0;
+  client:Connexion;
+  nom:string;
+  theme: string;
 
-
-  constructor(private pS: HttpPrestationService, private router: Router, private route: ActivatedRoute){
+  constructor(private utilisateurservice: UtilisateurService,private pS: HttpPrestationService, private router: Router, private route: ActivatedRoute){
     this.route.params.subscribe(params => { 
         console.log(params);
         this.idMariage = params['id'];
         console.log(this.idMariage);
         this.pS.setMariageId(this.idMariage);
 
+
         this.list();
     });
   }
+
 
   list() {
     this.pS.findDTOById(this.idMariage).subscribe(mariageDto => {
@@ -60,7 +65,9 @@ export class PrestationComponent {
        
       }
 
-        
+        this.client=this.utilisateurservice.getUtilisateur();
+        this.nom=this.client.nom;
+        this.theme=this.client.mariage.theme;
       
     })
 

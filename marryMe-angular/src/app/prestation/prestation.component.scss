@@ -50,7 +50,7 @@ body{
   }
 
 #navPage {
-  display: flex;
+  padding: 0;
   margin-left: 15%;
 }
 
@@ -59,7 +59,9 @@ body{
     font-weight: bold;
     font-size: 50px;
     color: black;
+  
   }
+
 
   #navPage button {
     width: 200px;
@@ -89,3 +91,4 @@ body{
   border-color: white;
   background-color: #777aa3cc;
   }
+
