@@ -421,4 +421,42 @@ public class MariageRessource {
 		}
 	} 
 	
+	@DeleteMapping("/{id}/cake/{idCake}")
+	@JsonView(Views.ViewCake.class)
+	public void deleteCake(@PathVariable Integer id, @PathVariable Integer idCake) {	
+		Optional<Mariage> optMariage = daoMariage.findById(id);
+		
+		if (optMariage.isPresent()) {
+			
+			try {
+				Mariage mar = optMariage.get();
+				
+				mar.getPrestations().removeIf(prestation -> prestation.getId() == idCake);
+				daoMariage.save(mar);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+		}
+	} 
+	
+	@DeleteMapping("/{id}/salle/{idSalle}")
+	@JsonView(Views.ViewSalle.class)
+	public void deleteSalle(@PathVariable Integer id, @PathVariable Integer idSalle) {	
+		Optional<Mariage> optMariage = daoMariage.findById(id);
+		
+		if (optMariage.isPresent()) {
+			
+			try {
+				Mariage mar = optMariage.get();
+				
+				mar.getPrestations().removeIf(prestation -> prestation.getId() == idSalle);
+				daoMariage.save(mar);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+		}
+	} 
+	
 }

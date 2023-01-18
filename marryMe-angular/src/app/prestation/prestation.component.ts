@@ -54,6 +54,20 @@ export class PrestationComponent {
     this.pS.removeRobe(robe.idRobe).subscribe();
   }
     
+  removeCake(cake: any) {
+    let idx: number = this.mariageDto.cakes.indexOf(cake);
 
+    this.mariageDto.cakes.splice(idx, 1);
+    this.pS.removeCake(cake.idCake).subscribe();
+  }
+
+  removeSalle(salle: any) {
+    let idx: number = this.mariageDto.salles.indexOf(salle);
+
+    this.mariageDto.salles.splice(idx, 1);
+    this.pS.removeSalle(salle.idSalle).subscribe();
+  }
+    
+    
 }
 

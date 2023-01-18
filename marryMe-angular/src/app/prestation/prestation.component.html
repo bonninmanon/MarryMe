@@ -48,7 +48,7 @@
         <td> 20% </td>
         <td> {{cake.prixCake * 1.2}} €</td>
         <td>
-          <button type="button">Supprimer</button>
+          <button (click)="removeCake(cake)" type="button">Supprimer</button>
         </td>
       </tr>
 
@@ -59,7 +59,7 @@
         <td> 20% </td>
         <td> {{salle.prixSalle * 1.2}} € </td>
         <td>
-          <button type="button">Supprimer</button>
+          <button (click)="removeSalle(salle)" type="button">Supprimer</button>
         </td>
       </tr>
 

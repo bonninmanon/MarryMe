@@ -31,6 +31,13 @@ export class HttpPrestationService {
     return this.http.delete<void>(this.serviceUrl + "/robe/" + id);
   }
 
+  removeCake(id: Number): Observable<void>{
 
-  
+    return this.http.delete<void>(this.serviceUrl + "/cake/" + id);
+  }
+
+  removeSalle(id: Number): Observable<void>{
+
+    return this.http.delete<void>(this.serviceUrl + "/salle/" + id);
+  }
 }
