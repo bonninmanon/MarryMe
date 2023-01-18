@@ -5,13 +5,13 @@
         <img src="assets/Marry-Me.png"> 
     </div>
         <ul id="menu">
-            <li><a (click)="passagerobe()">Robe</a></li>
-            <li><a (click)="passagecake()">Cake</a></li>
-            <li><a (click)="passagesalle()">Salle</a></li>
-            <li><a (click)="passagetraiteur()">Traiteur</a></li>
-            <li><a (click)="passagepanier()">Panier</a></li>
-            <li *ngIf="!utilisateurc"><a (click)="passageconnexion()">Connexion</a></li>
-            <li *ngIf="utilisateurc"><a  (click)="passageaccueil()">Déconnexion</a></li>
+            <li><a (click)="passagerobe()" class="cliquable">Robe</a></li>
+            <li><a (click)="passagecake()" class="cliquable">Cake</a></li>
+            <li><a (click)="passagesalle()" class="cliquable">Salle</a></li>
+            <li><a (click)="passagetraiteur()" class="cliquable">Traiteur</a></li>
+            <li><a (click)="passagepanier()" class="cliquable">Panier</a></li>
+            <li *ngIf="!utilisateurc" class="cliquable"><a (click)="passageconnexion()">Connexion</a></li>
+            <li *ngIf="utilisateurc" class="cliquable"><a  (click)="passageaccueil()">Déconnexion</a></li>
         </ul>
 </nav>
 
