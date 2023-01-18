@@ -16,11 +16,14 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HttpPrestationService } from './prestation/http-prestation.service';
 import { HttpSalleService } from './salle/salle-http.service';
 import { HttpRobeService } from './robe/http-robe.service';
+import { TraiteurComponent } from './traiteur/traiteur.component';
 import { HttpCakeService } from './cake/http-cake.service';
 import { MariageComponent } from './mariage/mariage.component';
 import { DecouvrirComponent } from './decouvrir/decouvrir.component';
 import { HttpDecouvrirService } from './decouvrir/http-decouvrir.service';
+import { TraiteurHttpService } from './traiteur/traiteur-http.service';
 import { FooterComponent } from './footer/footer.component';
+
 
 @NgModule({
   declarations: [
@@ -33,6 +36,7 @@ import { FooterComponent } from './footer/footer.component';
     PrestationComponent,
     SalleComponent,
     NavbarComponent,
+    TraiteurComponent,
     MariageComponent,
     DecouvrirComponent,
     FooterComponent,
@@ -45,7 +49,7 @@ import { FooterComponent } from './footer/footer.component';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [HttpPrestationService, HttpSalleService, HttpRobeService,HttpCakeService,HttpDecouvrirService],
+  providers: [HttpPrestationService, HttpSalleService, HttpRobeService,HttpCakeService,HttpDecouvrirService,TraiteurHttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

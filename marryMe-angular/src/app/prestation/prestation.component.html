@@ -30,8 +30,10 @@
 
     <tbody>
 
-      <tr *ngFor="let robe of mariageDto.robes">
-        <td>  </td>
+
+
+      <tr *ngFor="let robe of mariageDto.robes let index = index"> 
+        <td> {{index+1}} </td>
         <td> Robe de mariée {{robe.model}} - {{robe.taille}} </td>
         <td> {{robe.prixRobe}} €</td>
         <td> 20% </td>
@@ -41,8 +43,8 @@
         </td>
       </tr>
 
-      <tr *ngFor="let cake of mariageDto.cakes">
-        <td>  </td>
+      <tr *ngFor="let cake of mariageDto.cakes let index = index">
+        <td> {{ mariageDto.robes.length + index+1}} </td>
         <td> {{cake.design}} - {{cake.genoise}} </td>
         <td> {{cake.prixCake}} €</td>
         <td> 20% </td>
@@ -52,8 +54,8 @@
         </td>
       </tr>
 
-      <tr *ngFor="let salle of mariageDto.salles">
-        <td>  </td>
+      <tr *ngFor="let salle of mariageDto.salles let index = index">
+        <td> {{mariageDto.robes.length + mariageDto.cakes.length + index+1}} </td>
         <td> Salle {{salle.nom}} - {{salle.capacite}} personnes </td>
         <td> {{salle.prixSalle}} €</td>
         <td> 20% </td>
@@ -67,10 +69,10 @@
 
       <tfoot>
         <td> <div class="prixTotal"> # </div> </td>
-        <td> <div class="prixTotal"> Total: </div> </td>
-        <td> <div class="prixTotal"> 2200 € </div> </td>
+        <td> <div class="prixTotal"> Totaux: </div> </td>
+        <td> <div class="prixTotal"> {{ total }} € </div> </td>
         <td> <div class="prixTotal"> 20% </div> </td>
-        <td> <div class="prixTotal">  </div> </td>
+        <td> <div class="prixTotal"> {{ total * 1.2}} € </div> </td>
         <td colspan="4"> </td>
       </tfoot>
 

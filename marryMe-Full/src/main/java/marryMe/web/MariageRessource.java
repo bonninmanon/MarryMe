@@ -60,6 +60,8 @@ public class MariageRessource {
 	private IDAOPrestation daoSalle;
 	@Autowired
 	private IDAOPrestation daoCake;
+	@Autowired
+	private IDAOPrestation daoTraiteur;
 
 
 	@GetMapping("")
@@ -400,7 +402,44 @@ public class MariageRessource {
 		return salle;
 	} 
 	
+	@PostMapping("/{id}/traiteur")
+	@JsonView(Views.ViewTraiteur.class)
+	public Traiteur create(@PathVariable Integer id, @Valid @RequestBody Traiteur traiteur, BindingResult result) {
+		if (result.hasErrors()) {
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Le traiteur n'a pas pu être créée");
+		}
+		
+		Optional<Traiteur> optTraiteur = daoTraiteur.findByCuisine(traiteur.getCuisine());
+		
+		Optional<Mariage> optMariage = daoMariage.findById(id);
+		
+		if(optTraiteur.isEmpty()) {
+			traiteur = daoTraiteur.save(traiteur);
+		}
+		
+		else if (optTraiteur.isPresent()){
+			traiteur = optTraiteur.get();
+		}
 
+		
+		if (optMariage.isPresent()) {
+			
+			try {
+				Mariage mar = optMariage.get();
+				
+				mar.getPrestations().add(traiteur);
+				daoMariage.save(mar);
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			
+		}
+		
+
+		return traiteur;
+	} 
+
+	
 	
 	@DeleteMapping("/{id}/robe/{idRobe}")
 	@JsonView(Views.ViewRobe.class)
@@ -458,5 +497,25 @@ public class MariageRessource {
 			
 		}
 	} 
+	
+	@DeleteMapping("/{id}/salle/{idTraiteur}")
+	@JsonView(Views.ViewTraiteur.class)
+	public void deleteTraiteur(@PathVariable Integer id, @PathVariable Integer idTraiteur) {	
+		Optional<Mariage> optMariage = daoMariage.findById(id);
+		
+		if (optMariage.isPresent()) {
+			
+			try {
+				Mariage mar = optMariage.get();
+				
+				mar.getPrestations().removeIf(prestation -> prestation.getId() == idTraiteur);
+				daoMariage.save(mar);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+		}
+	} 
+	
 	
 }
