@@ -68,9 +68,12 @@ export class PrestationComponent {
 
   removeRobe(robe: any) {
     let idx: number = this.mariageDto.robes.indexOf(robe);
-
     this.mariageDto.robes.splice(idx, 1);
     this.pS.removeRobe(robe.idRobe).subscribe();
+    this.total -= robe.prixRobe;
+    
+
+    
   }
     
   removeCake(cake: any) {
@@ -78,6 +81,9 @@ export class PrestationComponent {
 
     this.mariageDto.cakes.splice(idx, 1);
     this.pS.removeCake(cake.idCake).subscribe();
+    this.total -= cake.prixCake;
+   
+    
   }
 
   removeSalle(salle: any) {
@@ -85,8 +91,17 @@ export class PrestationComponent {
 
     this.mariageDto.salles.splice(idx, 1);
     this.pS.removeSalle(salle.idSalle).subscribe();
+    this.total -= salle.prixSalle;
+      }
+    
+    
   }
-    
-    
-}
+
+ 
+
+
+
+
+  
+
 

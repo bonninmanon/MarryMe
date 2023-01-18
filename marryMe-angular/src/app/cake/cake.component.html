@@ -211,7 +211,8 @@
                 </div>
               </div>
             <div >
-              <button (click)="reservercake()" href="/cake" class="u-btn u-custom-font u-font-lobster u-button-style u-palette-2-light-2">Ajouter au panier</button>
+              <button  (click)="reservercake()" href="/cake" class="u-btn u-custom-font u-font-lobster u-button-style u-palette-2-light-2" (click)='isShowInfo = !isShowInfo' >Ajouter au panier</button>
+              <div *ngIf="isShowInfo"> <p>Merci! votre commande a bien été prise en compte</p> </div>   
             </div>
       </div>
     </div>

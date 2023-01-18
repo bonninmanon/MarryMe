@@ -20,6 +20,7 @@ export class CakeComponent {
   idMariage: number;
 
   connecte: Cake= new Cake();
+  isShowInfo: boolean;
 
   constructor(private cakeService: HttpCakeService, private router: Router, private route: ActivatedRoute){
     this.route.params.subscribe(params => { 
