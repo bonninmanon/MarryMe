@@ -13,14 +13,23 @@
 						<div class="formWrapper">
 							<div class="card" id="card">
 								<div class="card-header">
-									<div id="forLogin" class="form-header active" (click)="ngBeforeViewInit()">Se connecter</div>
+									<div id="forLogin" class="form-header active">Se connecter</div>
 
-									<div id="forRegister" class="form-header" (click)="ngAfterViewInit()" >S'inscrire</div>
+									<div id="forRegister" class="form-header" >S'inscrire</div>
 								</div>
 								<div class="card-body" id="formContainer" >
 									<form action="" id="loginForm">
-										<input type="text" class="form-control" placeholder="@Utilisateur" id="id" name="mail" [(ngModel)]="formConnexion.mail"/>
-										<input type="password" class="form-control" placeholder="Mot de passe" id="id" name="password" [(ngModel)]="formConnexion.mdp"/>
+										<input type="text" class="form-control" placeholder="@Utilisateur" id="id" name="mail" [(ngModel)]="formConnexion.mail" #mail="ngModel" required />
+
+
+										<div *ngIf="mail.invalid && (mail.dirty || mail.touched)" class="alert alert-danger" style="color:aqua;">
+											mail est requis
+										  </div>
+
+										<input type="password" class="form-control" placeholder="Mot de passe" id="id" name="password" [(ngModel)]="formConnexion.mdp" #password="ngModel" required/>
+										<div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger" style="color: aqua;">
+											password est requis
+										  </div>
 										<label for="remember">
 											<input type="checkbox" class="form-check" id="remember" />
 											Se Souvenir de moi
@@ -30,16 +39,45 @@
 									</form>
 
 									<form action="" id="registerForm" class="toggleForm">
-										<input type="text" class="form-control" placeholder="Nom..." id="id" name="nom" [(ngModel)]="formConnexion.nom" />
-										<input type="text" class="form-control" placeholder="Prénom..." id="id" name="prenom" [(ngModel)]="formConnexion.prenom"/>
-										<input type="text" class="form-control" placeholder="@utilisateur..."  id="id" name="mail" [(ngModel)]="formConnexion.mail"/>
-										<input type="text" class="form-control" placeholder="Mot de passe..."id="id" name="password" [(ngModel)]="formConnexion.mdp" />
-										<input type="date"  class="form-control" value="2023-01-20" id="id" name="date" [(ngModel)]="formConnexion.mariage.date"/>
+										<input type="text" class="form-control" placeholder="Nom..." id="id" name="nom" [(ngModel)]="formConnexion.nom" #nom="ngModel" required />
+										<div *ngIf="nom.invalid && (nom.dirty || nom.touched)" class="alert alert-danger" style="color:aqua;">
+											Nom est requis
+										  </div>
+										<input type="text" class="form-control" placeholder="Prénom..." id="id" name="prenom" [(ngModel)]="formConnexion.prenom" #prenom="ngModel" required/>
+										<div *ngIf="prenom.invalid && (prenom.dirty || prenom.touched)" class="alert alert-danger" style="color:aqua;">
+											Prenom est requis
+										  </div>
+
+										<input type="text" class="form-control" placeholder="@utilisateur..."  id="id" name="mail" [(ngModel)]="formConnexion.mail"  #mail="ngModel" required/>
+
+										<div *ngIf="mail.invalid && (mail.dirty || mail.touched)" class="alert alert-danger" style="color:aqua;">
+											mail est requis
+										  </div>
+
+										<input type="text" class="form-control" placeholder="Mot de passe..."id="id" name="password" [(ngModel)]="formConnexion.mdp" #password="ngModel" required />
+										<div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger" style="color: aqua;">
+											password est requis
+										  </div>
+
+										<input type="date"  class="form-control"  [min]="today" id="id" name="date" [(ngModel)]="formConnexion.mariage.date"  #date="ngModel" required />
+										
+										<div *ngIf="date.invalid && (date.dirty || date.touched)" class="alert alert-danger" style="color: aqua;">
+											la date est requise
+										  </div>
+										
 										<div class="form-group">
 											<label for="mariage">Mariage:</label>
-											<select class="form-control" name="theme" [(ngModel)]="formConnexion.mariage.theme">
-												<option value="">Sélectionner un théme</option>
-												<option style="color: black;" *ngFor="let mar of listMariage()"  [value]="mar.theme">{{mar.id}} - {{mar.theme}}</option>
+											<select class="form-control" name="theme" [(ngModel)]="formConnexion.mariage.theme" #theme="ngModel" required>
+												<div *ngIf="theme.invalid && (theme.dirty || theme.touched)" class="alert alert-danger" style="color: aqua;">
+													theme est requis
+												  </div>
+												<option  value="Clown" style="color: blueviolet;" >Clown</option>
+												<option value="Pirate" style="color: blueviolet;">Pirate</option>
+												<option value="Pilote" style="color: blueviolet;">Pilote</option>
+												<option value="Prisonnier" style="color: blueviolet;">Prisonnier</option>
+												<option value="Cafar" style="color: blueviolet;">Cafar</option>
+												
+											<!--	<option style="color: black;" *ngFor="let mar of listMariage()"  [value]="mar.theme">{{mar.id}} - {{mar.theme}}</option>-->
 											</select>
 										</div>
 						
@@ -47,7 +85,7 @@
 											<input type="checkbox" class="form-check" id="privacy" />
 											J'accepte les termes de l'accord
 										</label>
-										<button class="formButton" routerLink="/accueil" routerLinkActive="active" (click)="inscription(formConnexion.nom,formConnexion.prenom,formConnexion.mail,formConnexion.mdp,formConnexion.mariage.date,formConnexion.mariage.theme)">Inscription</button>
+										<button class="formButton" id="boutonInscription"  (click)="inscription(formConnexion.nom,formConnexion.prenom,formConnexion.mail,formConnexion.mdp,formConnexion.mariage.date,formConnexion.mariage.theme);">Inscription</button>
 									</form>
 								</div>
 							</div>

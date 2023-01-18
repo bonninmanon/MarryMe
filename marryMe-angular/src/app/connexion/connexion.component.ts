@@ -21,8 +21,8 @@ export class ConnexionComponent {
   formConnexion: Connexion = new Connexion();
   media: any;
   container: any;
-  
-
+  today = new Date().toISOString().split('T')[0];
+  selectedDate = new Date().toISOString().substring(0, 10);
   constructor(private utilisateurService: UtilisateurService,private connexionService: ConnexionHttpService,private  mariageService: MariageHttpService, private router: Router,private renderer: Renderer2, private el: ElementRef) {
   }
 
@@ -30,11 +30,10 @@ export class ConnexionComponent {
 
 
   inscription(nom :string,prenom:string, mail: String, mdp:string,date:Date,theme:string): void {
-  this.connexionService.creationCompte(nom,prenom,mail,mdp,date,theme).subscribe (resp => {
-    confirm("'BRAVO VOUS ETES BIEN ENREGISTRE CHEZ NOUS VEUILLEZ VOUS CONNECTER SVP.....:)'")
-    this.router.navigate(["/accueil"]);
-    this.formConnexion = resp;
-  })
+    this.connexionService.creationCompte(nom,prenom,mail,mdp,date + "",theme).subscribe (resp => {
+      confirm("'BRAVO VOUS ETES BIEN ENREGISTRE CHEZ NOUS VEUILLEZ VOUS CONNECTER SVP.....:)'")
+      this.el.nativeElement.querySelector('#forLogin').click();
+    })
 };
 
 
@@ -99,17 +98,6 @@ ngAfterViewInit() {
     }
   });
 
-}
-
-
-//pour glisser la page de inscription vers l'connexion 
-ngBeforeViewInit() {
-  const forlogin = this.el.nativeElement.querySelector('#forLogin');
-  const forRegister = this.el.nativeElement.querySelector('#forRegister');
-  const loginForm = this.el.nativeElement.querySelector('#loginForm');
-  const registerForm = this.el.nativeElement.querySelector('#registerForm');
-  const formContainer = this.el.nativeElement.querySelector('#formContainer');
-
   this.renderer.listen(forlogin, 'click', (e) => {
     e.preventDefault();
     this.renderer.removeClass(forRegister, 'active');
@@ -121,8 +109,7 @@ ngBeforeViewInit() {
       this.renderer.addClass(registerForm, 'toggleForm');
     }
   });
-  
- 
+
 }
 
 }

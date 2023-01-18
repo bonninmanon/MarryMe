@@ -28,7 +28,7 @@ export class ConnexionHttpService {
   }
 
   
-  creationCompte(nom :string,prenom:string, mail: String, mdp:string,date:Date,theme:string): Observable<Connexion> {
+  creationCompte(nom :string,prenom:string, mail: String, mdp:string,date:string,theme:string): Observable<Connexion> {
   
     return this.http.post<Connexion>(this.serviceUrl + "crea", {
       "nom":nom,

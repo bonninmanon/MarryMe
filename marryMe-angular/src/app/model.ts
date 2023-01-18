@@ -32,12 +32,12 @@ export class Mariage {
     id: number;
     date: Date;
     theme:string;
-
+    today = new Date().toISOString().split('T')[0];
     constructor(id?: number, date?: Date,theme?: string){
         
         this.id = id;
-        this.date = date;
-        this.theme=theme;
+        this.date = date ;
+        this.theme=theme || "Clown";
     }
 }
 
