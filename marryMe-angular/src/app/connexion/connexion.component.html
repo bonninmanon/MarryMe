@@ -19,15 +19,15 @@
 								</div>
 								<div class="card-body" id="formContainer" >
 									<form action="" id="loginForm">
-										<input type="text" class="form-control" placeholder="@Utilisateur" id="id" name="mail" [(ngModel)]="formConnexion.mail" #mail="ngModel" required />
+										<input type="text" class="form-control" placeholder="@Utilisateur" id="id" name="mailco" [(ngModel)]="formConnexion.mail" #mailco="ngModel" required />
 
 
-										<div *ngIf="mail.invalid && (mail.dirty || mail.touched)" class="alert alert-danger" style="color:aqua;">
+										<div *ngIf="mailco.invalid && (mailco.dirty || mail.touched)" class="alert alert-danger" style="color:aqua;">
 											mail est requis
 										  </div>
 
-										<input type="password" class="form-control" placeholder="Mot de passe" id="id" name="password" [(ngModel)]="formConnexion.mdp" #password="ngModel" required/>
-										<div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger" style="color: aqua;">
+										<input type="password" class="form-control" placeholder="Mot de passe" id="id" name="passwordco" [(ngModel)]="formConnexion.mdp" #passwordco="ngModel" required/>
+										<div *ngIf="passwordco.invalid && (passwordco.dirty || password.touched)" class="alert alert-danger" style="color: aqua;">
 											password est requis
 										  </div>
 										<label for="remember">
