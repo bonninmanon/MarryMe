@@ -47,6 +47,15 @@ export class NavbarComponent {
      this.router.navigate(["mariages/"+this.utilisateurc.mariage.id+"/salle"]);
  
    }
+   
+   passagetraiteur(){
+
+    this.utilisateurc =this.utilisateurservice.getUtilisateur();
+ 
+     console.log(this.utilisateurc);
+     this.router.navigate(["mariages/"+this.utilisateurc.mariage.id+"/traiteur"]);
+ 
+   }
 
    passagepanier(){
 

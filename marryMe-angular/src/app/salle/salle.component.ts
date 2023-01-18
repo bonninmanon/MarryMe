@@ -35,15 +35,17 @@ export class SalleComponent {
   constructor(private sS: HttpSalleService, private router: Router, private route: ActivatedRoute) {
     this.route.params.subscribe(params => { 
       console.log(params);
-      this.idMariage = params['idMariage'];
+      this.idMariage = params['id'];
       console.log(this.idMariage);
+      
+      this.sS.setMariageId(this.idMariage);
   });
 }
 
 Lapalmeraie(){
   
     this.prix= 6000 ;
-    this.nom="Lapalmeraie";
+    this.nom="La palmeraie";
     this.capacite = 1200;
     console.log("prix:" +this.prix + " nom:" +this.nom + " capacite:" + this.capacite)
   
@@ -53,7 +55,7 @@ Lapalmeraie(){
 
 DomainedelaGrave (){
     this.prix= 3500 ;
-    this.nom="DomainedelaGrave";
+    this.nom="Domaine de la Grave";
     this.capacite = 2000;
     console.log("prix:" +this.prix + " nom:" +this.nom + " capacite:" + this.capacite)
   
@@ -63,7 +65,7 @@ DomainedelaGrave (){
 
 DomaineLeSauvage(){
     this.prix= 4500 ;
-    this.nom="DomaineLeSauvage";
+    this.nom="Domaine Le Sauvage";
     this.capacite = 1600;
     console.log("prix:" +this.prix + " nom:" +this.nom + " capacite:" + this.capacite)
   
@@ -81,7 +83,7 @@ LaCroiseedesPossibles(){
 
 DomainedeVavril(){
     this.prix= 4000 ;
-    this.nom="DomainedeVavril";
+    this.nom="Domaine de Vavril";
     this.capacite = 450;
     console.log("prix:" +this.prix + " nom:" +this.nom + " capacite:" + this.capacite)
   
@@ -90,7 +92,7 @@ DomainedeVavril(){
 
 LePavillondelaSoie(){
     this.prix= 5000 ;
-    this.nom="LePavillondelaSoie";
+    this.nom="Le Pavillon de la Soie";
     this.capacite = 690;
     console.log("prix:" +this.prix + " nom:" +this.nom + " capacite:" + this.capacite)
   

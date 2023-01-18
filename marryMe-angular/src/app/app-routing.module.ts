@@ -9,6 +9,7 @@ import { MariageComponent } from './mariage/mariage.component';
 import { PrestationComponent } from './prestation/prestation.component';
 import { RobeComponent } from './robe/robe.component';
 import { SalleComponent } from './salle/salle.component';
+import { TraiteurComponent } from './traiteur/traiteur.component';
 
 const routes: Routes = [
   {path: "connexion", component: ConnexionComponent, pathMatch: 'full'},
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path: "mariages/:id/cake", component: CakeComponent},
   {path: "mariages/:id/robe", component: RobeComponent},
   {path: "mariages/:id/detail", component: PrestationComponent},
-  {path: "mariages/:id/salle", component: SalleComponent},
+  {path: "mariages/:id/salle", component: SalleComponent},  
+  {path: "mariages/:id/traiteur", component: TraiteurComponent},  
   {path: "mariage/:id", component: MariageComponent},
   {path: "decouvrir", component: DecouvrirComponent},
 ];

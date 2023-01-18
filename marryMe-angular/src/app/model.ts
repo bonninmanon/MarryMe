@@ -98,10 +98,30 @@ export class Cake{
     }
 }
 
+export class Traiteur {
+    id: number;
+    prix:number;
+    vinDHonneur: boolean;
+    cuisine: string;
+    nombreInvite:String;
+    
+   
+
+    constructor(id?: number, prix?: number, vinDHonneur?:boolean,  cuisine?: string,  nombreInvite?: String ) {
+        this.id = id;
+        this.prix = prix;
+        this.vinDHonneur = vinDHonneur;
+        this.cuisine=cuisine;
+        this.nombreInvite= nombreInvite;
+
+
+    }
+}
 
 export class MariageDTO {
     robes: Array<Robe>;
     cakes: Array<Cake>;
     salles: Array<Salle>;
+    traiteurs: Array<Traiteur>;
     constructor() { }
 }

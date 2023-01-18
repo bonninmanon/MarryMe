@@ -27,7 +27,7 @@ import marryMe.model.Traiteur;
 import marryMe.model.Views;
 
 @RestController
-@RequestMapping("/traiteurs")
+@RequestMapping("/traiteur")
 @CrossOrigin("*")
 public class TraiteurRessource {
 	

@@ -40,4 +40,9 @@ export class HttpPrestationService {
 
     return this.http.delete<void>(this.serviceUrl + "/salle/" + id);
   }
+
+  removeTraiteur(id: Number): Observable<void>{
+
+    return this.http.delete<void>(this.serviceUrl + "/traiteur/" + id);
+  }
 }

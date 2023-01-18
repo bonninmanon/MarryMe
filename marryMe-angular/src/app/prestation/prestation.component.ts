@@ -43,6 +43,14 @@ export class PrestationComponent {
       for (const cake of mariageDto.cakes) {
         this.prestations.push(cake);
       }
+
+      for (const salle of mariageDto.salles) {
+        this.prestations.push(salle);
+      }
+
+      for (const traiteur of mariageDto.traiteurs) {
+        this.prestations.push(traiteur);
+      }
     })
 
   }
