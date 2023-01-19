@@ -9,30 +9,39 @@ import { Traiteur } from '../model';
 })
 export class TraiteurHttpService {
 
-
-
-  
       serviceUrl: string;
       traiteurs: Array<Traiteur> = new Array<Traiteur>();
     
       constructor(private http: HttpClient, private appConfig: AppConfigService) {
-        this.serviceUrl = appConfig.backEndUrl + "traiteur";
        }
+
+
        setMariageId(id: number){
         this.serviceUrl = this.appConfig.backEndUrl + "mariages/"+id+"/traiteur";
       
        }
-
-
-   /* load() {
+      
+   load() {
       throw new Error('Method not implemented.');
-    }this.prix, this.vinDHonneur, this.cuisine,this.nombreInvite,(this.vinDHonneur == "oui" ? true : false);
-  }*/
+    }
+ 
     create(prix: number,vinDHonneur: boolean,cuisine: string,nombreInvite: string): Observable<Traiteur> {
       let traiteurDTO = {"prix": prix,"vinDHonneur": vinDHonneur, "cuisine": cuisine, "nombreInvite": nombreInvite};
   
       return this.http.post<Traiteur>(this.serviceUrl, traiteurDTO);
+      
     }
+
+    findAll(): Array<Traiteur> {
+      return this.traiteurs;
+    }
+  
+    findById(id: number): Observable<Traiteur> {
+      return this.http.get<Traiteur>(this.serviceUrl + id);
+    }
+  
+
+
   }
     
    

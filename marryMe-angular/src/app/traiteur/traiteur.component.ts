@@ -31,6 +31,14 @@ export class TraiteurComponent {
   cuisinevinDHonneur: string;
   cuisineinspiration: string;
   cuisinedecontract: string;
+  design: string;
+  isShowInfo: boolean;
+  isShowInfo110: boolean;
+  isShowInfo111: boolean;
+  isShowInfo112: boolean;
+  isShowInfo113: boolean;
+  isShowInfo114: boolean;
+  isShowInfo115: boolean;
 
   constructor(private tS: TraiteurHttpService, private router: Router, private route: ActivatedRoute){
     this.route.params.subscribe(params => { 
@@ -44,10 +52,10 @@ export class TraiteurComponent {
   reservertraiteur()
   {
     console.log(this.nombreInvite);
-    if(this.nombreInvite=="10-30"){this.prix = 250}
-    else if (this.nombreInvite=="31-60"){this.prix = 320}
-    else if (this.nombreInvite=="61-100"){this.prix = 500}
-    else if (this.nombreInvite==" >100 "){this.prix = 750}
+    if(this.nombreInvite=="10-30"){this.prix = 2500}
+    else if (this.nombreInvite=="31-60"){this.prix = 3200}
+    else if (this.nombreInvite=="61-100"){this.prix = 5000}
+    else if (this.nombreInvite==" >100 "){this.prix = 7500}
     //this.prix = (this.nombreInvite=="petit")? 250 : 400 ;
  
     
@@ -56,6 +64,9 @@ export class TraiteurComponent {
     this.tS.create(this.prix, (this.vinDHonneur == "oui" ? true : false), this.cuisine,this.nombreInvite).subscribe(resp => {this.connecte = resp;})
   }
  
+  choixTraiteur(designImgClic : string) {
+    this.design=designImgClic;
+}
 
 
   Lovely(){
@@ -78,7 +89,7 @@ export class TraiteurComponent {
   }
 
   inspiration(){
-      this.prix= 3500 ;
+      this.prix= 5500 ;
       this.vinDHonneur="vinDHonneur";
       this.cuisine = this.cuisineinspiration;
     

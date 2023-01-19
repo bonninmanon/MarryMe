@@ -28,7 +28,13 @@ export class SalleComponent {
   capaciteDomainedeVavril: number;
   capaciteLePavillondelaSoie: number;
   taille: number;
-
+  isShowInfo100: boolean;
+  isShowInfo101: boolean;
+  isShowInfo102: boolean;
+  isShowInfo103: boolean;
+  isShowInfo104: boolean;
+  isShowInfo105: boolean;
+  
   connecte: Salle= new Salle();
 
 
@@ -37,7 +43,6 @@ export class SalleComponent {
       console.log(params);
       this.idMariage = params['id'];
       console.log(this.idMariage);
-      
       this.sS.setMariageId(this.idMariage);
   });
 }
@@ -74,7 +79,7 @@ DomaineLeSauvage(){
 
 LaCroiseedesPossibles(){
     this.prix= 3000 ;
-    this.nom="LaCroiseedesPossibles";
+    this.nom="La Croisee des Possibles";
     this.capacite = 1200;
     console.log("prix:" +this.prix + " nom:" +this.nom + " capacite:" + this.capacite)
   
@@ -103,39 +108,3 @@ LePavillondelaSoie(){
 
 
 
-
-
-
-
-  /*list(): Array<Salle> {
-    return this.salleService.findAll();
-  }
-
-  add():void {
-    this.formSalle = new Salle();
-  }
-
-  edit(id: number): void {
-    this.salleService.findById(id).subscribe((resp: Salle) => {
-      this.formSalle= resp;
-    });
-  }
-
-  save(): void {
-    if(this.formSalle.id) { // UPDATE
-      this.salleService.update(this.formSalle);
-    } else { // CREATE
-      this.salleService.create(this.formSalle);
-    }
-
-    this.cancel();
-  }
-
-  cancel(): void {
-    this.formSalle = null;
-  }
-
-  remove(id: number): void {
-    this.salleService.remove(id);
-  }
-*/
