@@ -90,7 +90,7 @@ export class Cake{
         this.design=design;
         this.cremes= cremes;
         this.genoise= genoise;
-        this.ganaches= ganaches;
+        this.ganaches= ganaches || "Chocolat Noir";
         this.nombreInvite= nombreInvite;
         this.alcoolisee=alcoolisee;
         this.message=message;
