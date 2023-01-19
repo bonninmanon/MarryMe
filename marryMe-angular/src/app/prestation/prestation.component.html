@@ -47,7 +47,7 @@
 
       <tr *ngFor="let cake of mariageDto.cakes let index = index">
         <td> {{ mariageDto.robes.length + index+1}} </td>
-        <td> {{cake.design}} - {{cake.genoise}} </td>
+        <td> {{cake.design}} - {{cake.genoise}} - [{{cake.nombreInvite}}] personnes </td>
         <td> {{cake.prixCake}} €</td>
         <td> 20% </td>
         <td> {{cake.prixCake * 1.2}} €</td>
