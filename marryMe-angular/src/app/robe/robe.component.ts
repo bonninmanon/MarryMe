@@ -23,6 +23,14 @@ export class RobeComponent {
   tailleAriella: string;
   tailleBijoux: string;
   taille: string;
+  isShowInfo: boolean;
+  isShowInfo2: boolean;
+  isShowInfo3: boolean;
+  isShowInfo4: boolean;
+  isShowInfo5: boolean;
+  isShowInfo6: boolean;
+  isShowInfo7: boolean;
+  isShowInfo8: boolean;
 
   connecte: Robe= new Robe();
   idMariage: number;
@@ -93,7 +101,7 @@ export class RobeComponent {
   }
 
   ariella(){
-      this.prix= 4567 ;
+      this.prix= 2567 ;
       this.model="Delta";
       this.taille = this.tailleAriella;
       console.log("prix:" +this.prix + " model:" +this.model + " taille:" + this.taille)
@@ -102,7 +110,7 @@ export class RobeComponent {
   }
 
   bijoux(){
-    this.prix= 4567 ;
+    this.prix= 1200;
       this.model="Bijoux";
       this.taille = this.tailleBijoux;
       console.log("prix:" +this.prix + " model:" +this.model + " taille:" + this.taille)
