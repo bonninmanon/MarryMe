@@ -67,6 +67,17 @@
         </td>
       </tr>
 
+      <tr *ngFor="let traiteur of mariageDto.traiteurs let index = index">
+        <td> {{mariageDto.traiteurs.length + mariageDto.traiteurs.length + index+1}} </td>
+        <td> Traiteur menu {{traiteur.cuisine}} </td>
+        <td> {{traiteur.prixTraiteur}} €</td>
+        <td> 20% </td>
+        <td> {{traiteur.prixTraiteur * 1.2}} € </td>
+        <td>
+          <button (click)="removeTraiteur(traiteur)" type="button">Supprimer</button>
+        </td>
+      </tr>
+
     </tbody>
            
       <tfoot>

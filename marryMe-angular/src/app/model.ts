@@ -99,20 +99,20 @@ export class Cake{
 }
 
 export class Traiteur {
-    id: number;
-    prix:number;
+    idTraiteur: number;
+    prixTraiteur:number;
     vinDHonneur: boolean;
     cuisine: string;
-    nombreInvite:String;
+    nombreInviteTraiteur:String;
     
    
 
-    constructor(id?: number, prix?: number, vinDHonneur?:boolean,  cuisine?: string,  nombreInvite?: String ) {
-        this.id = id;
-        this.prix = prix;
+    constructor(idTraiteur?: number, prixTraiteur?: number, vinDHonneur?:boolean,  cuisine?: string,  nombreInviteTraiteur?: String ) {
+        this.idTraiteur = idTraiteur;
+        this.prixTraiteur = prixTraiteur;
         this.vinDHonneur = vinDHonneur;
         this.cuisine=cuisine;
-        this.nombreInvite= nombreInvite;
+        this.nombreInviteTraiteur= nombreInviteTraiteur;
 
 
     }

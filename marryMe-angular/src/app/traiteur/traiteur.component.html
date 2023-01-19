@@ -18,79 +18,81 @@
 
 <body>
 
-
-    <h1> Nos traiteurs</h1>
+ 
+    <h1> Nos spécialités</h1>
 
 <div id="choix">
   <div class="coll">
       <img src="assets/images/lovely.jpeg" class="cardimgtop" alt="...">
       <div class="cardbody">
-        <p> <b>Lovely</b> <br/> Le dîner de menu Lovely <p>
+        <p> <b>Lovely</b> <br/> LE DÎNER DE MENU LOVELY :<p>
+          <p>Entrée + Plat chaud + Sélection fromagere</p>
+
         </div>
-        <div class="cardQT">
+       
+          <div class="hide" *ngIf="isShowInfo110"> <p> Votre article a été ajouté au panier ! </p> </div> 
+        <div *ngIf="!isShowInfo110" class="cardQT">
           <p>Cuisine :
           <select  [(ngModel)]="cuisineLovely" class="cuisine">
             <optgroup label="Selectionner votre nombre d'invités"></optgroup>
-            <option value="10-30">10-30 personnes / 180€</option>
-            <option value="31-60">31-60 personnes / 320€</option>
-            <option value="61-100">61-100 personnes / 500€</option>
-            <option value=" >100 "> > 100 personnes / 750€</option>
+            <option value="Lovely">10-30 personnes / 1800€</option>
+            <option value="Lovely">31-60 personnes / 3200€</option>
+            <option value="Lovely">61-100 personnes / 5000€</option>
+            <option value="Lovely"> > 100 personnes / 7500€</option>
           </select>
         </p>
             <label   class="vin">Vin d'honneur</label>
             <div >
               <div >
-                <input class="vin" [(ngModel)]="vinDHonneur" id="choix-ouiZ" value="oui" checked name="choix1" type="radio">
+                <input class="vin" [ngModel]="vinDHonneur" id="choix-ouiZ" value="oui" checked name="choix1" type="radio">
                 <label  >Oui</label>
               </div>
               <div >
-                <input class="vin" [(ngModel)]="vinDHonneur" id="choix-nonY" value="non" checked name="choix1" type="radio">
+                <input class="vin" [ngModel]="vinDHonneur" id="choix-nonY" value="non" checked name="choix1" type="radio">
                 <label  >Non</label>
               </div>
             </div>
-            <button (click)="Lovely()" type="button">Ajouter au panier</button>
+            <button (click)="Lovely()" (click)='isShowInfo110 = !isShowInfo110' type="button">Ajouter au panier</button>
 
           </div>
-          <div class="cardfooter">
-            <p>Prix total: 200€</p>
-          </div>
+        
         </div>
     
 
       <div class="coll">
           <img src="assets/images/noces.jpeg" class="cardimgtop" alt="...">
           <div class="cardbody">
-            <p> <b>Jolies Noces</b> <br/> LE DÎNER MENU LES JOLIES NOCES <p>
+            <p> <b>Jolies Noces</b> <br/> LE DÎNER MENU LES JOLIES NOCES :<p>
+              <p>Entrée + Apéritif + Plat + Fromage + Dessert</p>
+
             </div>
-            <div class="cardQT">
+            <div class="hide" *ngIf="isShowInfo111"> <p> Votre article a été ajouté au panier ! </p> </div> 
+            <div *ngIf="!isShowInfo111" class="cardQT">
               <p>Cuisine :
                 <select  [(ngModel)]="cuisinejoliesnoces" class="cuisine">
                   <optgroup label="Selectionner votre nombre d'invités"></optgroup>
-                  <option value="10-30">10-30 personnes / 180€</option>
-                  <option value="31-60">31-60 personnes / 320€</option>
-                  <option value="61-100">61-100 personnes / 500€</option>
-                  <option value=" >100 "> > 100 personnes / 750€</option>
+                  <option value="Jolies noces">10-30 personnes / 2000€</option>
+                  <option value="Jolies noces">31-60 personnes / 3500€</option>
+                  <option value="Jolies noces">61-100 personnes / 5500€</option>
+                  <option value="Jolies noces"> > 100 personnes / 7500€</option>
                 </select>
               </p>
 
                 <label   class="vin">Vin d'honneur</label>
                 <div >
                   <div >
-                    <input class="vin" [(ngModel)]="vinDHonneur" id="choix-ouiA" value="oui" checked name="choix2" type="radio">
+                    <input class="vin" [ngModel]="vinDHonneur" id="choix-ouiA" value="oui" checked name="choix2" type="radio">
                     <label  >Oui</label>
                   </div>
                   <div >
-                    <input class="vin" [(ngModel)]="vinDHonneur" id="choix-nonB" value="non" checked name="choix2" type="radio">
+                    <input class="vin" [ngModel]="vinDHonneur" id="choix-nonB" value="non" checked name="choix2" type="radio">
                     <label  >Non</label>
                   </div>
                 </div>
-
-                <button (click)="joliesnoces()" type="button">Ajouter au panier</button>
+                <button (click)="joliesnoces()" (click)='isShowInfo111 = !isShowInfo111' type="button">Ajouter au panier</button>
 
               </div>
-              <div class="cardfooter">
-                <p>Prix total: 20€</p>
-              </div>
+              
             </div>
           
 
@@ -98,36 +100,36 @@
      
               <img src="assets/images/inspiration.jpeg" class="cardimgtop" alt="...">
               <div class="cardbody">
-                <p> <b>Inspiration</b> <br/> LE DÎNER MENU INSPIRATION  <p>
+                <p> <b>Inspiration</b> <br/> LE DÎNER MENU INSPIRATION : <p>
+                  <p>Entrées + Plats + Fromages + Desserts</p>
+
                 </div>
-                <div class="cardQT">
-                  <p>Cuisine :
+                <div class="hide" *ngIf="isShowInfo112"> <p> Votre article a été ajouté au panier ! </p> </div> 
+                <div *ngIf="!isShowInfo112" class="cardQT">                  <p>Cuisine :
                     <select  [(ngModel)]="cuisineinspiration" class="cuisine">
                       <optgroup label="Selectionner votre nombre d'invités"></optgroup>
-                      <option value="10-30">10-30 personnes / 180€</option>
-                      <option value="31-60">31-60 personnes / 320€</option>
-                      <option value="61-100">61-100 personnes / 500€</option>
-                      <option value=" >100 "> > 100 personnes / 750€</option>
+                      <option value="Inspiration">10-30 personnes / 180€</option>
+                      <option value="Inspiration">31-60 personnes / 320€</option>
+                      <option value="Inspiration">61-100 personnes / 500€</option>
+                      <option value="Inspiration"> > 100 personnes / 750€</option>
                     </select>
                   </p>
                     <label   class="vin">Vin d'honneur</label>
                     <div >
                       <div >
-                        <input  class="vin" [(ngModel)]="vinDHonneur" id="choix-ouiC" value="oui" checked name="choix3" type="radio">
+                        <input  class="vin" [ngModel]="vinDHonneur" id="choix-ouiC" value="oui" checked name="choix3" type="radio">
                         <label >Oui</label>
                       </div>
                       <div >
-                        <input class="vin"  [(ngModel)]="vinDHonneur" id="choix-nonD" value="non" checked name="choix3" type="radio">
+                        <input class="vin"  [ngModel]="vinDHonneur" id="choix-nonD" value="non" checked name="choix3" type="radio">
                         <label >Non</label>
                       </div>
                     </div>
+                    <button (click)="inspiration()" (click)='isShowInfo112 = !isShowInfo112' type="button">Ajouter au panier</button>
 
-                    <button (click)="inspiration()" type="button">Ajouter au panier</button>
 
                   </div>
-                  <div class="cardfooter">
-                    <p>Prix total: 20€</p>
-                  </div>
+                 
                 </div>
               </div>
 
@@ -136,10 +138,12 @@
                
                   <img src="assets/images/decontract.jpeg" class="cardimgtop" alt="...">
                   <div class="cardbody">
-                    <p> <b>Decontract</b> <br/> LE DÎNER DECONTRACT <p>
+                    <p> <b>Decontract</b> <br/> LE DÎNER DECONTRACT :<p>
+                      <p>Plats + Fromages + Desserts</p>
+
                     </div>
-                    <div class="cardQT">
-                      <p>Cuisine :
+                    <div class="hide" *ngIf="isShowInfo113"> <p> Votre article a été ajouté au panier ! </p> </div> 
+                    <div *ngIf="!isShowInfo113" class="cardQT">                      <p>Cuisine :
                         <select  [(ngModel)]="cuisinedecontract" class="cuisine">
                           <optgroup label="Selectionner votre nombre d'invités"></optgroup>
                           <option value="10-30">10-30 personnes / 180€</option>
@@ -152,20 +156,18 @@
                         <label   class="vin">Vin d'honneur</label>
                         <div >
                           <div >
-                            <input  class="vin" [(ngModel)]="vinDHonneur" id="choix-ouiE" value="oui" checked name="choix4" type="radio">
+                            <input  class="vin" [ngModel]="vinDHonneur" id="choix-ouiE" value="oui" checked name="choix4" type="radio">
                             <label  >Oui</label>
                           </div>
                           <div >
-                            <input  class="vin"  [(ngModel)]="vinDHonneur" id="choix-nonF" value="non" checked name="choix4" type="radio">
+                            <input  class="vin"  [ngModel]="vinDHonneur" id="choix-nonF" value="non" checked name="choix4" type="radio">
                             <label >Non</label>
                           </div>
                         </div>
-                        <button (click)="decontract()" type="button">Ajouter au panier</button>
+                        <button (click)="decontract()" (click)='isShowInfo113 = !isShowInfo113' type="button">Ajouter au panier</button>
 
                       </div>
-                      <div class="cardfooter">
-                        <p>Prix total: 20€</p>
-                      </div>
+                      
                     </div>
                  
        
@@ -175,70 +177,70 @@
              
                   <img src="assets/images/garden.jpeg" class="cardimgtop" alt="...">
                   <div class="cardbody">
-                    <p> <b>Garden Party</b> <br/> LE DÎNER MENU LA GARDEN PARTY  <p>
+                    <p> <b>Garden Party</b> <br/> LE DÎNER MENU LA GARDEN PARTY : <p>
+                      <p> BBQ + Viandes + Poissons + Dessert</p>
                     </div>
-                    <div class="cardQT">
-                      <p>Cuisine :
+                    <div class="hide" *ngIf="isShowInfo114"> <p> Votre article a été ajouté au panier ! </p> </div> 
+                    <div *ngIf="!isShowInfo114" class="cardQT">                      <p>Cuisine :
                         <select  [(ngModel)]="cuisinegardenparty" class="cuisine">
                           <optgroup label="Selectionner votre nombre d'invités"></optgroup>
-                          <option value="10-30">10-30 personnes / 180€</option>
-                          <option value="31-60">31-60 personnes / 320€</option>
-                          <option value="61-100">61-100 personnes / 500€</option>
-                          <option value=" >100 "> > 100 personnes / 750€</option>
+                          <option value="Garden Party">10-30 personnes / 180€</option>
+                          <option value="Garden Party">31-60 personnes / 320€</option>
+                          <option value="Garden Party">61-100 personnes / 500€</option>
+                          <option value="Garden Party"> > 100 personnes / 750€</option>
                         </select>
                       </p>
 
  <label   class="vin">Vin d'honneur</label>
             <div >
               <div >
-                <input class="vin" [(ngModel)]="vinDHonneur" id="choix-ouiG" value="oui" checked name="choix5" type="radio">
+                <input class="vin" [ngModel]="vinDHonneur" id="choix-ouiG" value="oui" checked name="choix5" type="radio">
                 <label  >Oui</label>
               </div>
               <div >
-                <input class="vin"  [(ngModel)]="vinDHonneur" id="choix-nonH" value="non" checked name="choix5" type="radio">
+                <input class="vin"  [ngModel]="vinDHonneur" id="choix-nonH" value="non" checked name="choix5" type="radio">
                 <label >Non</label>
               </div>
             </div>
-                        <button (click)="gardenparty()" type="button">Ajouter au panier</button>
+                        <button (click)="gardenparty()" (click)='isShowInfo114 = !isShowInfo114' type="button">Ajouter au panier</button>
 
                       </div>
-                      <div class="cardfooter">
-                        <p>Prix total: 20€</p>
-                      </div>
+                      
                     </div>
                  
 
                           <div class="coll">
                               <img src="assets/images/chic.jpeg" class="cardimgtop" alt="...">
                               <div class="cardbody">
-                                <p> <b>Chic Champete</b> <br/> LE DÎNER MENU  CHIC & CHAMPÊTRE <p>
+                                <p> <b>Chic Champete</b> <br/> LE DÎNER MENU  CHIC & CHAMPÊTRE :<p>
+                                  <p>Cocktail Apéritif + Elplancha de la mer + tartelette au citron</p>
+
+
                                 </div>
-                                <div class="cardQT">
-                                  <p>Cuisine :
+                                <div class="hide" *ngIf="isShowInfo115"> <p> Votre article a été ajouté au panier ! </p> </div> 
+                                <div *ngIf="!isShowInfo115" class="cardQT">                                
+                                    <p>Cuisine :
                                     <select  [(ngModel)]="cuisinechichampete" class="cuisine">
                                       <optgroup label="Selectionner votre nombre d'invités"></optgroup>
-                                      <option value="10-30">10-30 personnes / 180€</option>
-                                      <option value="31-60">31-60 personnes / 320€</option>
-                                      <option value="61-100">61-100 personnes / 500€</option>
-                                      <option value=" >100 "> > 100 personnes / 750€</option>
+                                      <option value="Chic Champete">10-30 personnes / 180€</option>
+                                      <option value="Chic Champete">31-60 personnes / 320€</option>
+                                      <option value="Chic Champete">61-100 personnes / 500€</option>
+                                      <option value="Chic Champete"> > 100 personnes / 750€</option>
                                     </select>
                                   </p>
  <label   class="vin">Vin d'honneur</label>
             <div >
               <div >
-                <input class="vin" [(ngModel)]="vinDHonneur" id="choix-ouiI" value="oui" checked name="choix6" type="radio">
+                <input class="vin" [ngModel]="vinDHonneur" id="choix-ouiI" value="oui" checked name="choix6" type="radio">
                 <label >Oui</label>
               </div>
               <div >
-                <input class="vin" [(ngModel)]="vinDHonneur" id="choix-nonJ" value="non" checked name="choix6" type="radio">
+                <input class="vin" [ngModel]="vinDHonneur" id="choix-nonJ" value="non" checked name="choix6" type="radio">
                 <label  >Non</label>
               </div>
             </div>
-                                    <button (click)="chichampete()" type="button">Ajouter au panier</button>
+                                    <button (click)="chichampete()" (click)='isShowInfo115 = !isShowInfo115' type="button">Ajouter au panier</button>
 
-                                  </div>
-                                  <div class="cardfooter">
-                                    <p>Prix total: 20€</p>
                                   </div>
                                 </div>
                               </div>

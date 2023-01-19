@@ -62,7 +62,8 @@ export class PrestationComponent {
 
       for (const traiteur of mariageDto.traiteurs) {
         this.prestations.push(traiteur);
-       
+        this.total += traiteur.prixTraiteur;
+
       }
 
         this.client=this.utilisateurservice.getUtilisateur();
@@ -101,6 +102,14 @@ export class PrestationComponent {
     this.total -= salle.prixSalle;
       }
     
+      removeTraiteur(traiteur: any) {
+        let idx: number = this.mariageDto.traiteurs.indexOf(traiteur);
+    
+        this.mariageDto.traiteurs.splice(idx, 1);
+        this.pS.removeTraiteur(traiteur.idtraiteur).subscribe();
+        this.total -= traiteur.prixTraiteur;
+          }
+        
     
 
 

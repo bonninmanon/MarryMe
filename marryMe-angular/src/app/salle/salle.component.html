@@ -19,15 +19,15 @@
   <div class="coll">
 
       <img src="assets/images/gallery-1.jpg" class="cardimgtop" alt="...">
-      <div class="cardbody">
-        <p> <b>La palmeraie</b> <br/> Salle de réception d'une superficie de 1700 m²<br/> 
+	  <div class="hide" *ngIf="isShowInfo100"> <p> Votre article a été ajouté au panier ! </p> </div> 
+	  <div *ngIf="!isShowInfo100" class="cardQT">        <p> <b>La palmeraie</b> <br/> Salle de réception d'une superficie de 1700 m²<br/> 
 			et pouvant réceptionner jusqu'à 1200 personnes  </p>
         </div>
         <div class="cardQT">
 			 <span>Adresse : Paris - 15eme (75015)</span>
 			</div>
-			<button (click)="Lapalmeraie()" type="button">Reserver</button>
-          
+			<button (click)="Lapalmeraie()" (click)='isShowInfo100 = !isShowInfo100' type="button">Ajouter au panier</button>
+
           <div class="cardfooter">
             <p>Prix total: 6000€</p>
           </div>
@@ -38,15 +38,14 @@
 	<div class="coll">
 	
 		  <img src="assets/images/gallery-2.jpg" class="cardimgtop" alt="...">
-		  <div class="cardbody">
-			<p> <b>Domaine de la Grave</b> <br/>Salle de réception d'une superficie de 2000 m² <br/>et pouvant réceptionner jusqu'à 1500 personnes</p>
+		  <div class="hide" *ngIf="isShowInfo101"> <p> Votre article a été ajouté au panier ! </p> </div> 
+		  <div *ngIf="!isShowInfo101" class="cardQT">			<p> <b>Domaine de la Grave</b> <br/>Salle de réception d'une superficie de 2000 m² <br/>et pouvant réceptionner jusqu'à 1500 personnes</p>
 			</div>
 			<div class="cardQT">
 				 <span>Adresse : Beichac-et-Caillou (Gironde-33750)</span>
 				</div>
-				<button (click)="DomainedelaGrave()" type="button">Reserver</button>
-			  
-			  <div class="cardfooter">
+				<button (click)="DomainedelaGrave()" (click)='isShowInfo101 = !isShowInfo101' type="button">Ajouter au panier</button>
+				<div class="cardfooter">
 				<p>Prix total: 3500€</p>
 			  </div>
 			
@@ -59,11 +58,11 @@
 			  <div class="cardbody">
 				<p> <b>Domaine Le Sauvage</b> <br/>Salle de réception d'une superficie de 1930 m² <br/>et pouvant réceptionner jusqu'à 1600 personnes</p>
 				</div>
-				<div class="cardQT">
-					 <span>Adresse : Saintes-Maries-de-la-Mer (13460)</span>
+				<div class="hide" *ngIf="isShowInfo102"> <p> Votre article a été ajouté au panier ! </p> </div> 
+				<div *ngIf="!isShowInfo102" class="cardQT">					 <span>Adresse : Saintes-Maries-de-la-Mer (13460)</span>
 					</div>
-					<button (click)="DomaineLeSauvage()" type="button">Reserver</button>
-				  
+					<button (click)="DomaineLeSauvage()" (click)='isShowInfo102 = !isShowInfo102' type="button">Ajouter au panier</button>
+
 				  <div class="cardfooter">
 					<p>Prix total: 4500€</p>
 				  </div>
@@ -77,11 +76,11 @@
 				  <div class="cardbody">
 					<p> <b>La Croisee des Possibles</b> <br/>Salle de réception d'une superficie de 1300 m² <br/>et pouvant réceptionner jusqu'à 1200 personnes</p>
 					</div>
-					<div class="cardQT">
-						 <span>Adresse : Ferme à Crépy-en-Valois  (60800)</span>
+					<div class="hide" *ngIf="isShowInfo103"> <p> Votre article a été ajouté au panier ! </p> </div> 
+					<div *ngIf="!isShowInfo103" class="cardQT">						 <span>Adresse : Ferme à Crépy-en-Valois  (60800)</span>
 						</div>
-						<button (click)="LaCroiseedesPossibles()" type="button">Reserver</button>
-					  
+						<button (click)="LaCroiseedesPossibles()" (click)='isShowInfo103 = !isShowInfo103' type="button">Ajouter au panier</button>
+
 					  <div class="cardfooter">
 						<p>Prix total: 4000€</p>
 					  </div>
@@ -93,11 +92,11 @@
 					  <div class="cardbody">
 						<p> <b>Domaine de Vavril</b> <br/>Salle de réception d'une superficie de 190 m² <br/>et pouvant réceptionner jusqu'à 450 personnes </p>
 						</div>
-						<div class="cardQT">
-							 <span>Adresse : Château à Beaujeu (69430)</span>
+						<div class="hide" *ngIf="isShowInfo104"> <p> Votre article a été ajouté au panier ! </p> </div> 
+						<div *ngIf="!isShowInfo104" class="cardQT">							 <span>Adresse : Château à Beaujeu (69430)</span>
 							</div>
-							<button (click)="DomainedeVavril()" type="button">Reserver</button>
-						  
+							<button (click)="DomainedeVavril()" (click)='isShowInfo104 = !isShowInfo104' type="button">Ajouter au panier</button>
+
 						  <div class="cardfooter">
 							<p>Prix total: 3000€</p>
 						  </div>
@@ -109,11 +108,12 @@
 						  <div class="cardbody">
 							<p> <b>Le Pavillon de la Soie</b> <br/>Salle de réception d'une superficie de 900 m² <br/>et pouvant réceptionner jusqu'à 690 personnes </p>
 							</div>
-							<div class="cardQT">
+							<div class="hide" *ngIf="isShowInfo105"> <p> Votre article a été ajouté au panier ! </p> </div> 
+							<div *ngIf="!isShowInfo105" class="cardQT">
 								 <span>Adresse : Vaulx-en-Velin (69120)</span>
 								</div>
-								<button (click)="LePavillondelaSoie()" type="button">Reserver</button>
-							  
+								<button (click)="LePavillondelaSoie()" (click)='isShowInfo105 = !isShowInfo105' type="button">Ajouter au panier</button>
+
 							  <div class="cardfooter">
 								<p>Prix total: 3000€</p>
 							  </div>
@@ -132,257 +132,3 @@
 
 
      
-
-   <!--   <div class="coll">
-        <div>
-          <img src="assets/robe2.png" class="cardimgtop" alt="...">
-          <div class="cardbody">
-            <p> <b>Esmeralda</b> <br/> Robe de mariée coupe princesse <p>
-            </div>
-            <div class="cardQT">
-              <p>Taille :
-                <select [(ngModel)]="tailleEsmeralda">
-                <option> Small </option>
-                <option selected> Medium </option>
-                  <option> Large </option>
-                </select>
-
-                <button (click)="esmeralda()" type="button">Ajouter au panier</button></p>
-
-              </div>
-              <div class="cardfooter">
-                <p>Prix total: 20€</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="coll">
-            <div>
-              <img src="assets/robe3.png" class="cardimgtop" alt="...">
-              <div class="cardbody">
-                <p> <b>Beauté</b> <br/> Robe de mariée coupe princesse <p>
-                </div>
-                <div class="cardQT">
-                  <p>Taille :
-                    <select [(ngModel)]="tailleBeaute">
-                    <option> Small </option>
-                    <option selected> Medium </option>
-                      <option> Large </option>
-                    </select>
-
-                    <button (click)="beaute()" type="button">Ajouter au panier</button></p>
-
-                  </div>
-                  <div class="cardfooter">
-                    <p>Prix total: 20€</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="coll">
-                <div>
-                  <img src="assets/robe4.png" class="cardimgtop" alt="...">
-                  <div class="cardbody">
-                    <p> <b>Dona</b> <br/> Robe de mariée fluide <p>
-                    </div>
-                    <div class="cardQT">
-                      <p>Taille :
-                        <select [(ngModel)]="tailleDona">
-                        <option> Small </option>
-                        <option selected> Medium </option>
-                          <option> Large </option>
-                        </select>
-
-                        <button (click)="dona()" type="button">Ajouter au panier</button></p>
-
-                      </div>
-                      <div class="cardfooter">
-                        <p>Prix total: 20€</p>
-                      </div>
-                    </div>
-                  </div>
-
-            </div>
-
-            <div id="choix2">
-              <div class="coll">
-                <div>
-                  <img src="assets/robe5.png" class="cardimgtop" alt="...">
-                  <div class="cardbody">
-                    <p> <b>Deborah</b> <br/> Robe de mariée ajustée et évasée <p>
-                    </div>
-                    <div class="cardQT">
-                      <p>Taille :
-                        <select [(ngModel)]="tailleDeborah">
-                        <option> Small </option>
-                        <option selected> Medium </option>
-                          <option> Large </option>
-                        </select>
-
-                        <button (click)="deborah()" type="button">Ajouter au panier</button></p>
-
-                      </div>
-                      <div class="cardfooter">
-                        <p>Prix total: 20€</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="coll">
-                    <div>
-                      <img src="assets/robe6.png" class="cardimgtop" alt="...">
-                      <div class="cardbody">
-                        <p> <b>Delta</b> <br/> Robe de mariée coupe Bohème  <p>
-                        </div>
-                        <div class="cardQT">
-                          <p>Taille :
-                            <select [(ngModel)]="tailleDelta">
-                            <option> Small </option>
-                            <option selected> Medium </option>
-                              <option> Large </option>
-                            </select>
-
-                            <button (click)="delta()" type="button">Ajouter au panier</button></p>
-
-                          </div>
-                          <div class="cardfooter">
-                            <p>Prix total: 20€</p>
-                          </div>
-                        </div>
-                      </div>
-
-                    
-
-                          
-                            </div>
-
-              </body>
-              <div>
-                <app-footer>
-                
-                </app-footer>
-                </div>              
-
-              </html>
-
-
-			  
-
-
--->
-
-
-
-
-<!--<body>
-	<navbar></navbar>
-
-	<div class="fh5co-loader"></div>
-	<div id="page">
-
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-					<h2>Location de salle de mariage</h2>
-					<p>Trouvez la salle idéale pour votre mariage.</p>
-				</div>
-			</div>
-			<div class="row row-bottom-padded-md"> 
-				<div class="col-md-12">
-					<ul id="fh5co-gallery-list">
-
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(assets/images/gallery-1.jpg) ; ">
-						<a href="assets/images/gallery-1.jpg">
-							<div class="case-studies-summary">
-								<span>Paris - 15eme (75015)</span>
-								<h2>La palmeraie</h2>
-							</div>
-						</a>
-<h3>  Salle de réception d'une superficie de 1700 m² et pouvant réceptionner jusqu'à 1200 personnes   </h3>
-<h4>Prix: Dès 6000£</h4>
-<button (click)="Lapalmeraie()" type="button">Reserver</button>
-
-
-					</li>
-				
-					<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(assets/images/gallery-2.jpg); ">
-						<a href="#" class="color-2">
-							<div class="case-studies-summary">
-								<span>Beichac-et-Caillou (Gironde-33750)</span>
-								<h2>Domaine de la Grave </h2>
-							</div>
-						</a>
-						<h3>  Salle de réception d'une superficie de 2000 m² et pouvant réceptionner jusqu'à 1500 personnes   </h3>
-						<h4>Prix: Dès 3500£</h4>
-						<button (click)="DomainedelaGrave()" type="button">Reserver</button>
-					</li>
-
-
-					<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(assets/images/gallery-3.jpg); ">
-						<a href="#" class="color-3">
-							<div class="case-studies-summary">
-								<span>Saintes-Maries-de-la-Mer (13460)</span>
-								<h2>Reserver</h2>
-							</div>
-						</a>
-						<h3>  Salle de réception d'une superficie de 1930 m² et pouvant réceptionner jusqu'à 1600 personnes   </h3>
-						<h4>Prix: Dès 4500£</h4>
-						<button (click)="DomaineLeSauvage()" type="button">Reserver</button>
-					</li>
-
-					<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(assets/images/gallery-4.jpg); ">
-						<a href="#" class="color-4">
-							<div class="case-studies-summary">
-								<span>Ferme à Crépy-en-Valois  (60800)</span>
-								<h2>La Croisée des Possibles</h2>
-							</div>
-						</a>
-						<h3>  Salle de réception d'une superficie de 1300 m² et pouvant réceptionner jusqu'à 1200 personnes   </h3>
-						<h4>Prix: Dès 3000£</h4>
-						<button (click)="LaCroiseedesPossibles()" type="button">Reserver</button>
-					</li>
-					
-
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(assets/images/gallery-5.jpg); ">
-							<a href="#" class="color-3">
-								<div class="case-studies-summary">
-									<span>Château à Beaujeu (69430)</span>
-									<h2>Domaine de Vavril </h2>
-								</div>
-							</a>
-							<h3>  Salle de réception d'une superficie de 190 m² et pouvant réceptionner jusqu'à 450 personnes   </h3>
-							<h4>Prix: Dès 4000£</h4>
-							<button (click)="DomainedeVavril()" type="button">Reserver</button>
-
-						</li>
-					
-
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(assets/images/gallery-6.jpg); ">
-							<a href="#" class="color-4">
-								<div class="case-studies-summary">
-									<span>Vaulx-en-Velin (69120)</span>
-									<h2>Le Pavillon de la Soie </h2>
-								</div>
-							</a>
-							<h3>  Salle de réception d'une superficie de 900 m² et pouvant réceptionner jusqu'à 690 personnes   </h3>
-							<h4>Prix: Dès 5000£</h4>
-							<button (click)="LePavillondelaSoie()" type="button">Reserver</button>
-							
-						</li>
-						
-					</ul>
-				</div>
-			</div>
-		</div>
-	
-	</div>
-
-	<div class="gototop js-top">
-		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
-	</div>
-
-	
-
-	</body>
-
-!-->
