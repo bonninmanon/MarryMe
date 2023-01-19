@@ -22,7 +22,10 @@
         <p> <b>Elsa</b> <br/> Robe de mariée coupe princesse <p>
         </div>
         <div class="hide" *ngIf="isShowInfo"> <p> Votre article a été ajouté au panier ! </p> </div> 
+        
+
         <div *ngIf="!isShowInfo" class="cardQT">
+        <div class="no-size" *ngIf="isSizeError">Veuillez choisir une taille</div>
           <p>Taille :
             <select [(ngModel)]="tailleElsa">
             <option> Small </option>
@@ -30,7 +33,7 @@
             <option> Large </option>
             </select>
 
-            <button (click)="elsa()" (click)='isShowInfo = !isShowInfo' type="button">Ajouter au panier</button></p>
+            <button (click)="elsa()" type="button">Ajouter au panier</button></p>
             
           </div>
           <div class="cardfooter">
@@ -47,6 +50,7 @@
             </div>
             <div class="hide" *ngIf="isShowInfo2"> <p> Votre article a été ajouté au panier ! </p> </div> 
             <div *ngIf="!isShowInfo2" class="cardQT">
+              <div class="no-size2" *ngIf="isSizeError2">Veuillez choisir une taille</div>
               <p>Taille :
                 <select [(ngModel)]="tailleEsmeralda">
                 <option> Small </option>
@@ -54,7 +58,7 @@
                   <option> Large </option>
                 </select>
 
-                <button (click)="esmeralda()" (click)='isShowInfo2 = !isShowInfo2' type="button">Ajouter au panier</button></p>
+                <button (click)="esmeralda()"  type="button">Ajouter au panier</button></p>
 
               </div>
               <div class="cardfooter">
@@ -71,6 +75,7 @@
                 </div>
                 <div class="hide" *ngIf="isShowInfo3"> <p> Votre article a été ajouté au panier ! </p> </div> 
                 <div *ngIf="!isShowInfo3" class="cardQT">
+                  <div class="no-size" *ngIf="isSizeError3">Veuillez choisir une taille</div>
                   <p>Taille :
                     <select [(ngModel)]="tailleBeaute">
                     <option> Small </option>
@@ -78,7 +83,7 @@
                       <option> Large </option>
                     </select>
 
-                    <button (click)="beaute()" (click)='isShowInfo3 = !isShowInfo3' type="button">Ajouter au panier</button></p>
+                    <button (click)="beaute()" type="button">Ajouter au panier</button></p>
 
                   </div>
                   <div class="cardfooter">
@@ -95,6 +100,7 @@
                     </div>
                     <div class="hide" *ngIf="isShowInfo4"> <p> Votre article a été ajouté au panier ! </p> </div> 
                     <div *ngIf="!isShowInfo4" class="cardQT">
+                      <div class="no-size" *ngIf="isSizeError4">Veuillez choisir une taille</div>
                       <p>Taille :
                         <select [(ngModel)]="tailleDona">
                         <option> Small </option>
@@ -102,7 +108,7 @@
                           <option> Large </option>
                         </select>
 
-                        <button (click)="dona()" (click)='isShowInfo4 = !isShowInfo4' type="button">Ajouter au panier</button></p>
+                        <button (click)="dona()" type="button">Ajouter au panier</button></p>
 
                       </div>
                       <div class="cardfooter">
@@ -122,6 +128,7 @@
                     </div>
                     <div class="hide" *ngIf="isShowInfo5"> <p> Votre article a été ajouté au panier ! </p> </div> 
                     <div *ngIf="!isShowInfo5" class="cardQT">
+                      <div class="no-size" *ngIf="isSizeError5">Veuillez choisir une taille</div>
                       <p>Taille :
                         <select [(ngModel)]="tailleDeborah">
                         <option> Small </option>
@@ -129,7 +136,7 @@
                           <option> Large </option>
                         </select>
 
-                        <button (click)="deborah()" (click)='isShowInfo5 = !isShowInfo5' type="button">Ajouter au panier</button></p>
+                        <button (click)="deborah()"  type="button">Ajouter au panier</button></p>
 
                       </div>
                       <div class="cardfooter">
@@ -146,6 +153,7 @@
                         </div>
                         <div class="hide" *ngIf="isShowInfo6"> <p> Votre article a été ajouté au panier ! </p> </div> 
                         <div *ngIf="!isShowInfo6" class="cardQT">
+                          <div class="no-size" *ngIf="isSizeError6">Veuillez choisir une taille</div>
                           <p>Taille :
                             <select [(ngModel)]="tailleDelta">
                             <option> Small </option>
@@ -153,7 +161,7 @@
                               <option> Large </option>
                             </select>
 
-                            <button (click)="delta()" (click)='isShowInfo6 = !isShowInfo6' type="button">Ajouter au panier</button></p>
+                            <button (click)="delta()"  type="button">Ajouter au panier</button></p>
 
                           </div>
                           <div class="cardfooter">
@@ -170,6 +178,7 @@
                             </div>
                             <div class="hide" *ngIf="isShowInfo7"> <p> Votre article a été ajouté au panier ! </p> </div> 
                             <div *ngIf="!isShowInfo7" class="cardQT">
+                              <div class="no-size" *ngIf="isSizeError7">Veuillez choisir une taille</div>
                               <p>Taille :
                                 <select [(ngModel)]="tailleAriella">
                                 <option> Small </option>
@@ -177,7 +186,7 @@
                                   <option> Large </option>
                                 </select>
 
-                                <button (click)="ariella()" (click)='isShowInfo7 = !isShowInfo7' type="button">Ajouter au panier</button></p>
+                                <button (click)="ariella()"  type="button">Ajouter au panier</button></p>
 
                               </div>
                               <div class="cardfooter">
@@ -194,6 +203,7 @@
                                 </div>
                                 <div class="hide" *ngIf="isShowInfo8"> <p> Votre article a été ajouté au panier ! </p> </div> 
                                 <div *ngIf="!isShowInfo8" class="cardQT">
+                                  <div class="no-size" *ngIf="isSizeError8">Veuillez choisir une taille</div>
                                   <p>Taille :
                                     <select [(ngModel)]="tailleBijoux">
                                     <option> Small </option>
@@ -201,7 +211,7 @@
                                       <option> Large </option>
                                     </select>
 
-                                    <button (click)="bijoux()" (click)='isShowInfo8 = !isShowInfo8' type="button">Ajouter au panier</button></p>
+                                    <button (click)="bijoux()"  type="button">Ajouter au panier</button></p>
 
                                   </div>
                                   <div class="cardfooter">
