@@ -1,289 +1,289 @@
 .u-section-1 {
-    background-image: linear-gradient(0deg, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("assets/body-cake.jpg");
-    background-position: 50% 50%;
-  }
-  
-  
-  .u-section-1 .u-form-1 {
-    height: 409px;
-    background-image: none;
-    width: 570px;
-    margin: 85px auto 60px;
-  }
-  
-  .u-section-1 .u-label-1 {
-    font-size: 1.25rem;
-    font-weight: 400;
-  }
-  
-  .u-section-1 .u-label-2 {
-    font-size: 1.25rem;
-    font-weight: 400;
-  }
-  
-  .u-section-1 .u-label-3 {
-    font-size: 1.25rem;
-    font-weight: 400;
-  }
-  
-  .u-section-1 .u-label-4 {
-    font-size: 1.25rem;
-    font-weight: 400;
-  }
-  
-  .u-section-1 .u-label-5 {
-    font-size: 1.25rem;
-    font-weight: 400;
-  }
-  
-  .u-section-1 .u-label-6 {
-    font-size: 1.25rem;
-    font-weight: 400;
-  }
-  
-  .u-section-1 .u-label-7 {
-    font-size: 1.25rem;
-    font-weight: 400;
-  }
-  
-  .u-section-1 .u-label-8 {
-    font-size: 1.25rem;
-    font-weight: 400;
-  }
-  
-  .u-section-1 .u-label-9 {
-    font-size: 1.25rem;
-    font-weight: 400;
-  }
-  
-  .u-section-1 .u-label-10 {
-    font-size: 1.25rem;
-    font-weight: 400;
-  }
-  
-  .u-section-1 .u-label-11 {
-    font-size: 1.25rem;
-    font-weight: 400;
-  }
-  
-  .u-section-1 .u-btn-1 {
-    background-image: none;
-  }
-  .u-palette-2-light-2,
-  .u-body.u-palette-2-light-2,
-  section.u-palette-2-light-2:before,
-  .u-palette-2-light-2 > .u-container-layout:before,
-  .u-palette-2-light-2 > .u-inner-container-layout:before,
-  .u-palette-2-light-2.u-sidenav:before,
-  .u-container-layout.u-container-layout.u-palette-2-light-2:before,
-  .u-table-alt-palette-2-light-2 tr:nth-child(even) {
-    color: #111111;
-    background-color: #f1b5b8;
-  }
-  
-  .u-border-1,
-  .u-separator-1:after,
-  .u-text.u-border-1,
-  a.u-button-style.u-border-1 {
-    border-width: 1px;
-  }
-  
-  .u-tab-list[class*="u-border"] .u-tab-link.u-border-1 {
-    margin-bottom: -1px;
-  }
-  
-  [class*="u-border-"],
-  .u-link[class*="u-border-"] {
-    border-style: solid;
-  }
-  
-  .u-font-lobster.u-custom-font {
-    font-family: Lobster, display !important;
-  }
-  
-  body {
-    height: auto;
-    min-height: 100%;
-    position: relative;
-  }
-  
-  .u-clearfix:after,
-  .u-clearfix:before {
-    content: '';
-    display: table;
-    clear: both;
-  }
-  .u-clearfix:after {
-    clear: both;
-  }
-  
-  .u-caret {
-    content: '';
-    display: inline-block;
-    vertical-align: middle;
-    height: 1em;
-    width: 1.5em;
-  }
-  .u-image,
-  .u-background-effect-image,
-  .u-video-poster {
-    object-fit: cover;
-    display: block;
-    background-size: cover;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-  }
-  
-  *,
-  *:before,
-  *:after {
-    box-sizing: border-box;
-  }
-  
-  .u-form {
-    position: relative;
-    font-size: 1rem;
-    height: auto !important;
-  }
-  
-  .u-form-select-wrapper .u-caret {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 10px;
-    pointer-events: none;
-  }
-  
-  
-  
-  
-  .u-form-select-wrapper select[size] ~ .u-caret {
-    display: none;
-  }
-  
-  
-  .u-form-select-wrapper select {
-    -webkit-appearance: none;
-       -moz-appearance: none;
-            appearance: none;
-  }
-  
-  .u-form-select-wrapper {
-    position: relative;
-  }
-  
-  
-  .u-input {
-    display: block;
-    width: 100%;
-    padding: 10px 12px;
-    background-image: none;
-    background-clip: padding-box;
-    border-radius: 3px;
-    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-    background-color: transparent;
-    color: inherit;
-    height: auto;
-  }
-  
-  .u-btn {
-    /*display: inline-block;*/
-    display: table;
-    /*TODO maye need another solution for negative marin*/
-    cursor: pointer;
-    color: inherit;
-    font-size: inherit;
-    font-family: inherit;
-    border: 0 none transparent;
-    outline-width: 0;
-    margin: 0;
-    font-style: initial;
-    white-space: nowrap;
-    -webkit-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-    text-align: center;
-    padding: 10px 30px;
-    align-self:center;
-    margin: auto;
-  }
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("assets/body-cake.jpg");
+  background-position: 50% 50%;
+}
 
-  .u-custom-color-2,
-  .u-body.u-custom-color-2,
-  section.u-custom-color-2:before
-  
-  {
-    color: #111111;
-    background-color: #f0e2e2;
-  }
- 
-  h4
-  {
-    color: #050505;
-    background-color: transparent;
-    text-align: center;
 
-  }
+.u-section-1 .u-form-1 {
+  height: 409px;
+  background-image: none;
+  width: 570px;
+  margin: 85px auto 60px;
+}
 
-  .coll {
-    border: 1px solid #f4eeec;
-    border-radius: 0px;
-    background-color: white;
-  }
-  
-  .cardQT button{
-  margin-left: 7%;
-  
-  }
+.u-section-1 .u-label-1 {
+  font-size: 1.25rem;
+  font-weight: 400;
+}
 
-  #choix {
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 2%;
-  }
-  
-  #choix2 {
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 2%;
-  }
-  
-  
-  .cardbody p b {
-    font-size: 130%;
-    
-    
-  }
+.u-section-1 .u-label-2 {
+  font-size: 1.25rem;
+  font-weight: 400;
+}
 
-  img
-  {
-    width: 300px ;
-    height: 400px; 
-  }
+.u-section-1 .u-label-3 {
+  font-size: 1.25rem;
+  font-weight: 400;
+}
 
-  .cardimgtop {
-    width: 250px;
-    height: 350px; 
-    border-radius: 5px;
-  }
+.u-section-1 .u-label-4 {
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.u-section-1 .u-label-5 {
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.u-section-1 .u-label-6 {
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.u-section-1 .u-label-7 {
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.u-section-1 .u-label-8 {
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.u-section-1 .u-label-9 {
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.u-section-1 .u-label-10 {
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.u-section-1 .u-label-11 {
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.u-section-1 .u-btn-1 {
+  background-image: none;
+}
+.u-palette-2-light-2,
+.u-body.u-palette-2-light-2,
+section.u-palette-2-light-2:before,
+.u-palette-2-light-2 > .u-container-layout:before,
+.u-palette-2-light-2 > .u-inner-container-layout:before,
+.u-palette-2-light-2.u-sidenav:before,
+.u-container-layout.u-container-layout.u-palette-2-light-2:before,
+.u-table-alt-palette-2-light-2 tr:nth-child(even) {
+  color: #111111;
+  background-color: #f1b5b8;
+}
+
+.u-border-1,
+.u-separator-1:after,
+.u-text.u-border-1,
+a.u-button-style.u-border-1 {
+  border-width: 1px;
+}
+
+.u-tab-list[class*="u-border"] .u-tab-link.u-border-1 {
+  margin-bottom: -1px;
+}
+
+[class*="u-border-"],
+.u-link[class*="u-border-"] {
+  border-style: solid;
+}
+
+.u-font-lobster.u-custom-font {
+  font-family: Lobster, display !important;
+}
+
+body {
+  height: auto;
+  min-height: 100%;
+  position: relative;
+}
+
+.u-clearfix:after,
+.u-clearfix:before {
+  content: '';
+  display: table;
+  clear: both;
+}
+.u-clearfix:after {
+  clear: both;
+}
+
+.u-caret {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  height: 1em;
+  width: 1.5em;
+}
+.u-image,
+.u-background-effect-image,
+.u-video-poster {
+  object-fit: cover;
+  display: block;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.u-form {
+  position: relative;
+  font-size: 1rem;
+  height: auto !important;
+}
+
+.u-form-select-wrapper .u-caret {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  pointer-events: none;
+}
+
+
+
+
+.u-form-select-wrapper select[size] ~ .u-caret {
+  display: none;
+}
+
+
+.u-form-select-wrapper select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.u-form-select-wrapper {
+  position: relative;
+}
+
+
+.u-input {
+  display: block;
+  width: 100%;
+  padding: 10px 12px;
+  background-image: none;
+  background-clip: padding-box;
+  border-radius: 3px;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  background-color: transparent;
+  color: inherit;
+  height: auto;
+}
+
+.u-btn {
+  /*display: inline-block;*/
+  display: table;
+  /*TODO maye need another solution for negative marin*/
+  cursor: pointer;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  border: 0 none transparent;
+  outline-width: 0;
+  margin: 0;
+  font-style: initial;
+  white-space: nowrap;
+  -webkit-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  text-align: center;
+  padding: 10px 30px;
+  align-self:center;
+  margin: auto;
+}
+
+.u-custom-color-2,
+.u-body.u-custom-color-2,
+section.u-custom-color-2:before
+
+{
+  color: #111111;
+  background-color: #f0e2e2;
+}
+
+h4
+{
+  color: #050505;
+  background-color: transparent;
+  text-align: center;
+
+}
+
+.coll {
+  border: 1px solid #f4eeec;
+  border-radius: 0px;
+  background-color: white;
+}
+
+.cardQT button{
+margin-left: 7%;
+
+}
+
+#choix {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 2%;
+}
+
+#choix2 {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 2%;
+}
+
+
+.cardbody p b {
+  font-size: 130%;
   
- 
   
-  .cardfooter p {
-    padding-top: 6px;
-  }
+}
 
-  h1 {
-    text-align: center;
-    font-family: 'Alex Brush';
-    font-size: 50px;
-  }
+img
+{
+  width: 300px ;
+  height: 400px; 
+}
 
-  p {
-    
-    text-align: center;
-  }
+.cardimgtop {
+  width: 250px;
+  height: 350px; 
+  border-radius: 5px;
+}
 
-  .cliquable {
-    cursor: pointer;
-  }
+
+
+.cardfooter p {
+  padding-top: 6px;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Alex Brush';
+  font-size: 50px;
+}
+
+p {
+  
+  text-align: center;
+}
+
+.cliquable {
+  cursor: pointer;
+}

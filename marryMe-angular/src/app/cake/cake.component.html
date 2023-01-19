@@ -37,7 +37,7 @@
     
               <div class="coll">
                 <div>
-                  <img (click)="choixCake('Rafaello Cake')"  src="assets/cake3.jpeg" class="cardimgtop" alt="...">
+                  <img (click)="choixCake('Rafaello cake')" src="assets/cake3.jpeg" class="cardimgtop cliquable" alt="...">
                   <div class="cardbody">
                     <p class="u-custom-font u-font-lobster"> Rafaello Cake <p>
                     </div>
@@ -176,7 +176,7 @@
               <label  class="u-custom-font u-font-lobster u-label u-label-2">Nombre d'invités - Tarifs</label>
               <div class="u-form-select-wrapper">
                 <select [(ngModel)]="nombreInvite" class="u-border-1 u-border-grey-30 u-input u-input-rectangle cliquable">
-                  <optgroup label="Selectionner votre nombre d'invités"></optgroup>
+                   <optgroup label="Selectionner votre nombre d'invités"></optgroup>
                   <option value="10-30">10-30 personnes / 180€</option>
                   <option value="31-60">31-60 personnes / 320€</option>
                   <option value="61-100">61-100 personnes / 500€</option>
@@ -188,7 +188,7 @@
               <div class=" u-form-select ">
                 <label  class="u-custom-font u-font-lobster u-label u-label-2">Design</label>
                 <div class="u-form-select-wrapper">
-                  <select [(ngModel)]="design" class="u-border-1 u-border-grey-30 u-input u-input-rectangle cliquable">
+                  <select required [(ngModel)]="design" class="u-border-1 u-border-grey-30 u-input u-input-rectangle cliquable">
                   <optgroup>Selectionner un design</optgroup>
                   <option value="Caramel cake" >Caramel cake </option>
                   <option value="Mango cake" >Mango cake </option>
@@ -207,7 +207,7 @@
               <label class="u-custom-font u-font-lobster u-label u-label-2">Génoise</label>
               <div class="u-form-select-wrapper">
                 <select [(ngModel)]="genoise" class="u-border-1 u-border-grey-30 u-input u-input-rectangle cliquable">
-                  <optgroup>Selectionner une génoise</optgroup>
+                  <optgroup> Selectionner une génoise</optgroup>
                   <option value="Red Velvet" >Red Velvet</option>
                   <option value="Moelleux chocolat" >Moelleux chocolat</option>
                   <option value="Moelleux caramel" >Moelleux caramel</option>
@@ -271,9 +271,11 @@
                   <label class="u-custom-font u-font-lobster u-label u-label-9" >Non</label>
                 </div>
               </div>
+              <div *ngIf="isFormInComplete"> <p >  Veuillez remplir les choix </p> </div>
             <div >
-              <button (click)="reservercake()" href="/cake" class="u-btn u-custom-font u-font-lobster u-button-style u-palette-2-light-2" (click)='isShowInfo = !isShowInfo' >Ajouter au panier</button>
-              <div *ngIf="isShowInfo"> <p>Merci! votre commande a bien été prise en compte</p> </div>   
+           <button  (click)="reservercake()" href="/cake" class="u-btn u-custom-font u-font-lobster u-button-style u-palette-2-light-2">Ajouter au panier</button> 
+              <div *ngIf="isShowInfo && !isFormInComplete"> <p>Merci! votre commande a bien été prise en compte</p> </div>
+              
             </div>
       </div>
     </div>
