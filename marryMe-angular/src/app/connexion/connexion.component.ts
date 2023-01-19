@@ -33,7 +33,7 @@ export class ConnexionComponent {
 
   inscription(nom :string,prenom:string, mail: String, mdp:string,date:Date,theme:string): void {
     this.connexionService.creationCompte(nom,prenom,mail,mdp,date + "",theme).subscribe (resp => {
-      confirm("'BRAVO VOUS ETES BIEN ENREGISTRE CHEZ NOUS VEUILLEZ VOUS CONNECTER SVP.....:)'")
+ 
       this.el.nativeElement.querySelector('#forLogin').click();
     })
 };
