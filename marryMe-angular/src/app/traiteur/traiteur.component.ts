@@ -56,7 +56,7 @@ export class TraiteurComponent {
     else if (this.nombreInvite=="31-60"){this.prix = 3200}
     else if (this.nombreInvite=="61-100"){this.prix = 5000}
     else if (this.nombreInvite==" >100 "){this.prix = 7500}
-    //this.prix = (this.nombreInvite=="petit")? 250 : 400            ;
+    //this.prix = (this.nombreInvite=="petit")? 250 : 400;
  
     
    console.log("prix:" +this.prix  + " vinDHonneur:" + this.vinDHonneur+ " nombreInvite:" + " design:" +this.cuisine + this.nombreInvite  )

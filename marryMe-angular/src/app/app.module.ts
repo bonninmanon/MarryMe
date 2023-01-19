@@ -24,7 +24,7 @@ import { HttpDecouvrirService } from './decouvrir/http-decouvrir.service';
 import { TraiteurHttpService } from './traiteur/traiteur-http.service';
 import { FooterComponent } from './footer/footer.component';
 
-//////
+
 @NgModule({
   declarations: [
     AppComponent,
