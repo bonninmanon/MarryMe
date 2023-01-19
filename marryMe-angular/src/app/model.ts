@@ -97,7 +97,7 @@ export class Cake{
         
     }
 }
-
+/////////////////
 export class Traiteur {
     idTraiteur: number;
     prixTraiteur:number;
