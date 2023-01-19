@@ -32,7 +32,7 @@
        
           <div class="hide" *ngIf="isShowInfo110"> <p> Votre article a été ajouté au panier ! </p> </div> 
         <div *ngIf="!isShowInfo110" class="cardQT">
-          <p>Cuisine :
+        <p>Cuisine :
           <select  [(ngModel)]="cuisineLovely" class="cuisine">
             <optgroup label="Selectionner votre nombre d'invités"></optgroup>
             <option value="Lovely">10-30 personnes </option>
@@ -51,8 +51,10 @@
                 <input class="vin" [ngModel]="vinDHonneur" id="choix-nonY" value="non" checked name="choix1" type="radio">
                 <label  >Non</label>
               </div>
+
+              <div class="no-size2" *ngIf="isSizeError110">Veuillez choisir une spécialité</div>
             </div>
-            <button (click)="Lovely()" (click)='isShowInfo110 = !isShowInfo110' type="button">Ajouter au panier</button>
+            <button (click)="Lovely()"  type="button">Ajouter au panier</button>
 
           </div>
         
@@ -68,6 +70,7 @@
             </div>
             <div class="hide" *ngIf="isShowInfo111"> <p> Votre article a été ajouté au panier ! </p> </div> 
             <div *ngIf="!isShowInfo111" class="cardQT">
+              
               <p>Cuisine :
                 <select  [(ngModel)]="cuisinejoliesnoces" class="cuisine">
                   <optgroup label="Selectionner votre nombre d'invités"></optgroup>
@@ -88,8 +91,10 @@
                     <input class="vin" [ngModel]="vinDHonneur" id="choix-nonB" value="non" checked name="choix2" type="radio">
                     <label  >Non</label>
                   </div>
+
+                  <div class="no-size" *ngIf="isSizeError111">Veuillez choisir une spécialité</div>
                 </div>
-                <button (click)="joliesnoces()" (click)='isShowInfo111 = !isShowInfo111' type="button">Ajouter au panier</button>
+                <button (click)="joliesnoces()"  type="button">Ajouter au panier</button>
 
               </div>
               
@@ -105,7 +110,9 @@
 
                 </div>
                 <div class="hide" *ngIf="isShowInfo112"> <p> Votre article a été ajouté au panier ! </p> </div> 
-                <div *ngIf="!isShowInfo112" class="cardQT">                  <p>Cuisine :
+                <div *ngIf="!isShowInfo112" class="cardQT">                  
+              
+                  <p>Cuisine :
                     <select  [(ngModel)]="cuisineinspiration" class="cuisine">
                       <optgroup label="Selectionner votre nombre d'invités"></optgroup>
                       <option value="Inspiration">10-30 personnes</option>
@@ -124,8 +131,10 @@
                         <input class="vin"  [ngModel]="vinDHonneur" id="choix-nonD" value="non" checked name="choix3" type="radio">
                         <label >Non</label>
                       </div>
+
+                      <div class="no-size" *ngIf="isSizeError112">Veuillez choisir une spécialité</div>
                     </div>
-                    <button (click)="inspiration()" (click)='isShowInfo112 = !isShowInfo112' type="button">Ajouter au panier</button>
+                    <button (click)="inspiration()" type="button">Ajouter au panier</button>
 
 
                   </div>
@@ -143,7 +152,9 @@
 
                     </div>
                     <div class="hide" *ngIf="isShowInfo113"> <p> Votre article a été ajouté au panier ! </p> </div> 
-                    <div *ngIf="!isShowInfo113" class="cardQT">                      <p>Cuisine :
+                    <div *ngIf="!isShowInfo113" class="cardQT">                      
+                  
+                      <p>Cuisine :
                         <select  [(ngModel)]="cuisinedecontract" class="cuisine">
                           <optgroup label="Selectionner votre nombre d'invités"></optgroup>
                           <option value="Decontract">10-30 personnes</option>
@@ -163,8 +174,9 @@
                             <input  class="vin"  [ngModel]="vinDHonneur" id="choix-nonF" value="non" checked name="choix4" type="radio">
                             <label >Non</label>
                           </div>
+                          <div class="no-size" *ngIf="isSizeError113">Veuillez choisir une spécialité</div>
                         </div>
-                        <button (click)="decontract()" (click)='isShowInfo113 = !isShowInfo113' type="button">Ajouter au panier</button>
+                        <button (click)="decontract()"  type="button">Ajouter au panier</button>
 
                       </div>
                       
@@ -181,7 +193,9 @@
                       <p> BBQ + Viandes + Poissons + Dessert</p>
                     </div>
                     <div class="hide" *ngIf="isShowInfo114"> <p> Votre article a été ajouté au panier ! </p> </div> 
-                    <div *ngIf="!isShowInfo114" class="cardQT">                      <p>Cuisine :
+                    <div *ngIf="!isShowInfo114" class="cardQT">                      
+                      
+                      <p>Cuisine :
                         <select  [(ngModel)]="cuisinegardenparty" class="cuisine">
                           <optgroup label="Selectionner votre nombre d'invités"></optgroup>
                           <option value="Garden Party">10-30 personnes</option>
@@ -201,8 +215,9 @@
                 <input class="vin"  [ngModel]="vinDHonneur" id="choix-nonH" value="non" checked name="choix5" type="radio">
                 <label >Non</label>
               </div>
+              <div class="no-size" *ngIf="isSizeError114">Veuillez choisir une spécialité</div>
             </div>
-                        <button (click)="gardenparty()" (click)='isShowInfo114 = !isShowInfo114' type="button">Ajouter au panier</button>
+                        <button (click)="gardenparty()"  type="button">Ajouter au panier</button>
 
                       </div>
                       
@@ -218,7 +233,8 @@
 
                                 </div>
                                 <div class="hide" *ngIf="isShowInfo115"> <p> Votre article a été ajouté au panier ! </p> </div> 
-                                <div *ngIf="!isShowInfo115" class="cardQT">                                
+                                <div *ngIf="!isShowInfo115" class="cardQT">     
+                                                          
                                     <p>Cuisine :
                                     <select  [(ngModel)]="cuisinechichampete" class="cuisine">
                                       <optgroup label="Selectionner votre nombre d'invités"></optgroup>
@@ -238,11 +254,17 @@
                 <input class="vin" [ngModel]="vinDHonneur" id="choix-nonJ" value="non" checked name="choix6" type="radio">
                 <label  >Non</label>
               </div>
+              <div class="no-size" *ngIf="isSizeError115">Veuillez choisir une spécialité</div>
             </div>
-                                    <button (click)="chichampete()" (click)='isShowInfo115 = !isShowInfo115' type="button">Ajouter au panier</button>
+                                    <button (click)="chichampete()"  type="button">Ajouter au panier</button>
 
                                   </div>
                                 </div>
                               </div>
 <!--==============================footer=================================-->
 
+<div>
+  <app-footer>
+  
+  </app-footer>
+  </div>
