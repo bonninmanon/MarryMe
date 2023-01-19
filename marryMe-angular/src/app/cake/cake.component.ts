@@ -18,9 +18,9 @@ export class CakeComponent {
   alcoolisee:string;
   message:string;
   idMariage: number;
-
   connecte: Cake= new Cake();
   isShowInfo: boolean;
+  isFormInComplete:boolean;
 
   constructor(private cakeService: HttpCakeService, private router: Router, private route: ActivatedRoute){
     this.route.params.subscribe(params => { 
@@ -38,11 +38,15 @@ export class CakeComponent {
     else if (this.nombreInvite=="61-100"){this.prix = 500}
     else if (this.nombreInvite==" >100 "){this.prix = 750}
     //this.prix = (this.nombreInvite=="petit")? 250 : 400 ;
- 
     
     console.log("prix:" +this.prix + " design:" +this.design + " cremes:" + this.cremes + " genoise:" + this.genoise  + " ganaches:" + this.ganaches    + " alcoolisee:" + this.alcoolisee+ " nombreInvite:" + this.nombreInvite  )
-  
+    this.isFormInComplete=(this.prix==null || this.design==null || this.genoise==null|| this.cremes==null || this.ganaches==null || this.alcoolisee==null)
+    if(this.isFormInComplete){
+         }
+    else{
+    this.isShowInfo = true;
     this.cakeService.create(this.prix, this.design, this.cremes, this.genoise, this.ganaches,this.nombreInvite,(this.alcoolisee == "oui" ? true : false)).subscribe(resp => {this.connecte = resp;})
+    }
   }
 
   choixCake(designImgClic : string) {
@@ -53,3 +57,5 @@ export class CakeComponent {
   }
 
 }
+ 
+
