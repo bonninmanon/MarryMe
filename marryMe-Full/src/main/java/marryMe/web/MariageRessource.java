@@ -489,7 +489,7 @@ public class MariageRessource {
 			try {
 				Mariage mar = optMariage.get();
 				
-				mar.getPrestations().removeIf(prestation -> prestation.getId() == idSalle);
+				mar.getPrestations().removeIf(prestation -> prestation.getId().equals(idSalle));
 				daoMariage.save(mar);
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -498,7 +498,7 @@ public class MariageRessource {
 		}
 	} 
 	
-	@DeleteMapping("/{id}/salle/{idTraiteur}")
+	@DeleteMapping("/{id}/traiteur/{idTraiteur}")
 	@JsonView(Views.ViewTraiteur.class)
 	public void deleteTraiteur(@PathVariable Integer id, @PathVariable Integer idTraiteur) {	
 		Optional<Mariage> optMariage = daoMariage.findById(id);
@@ -507,8 +507,7 @@ public class MariageRessource {
 			
 			try {
 				Mariage mar = optMariage.get();
-				
-				mar.getPrestations().removeIf(prestation -> prestation.getId() == idTraiteur);
+				mar.getPrestations().removeIf(prestation -> prestation.getId().equals(idTraiteur));
 				daoMariage.save(mar);
 			} catch (Exception e) {
 				e.printStackTrace();

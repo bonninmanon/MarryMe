@@ -106,7 +106,7 @@ export class PrestationComponent {
         let idx: number = this.mariageDto.traiteurs.indexOf(traiteur);
     
         this.mariageDto.traiteurs.splice(idx, 1);
-        this.pS.removeTraiteur(traiteur.idtraiteur).subscribe();
+        this.pS.removeTraiteur(traiteur.idTraiteur).subscribe();
         this.total -= traiteur.prixTraiteur;
           }
         

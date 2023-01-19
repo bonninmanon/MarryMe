@@ -19,15 +19,17 @@
   <div class="coll">
 
       <img src="assets/images/gallery-1.jpg" class="cardimgtop" alt="...">
-	  <div class="hide" *ngIf="isShowInfo100"> <p> Votre article a été ajouté au panier ! </p> </div> 
-	  <div *ngIf="!isShowInfo100" class="cardQT">        <p> <b>La palmeraie</b> <br/> Salle de réception d'une superficie de 1700 m²<br/> 
+	  
+		 <p> <b>La palmeraie</b> <br/> Salle de réception d'une superficie de 1700 m²<br/> 
 			et pouvant réceptionner jusqu'à 1200 personnes  </p>
-        </div>
+        
         <div class="cardQT">
 			 <span>Adresse : Paris - 15eme (75015)</span>
 			</div>
+			<div class="hide" *ngIf="isShowInfo100"> <p> Votre article a été ajouté au panier ! </p> </div> 
+	  <div *ngIf="!isShowInfo100" >      
 			<button (click)="Lapalmeraie()" (click)='isShowInfo100 = !isShowInfo100' type="button">Ajouter au panier</button>
-
+		</div>
           <div class="cardfooter">
             <p>Prix total: 6000€</p>
           </div>
@@ -38,13 +40,14 @@
 	<div class="coll">
 	
 		  <img src="assets/images/gallery-2.jpg" class="cardimgtop" alt="...">
-		  <div class="hide" *ngIf="isShowInfo101"> <p> Votre article a été ajouté au panier ! </p> </div> 
-		  <div *ngIf="!isShowInfo101" class="cardQT">			<p> <b>Domaine de la Grave</b> <br/>Salle de réception d'une superficie de 2000 m² <br/>et pouvant réceptionner jusqu'à 1500 personnes</p>
+		 	<p> <b>Domaine de la Grave</b> <br/>Salle de réception d'une superficie de 2000 m² <br/>et pouvant réceptionner jusqu'à 1500 personnes</p>
 			</div>
 			<div class="cardQT">
 				 <span>Adresse : Beichac-et-Caillou (Gironde-33750)</span>
 				</div>
 				<button (click)="DomainedelaGrave()" (click)='isShowInfo101 = !isShowInfo101' type="button">Ajouter au panier</button>
+				<div class="hide" *ngIf="isShowInfo101"> <p> Votre article a été ajouté au panier ! </p> </div> 
+				<div *ngIf="!isShowInfo101" class="cardQT">	
 				<div class="cardfooter">
 				<p>Prix total: 3500€</p>
 			  </div>
