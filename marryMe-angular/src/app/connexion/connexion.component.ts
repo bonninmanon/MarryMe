@@ -18,6 +18,8 @@ declare var $: any;
 })
 export class ConnexionComponent {
 
+
+  isShowInfo: boolean;
   formConnexion: Connexion = new Connexion();
   media: any;
   container: any;

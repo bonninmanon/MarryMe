@@ -5,6 +5,7 @@
         <img src="assets/Marry-Me.png"> 
     </div>
         <ul id="menu">
+            <li *ngIf="!utilisateurc" ><a (click)="passage()" class="cliquable">Accueil</a></li>
             <li><a (click)="passagerobe()" class="cliquable">Robe</a></li>
             <li><a (click)="passagecake()" class="cliquable">Cake</a></li>
             <li><a (click)="passagesalle()" class="cliquable">Salle</a></li>

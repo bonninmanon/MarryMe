@@ -90,6 +90,15 @@ this.router.navigate(["/connexion"]);
  
    }
 
+   passage(){
+
+    this.utilisateurc =this.utilisateurservice.getUtilisateur();
+ 
+     console.log(this.utilisateurc);
+     this.router.navigate([""]);
+ 
+   }
+
 
 
 
